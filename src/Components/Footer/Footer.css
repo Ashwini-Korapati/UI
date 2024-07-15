@@ -1,11 +1,25 @@
 .footer-cont {
   display: flex;
-  justify-content: space-around;
-  align-items: stretch;
+  /* justify-content: space-around; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);    
   top: 0;
   height: 100%;
+  
+}
+.copyright{
+  width: 80%;
+}
+.para{
+  margin-left: 400px;
+}
+.footer-content{
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
 }
 
 .footer-section {
@@ -37,7 +51,22 @@
   justify-content: center;
   align-items: center;
 }
-
+.logo{
+  width: 150px;
+  height: 100px;
+}
+.location-div{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: -10px;
+}
+.location{
+   /* margin-top: 20px; */
+}
+.phone{
+  margin-top: 15px;
+}
 
 .icons {
   color: white;
@@ -46,7 +75,7 @@
 }
 
 .maps {
-  height: 240px;
+  height: 200px;
   width: 450px;
   margin-right: 40px;
   

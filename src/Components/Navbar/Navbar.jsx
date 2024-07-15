@@ -24,13 +24,13 @@ const Navbar = () => {
               <Link to="/" >Home</Link>
             </li>
             <li>
+              <Link to="/about" >About Us</Link>
+            </li>
+            <li>
               <Link to="/events" >Corporate Events</Link>
             </li>
             <li>
               <Link to="/giftings">Giftings</Link>
-            </li>
-            <li>
-              {/* <Link to="/clients"  >Our Clients</Link> */}
             </li>
             <li>
               <Link to="/dj">DJ</Link>

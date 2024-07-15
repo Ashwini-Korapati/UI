@@ -29,8 +29,8 @@ const Contact = () => {
                 <input type="date" placeholder='dd-mm-yyyy' />
                 <input type="text" placeholder='Location' />
               </div>
-              <div className='text'>
-                <textarea name="" id="" cols="30" rows="5" placeholder='Message....'></textarea>
+              <div className='boxes'>
+                <textarea name="" id="" cols="30" rows="5" placeholder='Message....' className="text-box"></textarea>
               </div>
               <button className='send-button' style={{ width: '150px' }}>Send Message</button>
             </div>
@@ -48,7 +48,7 @@ const Contact = () => {
         <div className='chat' data-aos="flip-left">
           <i className="pi pi-map-marker" style={{ fontSize: '2.5rem', color: "green" }}></i>
           <h3>Location</h3>
-          <p>3RD Temple Street, NO 9, Siddanthi Block, Malleswaram, Bengaluru, Karnataka 560003 · 11 km</p>
+          <p>42, 4th Temple St Rd, Vyalikaval, Kodandarampura, Malleshwaram, Bengaluru, Karnataka 560003</p>
         </div>
         <div className='chat' data-aos="flip-left">
           <i className="pi pi-globe" style={{ fontSize: '2.5rem', color: "blue" }}></i>
@@ -62,4 +62,3 @@ const Contact = () => {
 };
 
 export default Contact;
-// https://www.bing.com/maps?mepi=127%7EDirections%7EUnknown%7EDirection_Button&ty=0&rtp=pos.12.928600311279297_77.62879180908203__Events+Unlimited__e_%7E&mode=d&v=2&sV=1&cp=12.9286%7E77.628762&lvl=14.5

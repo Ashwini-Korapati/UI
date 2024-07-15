@@ -1,0 +1,78 @@
+.about-container{
+    display: flex;
+    flex-direction: column;
+    /* margin: 100px; */
+}
+.about-image{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0px 100px;
+    
+}
+.imgs{
+    margin: 30px;
+}
+.big-image{
+    width: 620px;
+    height: 300px;
+    margin: 10px;
+}
+.down-image{
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+}
+p{
+    line-height: 1.6;
+}
+.vision-page{
+    margin-top: 60px;
+    background-image: linear-gradient(to top, #f9f7f4 0%, #f1f3f4 100%);
+    padding: 0px 100px;
+}
+.main-hr{
+    border: none; 
+    height: 3px; 
+    width: 380px;
+	background: linear-gradient(to right, #44c0c0 0%, #9e7fc3 100%);
+    margin-left: -0px;
+} 
+
+.points hr {
+    border: none; 
+    height: 0.07px; 
+    background-color: #b5a5a5; 
+    /* margin: 20px 0;  */
+}
+.offering{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 70px 100px;
+}
+.offer-image{
+    width: 650px;
+    height: 400px;
+    margin-right: 60px;
+}
+span{
+    background: linear-gradient(to right, #154040 0%, #291147 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+.whytochoose{
+    margin: 0px 100px;
+    margin-bottom: 50px;
+}
+h1{
+    background: linear-gradient(to right, #235642 0%, #c33f16 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+

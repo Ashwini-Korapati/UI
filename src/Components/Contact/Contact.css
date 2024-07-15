@@ -23,7 +23,7 @@
      padding: 20px;
      align-items: center;
      justify-content: center;
-     background-color: rgba(0, 0, 255, 0.11);
+     /* background-color: rgba(0, 0, 255, 0.11); */
      box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 8px;
      /* border: 1px solid rgb(44, 43, 43);
      background-color: rgba(0,0,0,0);
@@ -47,7 +47,7 @@
 
 }
 input{
-     width: 250px;  
+     width: 350px;  
      height: 30px;
      margin: 20px;
      padding: 10px;
@@ -101,11 +101,17 @@ textarea{
    margin: 20px;
  
 }
- p{
-    /* text-transform: uppercase; */
+.text-box{
+    width: 750px;
+    /* margin-left: -100px; */
+}
+ /* p{
 	background: linear-gradient(to right, #0b2d2d 0%, #230d3e 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
- }
+ } */
+  hr{
+    background-color: skyblue;
+  }
 
 

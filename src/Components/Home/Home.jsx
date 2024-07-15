@@ -9,9 +9,9 @@ import dj1 from "../../assets/dj2.jpeg"
 import anchor from "../../assets/anchor1.jpeg"
 import print from "../../assets/id.webp"
 import cevent from "../../assets/c-events.jpeg"
-import anchor1 from "../../assets/anchor.jpeg"
-import gift1 from "../../assets/gifts.jpeg"
-import game from "../../assets/game.jpeg"
+import anchor1 from "../../assets/anchor2.JPG"
+import gift1 from "../../assets/award.JPG"
+import game from "../../assets/games.JPG"
 import Home1 from "./Home1";
 import Clients from '../Clients/Clients'
 
@@ -41,16 +41,14 @@ const Home = () => {
                     <h1>Planning a Successful Corporate Event?</h1>
                     <br />
                     <div>
-                        Planning a successful corporate event is a meticulous process that involves setting clear objectives, budgeting, selecting a venue and theme, and crafting an engaging agenda and content.
-
-                        Additionally, managing logistics, operations, marketing, sales process, and promotion is essential to ensure the event runs smoothly and achieves its desired outcomes.
+                        <p>Planning a successful corporate event is a meticulous process that involves setting clear objectives, budgeting, selecting a venue and theme, and crafting an engaging agenda and content.</p>
+       
+                       <p>Additionally, managing logistics, operations, marketing, sales process, and promotion is essential to ensure the event runs smoothly and achieves its desired outcomes.</p>
                     </div>
-                    <br />
-
                     <div>
-                        Corporate events are gatherings of individuals with a specific purpose, such as sales meetings, networking, product launches, or team building. These events play a pivotal role in the growth and success of businesses, enabling them to reach new markets, strengthen customer relationships, and enhance employee morale.
+                        <p>Corporate events are gatherings of individuals with a specific purpose, such as sales meetings, networking, product launches, or team building. These events play a pivotal role in the growth and success of businesses, enabling them to reach new markets, strengthen customer relationships, and enhance employee morale.</p>
 
-                        Organizing a successful corporate event requires careful planning and attention to detail. Many factors must be considered, from selecting the right venue to creating an engaging agenda. It is important to ensure that the event is successful.
+                        <p>Organizing a successful corporate event requires careful planning and attention to detail. Many factors must be considered, from selecting the right venue to creating an engaging agenda. It is important to ensure that the event is successful.</p>
                     </div>
 
                     <button className="know-button">Know About Us </button>

@@ -10,24 +10,26 @@ import Printing from './Components/Printing/Printing';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
+import Vendor from "./Components/Vendor/Vendor";
+import AboutUs from "./Components/AboutUs/AboutUs";
 
 function App() {
- 
+
   return (
     <BrowserRouter>
       <div className="App">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/events" element={<Corporate />} />
-          <Route path="/dj" element={<DJ />} />
-          <Route path="/anchor" element={<Anchor />} />
-          <Route path="/giftings" element={<Giftings />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/vendor" element={<Vendoe />} /> */}
-          <Route path="/printing" element={<Printing />} />
-          
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/events" element={<Corporate />} />
+            <Route path="/dj" element={<DJ />} />
+            <Route path="/anchor" element={<Anchor />} />
+            <Route path="/giftings" element={<Giftings />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/vendor" element={<Vendor />} />
+            <Route path="/printing" element={<Printing />} />
+          </Routes>
         <Footer />
       </div>
     </BrowserRouter>
