@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./Navbar.css"
+import img from '../../assets/logo.png'
 
 
 const Navbar = () => {
@@ -10,7 +11,8 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <Link to="/" className="title">
-        Website
+      <img className='image' src={img}></img>
+        {/* Website */}
       </Link>
       <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
         <span></span>
@@ -26,6 +28,9 @@ const Navbar = () => {
             </li>
             <li>
               <Link to="/giftings">Giftings</Link>
+            </li>
+            <li>
+              {/* <Link to="/clients"  >Our Clients</Link> */}
             </li>
             <li>
               <Link to="/dj">DJ</Link>

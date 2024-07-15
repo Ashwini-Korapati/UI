@@ -26,6 +26,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           {/* <Route path="/vendor" element={<Vendoe />} /> */}
           <Route path="/printing" element={<Printing />} />
+          
         </Routes>
         <Footer />
       </div>

@@ -12,6 +12,8 @@ import cevent from "../../assets/c-events.jpeg"
 import anchor1 from "../../assets/anchor.jpeg"
 import gift1 from "../../assets/gifts.jpeg"
 import game from "../../assets/game.jpeg"
+import Home1 from "./Home1";
+import Clients from '../Clients/Clients'
 
 const Home = () => {
 
@@ -23,7 +25,8 @@ const Home = () => {
         <div className='main'>
 
             <div className='bgcontainer' data-aos="zoom-in">
-                <video src={video} autoPlay loop muted ></video>
+                {/* <video src={video} autoPlay loop muted ></video> */}
+                <Home1/>
             </div>
 
             <div className='main-service'>
@@ -86,6 +89,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+                <Clients/>
             </div>
         </div>
 
