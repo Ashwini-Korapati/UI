@@ -31,6 +31,7 @@ function Footer() {
         <div className="footer-center-section">
           <h2>Follow Us</h2>
           <div className="icons">
+            
             <a href="https://www.instagram.com/events_unlimited_365?igsh=MWYybzdnODYyc3dpMA==">
               <FaLinkedin style={{ color: "#0077B5" }} fontSize={"30px"} />
             </a>

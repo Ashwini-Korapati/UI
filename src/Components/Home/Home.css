@@ -1,9 +1,12 @@
+.main{
+  /* margin-top: 90px; */
+}
 .bgcontainer {
     position: relative;
     width: 100%;
-    height: 100vh; 
+    height: 80vh; 
     overflow: hidden;
-    /* margin-top: 30px; */
+    
   }
   
   .bgcontainer video {
@@ -11,9 +14,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
+   width: 400px;
+   height: 200px;
     height: auto;
     z-index: -1;
   }
@@ -22,20 +24,22 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-left: -50px;
   }
   .main-images{
       margin: 30px;
 
   }
   .event{
-    width: 700px;
-    height: 300px;
+    width: 780px;
+    height: 380px;
   }
   .dj{
     margin-right: 20px;    
     margin-top:20px;
-    width: 340px;
+    width: 380px;
+    height:380px ;
                                                                                                                                                                                                                                                    
   }
   .images{
@@ -49,9 +53,10 @@
 
   .know-button{
     background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);    top: 0;
-    width: 150px;
-    height: 40px;
-    margin-top: 40px;
+    width: 250px;
+    height: 50px;
+    margin-top: 30px;
+    font-size: 20px;
   }
   .services{
     display: flex;
@@ -83,7 +88,48 @@
     width: 400px;
     height: 300px;
   }
-  p{
-    
+  @media (max-width: 768px) {
+    .main-service {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .images {
+        flex-direction: column;
+    }
+
+    .dj {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+  .main-service{
+    margin-top: -150px;
+    margin-right: 30px;
   }
+   .main-images{
+    display: none;
+   }
+   .serice-text{
+    width: 280px;
+   }
+   .services-images{
+    flex-direction: column;
+   }
+   .up-images{
+    flex-direction: column;
+   }
+   .down-images{
+    flex-direction: column;
+   }
+   .service-image{
+    width: 250px;
+    margin-left: -10px;
+   }
+   .service-img{
+    width: 250px;
+   }
+
+}
   

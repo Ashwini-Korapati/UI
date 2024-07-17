@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Home/Home1.css';
-import video1 from '../../assets/event.mp4'; // Ensure this path is correct
+import video1 from '../../assets/event1.mp4'; // Ensure this path is correct
 
 const Home = () => {
   return (

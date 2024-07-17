@@ -1,53 +1,42 @@
-import React,{useState} from 'react';
-import { Link } from 'react-router-dom';
-import "./Navbar.css"
-import img from '../../assets/logo.png'
+// Navbar.js
 
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import "./Navbar.css";
+import img from '../../assets/logo.png';
 
 const Navbar = () => {
-
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <nav className='navbar'>
-      <Link to="/" className="title">
-      <img className='image' src={img}></img>
-        {/* Website */}
-      </Link>
-      <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
+      <img className='image' src={img} alt="Logo" />
+      <div className={`menu ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
       </div>
-          <ul className={menuOpen ? "open" : ""}>
-            <li>
-              <Link to="/" >Home</Link>
-            </li>
-            <li>
-              <Link to="/about" >About Us</Link>
-            </li>
-            <li>
-              <Link to="/events" >Corporate Events</Link>
-            </li>
-            <li>
-              <Link to="/giftings">Giftings</Link>
-            </li>
-            <li>
-              <Link to="/dj">DJ</Link>
-            </li>
-            <li>
-              <Link to="/anchor">Anchoring</Link>
-            </li>
-            <li>
-              <Link to="/printing">Printing</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact Us</Link>
-            </li>
-            <li>
-            <Link to="/vendor"> Become a Vendor</Link>
-            </li>
-          </ul>
+      <ul className={`navbar-ul ${menuOpen ? 'open' : ''}`}>
+        <li>
+          <NavLink to="/" exact activeClassName="active">Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" activeClassName="active">About Us</NavLink>
+        </li>
+        <li>
+          <NavLink to="/events" activeClassName="active">Corporate Events</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" activeClassName="active">Contact Us</NavLink>
+        </li>
+        <li>
+          <NavLink to="/vendor" activeClassName="active">Become a Vendor</NavLink>
+        </li>
+      </ul>
     </nav>
   );
 }

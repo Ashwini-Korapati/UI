@@ -1,110 +1,112 @@
-/* Navbar.css */
-
 .active {
-    background-color: #1d4ed8;
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+  top: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+  height: 90px;
+  font-size: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays on top of other content */
+  top: 0;
+}
+
+nav .title {
+  font-size: 20px;
+  margin: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+nav ul {
+  display: flex;
+  margin: 30px;
+}
+
+nav ul li {
+  padding: 10px;
+  list-style: none;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  height: max-content;
+  padding: 10px;
+  margin: 0 0.5rem;
+  border-radius: 10px;
+}
+
+nav ul li a:not(.active):hover {
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+  color: white;
+}
+
+nav .menu {
+  display: none;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.25rem;
+  height: 2rem;
+}
+
+.image {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 200px;
+  height: 80px;
+  border-radius: 20px;
+}
+
+nav .menu span {
+  height: 0.4rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.2rem;
+}
+
+@media (max-width: 480px) {
+  nav .menu {
+    display: flex;
   }
-  
+
   nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: whitesmoke;
-    height: 90px;
-    /* background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);    top: 0; */
-    /* position: fixed;
-    width: 100%;
-    z-index: 1000; Ensure it stays on top of other content */
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  nav .title {
-    font-size: 20px;
-    margin: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-  }
-  
+
   nav ul {
-    
-    display: flex;
-    margin: 30px;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.25rem;
   }
-  
+
+  nav ul.open {
+    display: flex;
+  }
 
   nav ul li {
-    padding: 10px;
-    list-style: none;
-  }
-  
-  nav ul li a {
-    display: block;
-    text-decoration: none;
-    color: black;
-    height: max-content;
-padding: 10px
-;    margin: 0 0.5rem;
-    border-radius: 10px;
-  }
-  
-  nav ul li a:not(.active):hover {
-    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);    top: 0;
-    color: white;
-  }
-  
-  nav .menu {
-    display: none;
-    position: absolute;
-    top: 0.75rem;
-    right: 0.5rem;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 2.25rem;
-    height: 2rem;
+    width: 100%;
+    text-align: center;
   }
 
-  .image{
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 200px;
-    height: 80px;
-    border-radius: 20px;
+  nav ul li a {
+    margin: 0.2rem 0.5rem;
   }
-  
-  nav .menu span {
-    height: 0.4rem;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 0.2rem;
-  }
-  
-  @media (max-width: 480px) {
-    nav .menu {
-      display: flex;
-    }
-  
-    nav {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    nav ul {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      margin-bottom: 0.25rem;
-    }
-  
-    nav ul.open {
-      display: flex;
-    }
-  
-    nav ul li {
-      width: 100%;
-      text-align: center;
-    }
-  
-    nav ul li a {
-      margin: 0.2rem 0.5rem;
-    }
-  }
-  
+}
+
+/* Add margin-top to the main content to prevent it from being hidden under the navbar */
+.main-content {
+  margin-top: 90px; /* Adjust this value to the height of your navbar */
+}

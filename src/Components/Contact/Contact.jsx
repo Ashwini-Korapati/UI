@@ -18,16 +18,16 @@ const Contact = () => {
             <div className="contact-container">
               <h1>Be In Touch</h1>
               <div className="boxes">
-                <input type="text" placeholder='FirstName' />
-                <input type="text" placeholder='LastName' />
+                <input type="text" placeholder='FirstName'  className="textbox"/>
+                <input type="text" placeholder='LastName' className="textbox"/>
               </div>
               <div className="boxes">
-                <input type="text" placeholder='Email Id' />
-                <input type="text" placeholder='Phone Number' />
+                <input type="text" placeholder='Email Id' className="textbox"/>
+                <input type="text" placeholder='Phone Number' className="textbox"/>
               </div>
               <div className='boxes'>
-                <input type="date" placeholder='dd-mm-yyyy' />
-                <input type="text" placeholder='Location' />
+                <input type="date" placeholder='dd-mm-yyyy' className="textbox"/>
+                <input type="text" placeholder='Location' className="textbox"/>
               </div>
               <div className='boxes'>
                 <textarea name="" id="" cols="30" rows="5" placeholder='Message....' className="text-box"></textarea>

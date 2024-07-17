@@ -1,78 +1,194 @@
-.about-container{
+.about-container {
     display: flex;
     flex-direction: column;
-    /* margin: 100px; */
+    margin-top: 90px;
 }
-.about-image{
+
+.about-image {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     margin: 0px 100px;
-    
 }
-.imgs{
+
+.imgs {
     margin: 30px;
 }
-.big-image{
+
+.big-image {
     width: 620px;
     height: 300px;
     margin: 10px;
 }
-.down-image{
+
+.down-image {
     width: 300px;
     height: 300px;
     margin: 10px;
 }
-p{
+
+p {
     line-height: 1.6;
+    font-size: 20px;
 }
-.vision-page{
+
+.vision-page {
     margin-top: 60px;
     background-image: linear-gradient(to top, #f9f7f4 0%, #f1f3f4 100%);
     padding: 0px 100px;
 }
-.main-hr{
+
+.main-hr {
     border: none; 
     height: 3px; 
     width: 380px;
-	background: linear-gradient(to right, #44c0c0 0%, #9e7fc3 100%);
+    background: linear-gradient(to right, #44c0c0 0%, #9e7fc3 100%);
     margin-left: -0px;
-} 
+}
 
 .points hr {
     border: none; 
     height: 0.07px; 
     background-color: #b5a5a5; 
-    /* margin: 20px 0;  */
 }
-.offering{
+
+.offering {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     margin: 70px 100px;
 }
-.offer-image{
+
+.offer-image {
     width: 650px;
     height: 400px;
     margin-right: 60px;
 }
-span{
+
+span {
     background: linear-gradient(to right, #154040 0%, #291147 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: bold;
 }
-.whytochoose{
+
+.whytochoose {
     margin: 0px 100px;
     margin-bottom: 50px;
 }
-h1{
+
+h1 {
     background: linear-gradient(to right, #235642 0%, #c33f16 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: bold;
 }
 
+/* Media Queries for Responsive Design */
 
+@media (max-width: 1200px) {
+    .about-container{
+        margin-right: 20px;
+    }
+    .about-image {
+        margin: 0px 50px;
+    }
+
+    .vision-page {
+        padding: 0px 50px;
+    }
+
+    .offering {
+        margin: 70px 50px;
+    }
+
+    .whytochoose {
+        margin: 0px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container{
+        margin-right: 20px;
+        border: 1px solid black;
+
+    }
+    .about-image {
+        flex-direction: column;
+        margin: 0px 20px;
+    }
+
+    .imgs {
+        margin: 20px 0;
+    }
+
+    .big-image, .down-image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .down-images{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vision-page {
+        padding: 0px 20px;
+    }
+
+    .offering {
+        flex-direction: column;
+        margin: 70px 20px;
+    }
+
+    .offer-image {
+        max-width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .whytochoose {
+        margin: 0px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container{
+        margin-right: 20px;
+        margin-left: -15px;
+    }
+    .about-image {
+        margin: 0px 10px;
+    }
+
+    .vision-page {
+        padding: 0px 10px;
+        width: 300px;
+    }
+
+    .offering {
+        margin: 70px 10px;
+    }
+
+    .whytochoose {
+        margin: 0px 10px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .big-image, .down-image {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+    .down-images{
+        display: flex;
+        flex-direction: column;
+    }
+}
