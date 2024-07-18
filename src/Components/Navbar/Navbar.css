@@ -28,6 +28,15 @@ nav ul {
   display: flex;
   margin: 30px;
 }
+nav ul.open {
+  display: flex;
+  position: absolute;
+  background-color: whitesmoke;
+  top: 90px; /* Adjust according to the height of your navbar */
+  left: 0;
+  right: 0;
+  z-index: 999; /* Higher than other content but less than navbar */
+}
 
 nav ul li {
   padding: 10px;
@@ -46,7 +55,29 @@ nav ul li a {
 
 nav ul li a:not(.active):hover {
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
-  color: white;
+  color: rgb(40, 12, 12);
+}
+.navbar-ul .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f4ebeb;
+  list-style: none;
+  padding: 0;
+  margin-left:1300px;
+  margin-top: -3px;
+  display: none;
+  z-index: 1000;
+}
+
+.navbar-ul li:hover .dropdown {
+  display: block;
+}
+
+.dropdown li a {
+  padding: 10px 20px;
+  display: block;
+  background-color: #f4ebeb;
 }
 
 nav .menu {
@@ -54,10 +85,8 @@ nav .menu {
   position: absolute;
   top: 0.75rem;
   right: 0.5rem;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 2.25rem;
-  height: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .image {
@@ -68,16 +97,11 @@ nav .menu {
   border-radius: 20px;
 }
 
-nav .menu span {
-  height: 0.4rem;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 0.2rem;
-}
-
 @media (max-width: 480px) {
   nav .menu {
-    display: flex;
+    display: block;
+    margin-right: 90px;
+    margin-top: 30px;
   }
 
   nav {
@@ -91,11 +115,18 @@ nav .menu span {
     width: 100%;
     margin-bottom: 0.25rem;
   }
+  nav ul .dropdown{
+    width: 100px;
+  }
 
   nav ul.open {
     display: flex;
+    margin-left: -50px;
+    /* margin-top: 0x; */
   }
-
+  .image{
+     margin-left: -90px;
+  }
   nav ul li {
     width: 100%;
     text-align: center;
