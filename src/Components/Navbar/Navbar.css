@@ -1,143 +1,159 @@
-.active {
-  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
-  top: 0;
-}
-
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: whitesmoke;
-  height: 90px;
-  font-size: 20px;
+  background-color: #f0f0f0;
+  /* background-color: rgba(0, 24, 69, 0.8);  */
+  height: 70px; /* Reduced height */
+  padding: 0 30px; /* Increased padding */
   position: fixed;
   width: 100%;
-  z-index: 1000; /* Ensure it stays on top of other content */
   top: 0;
-}
-
-nav .title {
-  font-size: 20px;
-  margin: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: black;
-}
-
-nav ul {
-  display: flex;
-  margin: 30px;
-}
-nav ul.open {
-  display: flex;
-  position: absolute;
-  background-color: whitesmoke;
-  top: 90px; /* Adjust according to the height of your navbar */
   left: 0;
-  right: 0;
-  z-index: 999; /* Higher than other content but less than navbar */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+  transition: all 0.3s ease-in-out;
 }
 
-nav ul li {
-  padding: 10px;
+/* Logo */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: 140px; /* Reduced size */
+  height: auto;
+  /*border-radius: 5px; Removed border radius from logo */
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar .logo img:hover {
+  transform: scale(1.05); /* Reduced scale on hover */
+}
+
+/* Navbar Menu */
+.navbar ul {
+  display: flex;
   list-style: none;
+  margin: 0; /* Remove default ul margin */
+  padding: 0; /* Remove default ul padding */
 }
 
-nav ul li a {
-  display: block;
+.navbar ul li {
+  padding: 10px 15px;
+  position: relative;
+}
+
+.navbar ul li a {
   text-decoration: none;
-  color: black;
-  height: max-content;
-  padding: 10px;
-  margin: 0 0.5rem;
-  border-radius: 10px;
+  color: black; /* Light grey text */
+  font-size: 16px; /* Reduced font size */
+  font-weight: 500;
+  padding: 8px 15px; /* Adjusted padding */
+  border-radius: 25px; /* Rounded corners */
+  transition: all 0.3s ease-in-out;
+  /* background-color: rgba(255, 255, 255, 0.1);  Slightly transparent white background */
+  margin-right: 5px;
+  display: block; /* Make the link a block level element */
 }
 
-nav ul li a:not(.active):hover {
-  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
-  color: rgb(40, 12, 12);
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  background-color: #0353a4;
+  /* background-color: #64b5f6; A lighter blue for hover */
+  color: white;  /* Dark blue text */
+  transform: scale(1.05);
 }
-.navbar-ul .dropdown {
+
+/* Dropdown */
+.navbar ul .dropdown {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #f4ebeb;
-  list-style: none;
-  padding: 0;
-  margin-left:1300px;
-  margin-top: -3px;
-  display: none;
-  z-index: 1000;
+background-color: whitesmoke;
+  color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  border-radius: 5px;
+  overflow: hidden;
+  min-width: 180px;
+  transition: all 0.3s ease-in-out;
 }
 
-.navbar-ul li:hover .dropdown {
+.navbar ul li:hover .dropdown {
   display: block;
+  /* background-color: #0353a4; */
+}
+
+.dropdown li {
+  padding: 0; /* Remove padding */
 }
 
 .dropdown li a {
-  padding: 10px 20px;
   display: block;
-  background-color: #f4ebeb;
+  padding: 10px 15px; /* Adjusted padding */
+  color: #f0f0f0; /* Light grey text */
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
-nav .menu {
+.dropdown li a:hover {
+  background-color: #64b5f6; /* A lighter blue for hover */
+  color: #001845; /* Dark blue text */
+}
+
+/* Menu Icon for Mobile */
+.menu {
   display: none;
-  position: absolute;
-  top: 0.75rem;
-  right: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 24px;
   cursor: pointer;
+  color: #f0f0f0; /* Light grey color for the icon */
 }
 
 .image {
-  margin-top: 20px;
-  margin-left: 20px;
-  width: 200px;
-  height: 80px;
-  border-radius: 20px;
+  width: 140px; /* Reduced size */
+  height: auto;
+  /* border-radius: 50%; */
+  /*background-color: white; Removed background-color */
 }
 
-@media (max-width: 480px) {
-  nav .menu {
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu {
     display: block;
-    margin-right: 90px;
-    margin-top: 30px;
   }
 
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
+  .navbar ul {
     display: none;
     flex-direction: column;
+    position: absolute;
+    top: 70px; /* Adjust the top position to match the navbar height */
+    left: 0;
     width: 100%;
-    margin-bottom: 0.25rem;
-  }
-  nav ul .dropdown{
-    width: 100px;
+    background-color: rgba(0, 24, 69, 0.95); /* Semi-transparent dark blue mobile menu */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 0; /* Reset padding */
   }
 
-  nav ul.open {
+  .navbar ul.open {
     display: flex;
-    margin-left: -50px;
-    /* margin-top: 0x; */
   }
-  .image{
-     margin-left: -90px;
-  }
-  nav ul li {
-    width: 100%;
+
+  .navbar ul li {
     text-align: center;
+    width: 100%;
+    padding: 10px 0;
   }
 
-  nav ul li a {
-    margin: 0.2rem 0.5rem;
+  .navbar ul li a {
+      margin-right: 0; /* Remove right margin */
   }
-}
 
-/* Add margin-top to the main content to prevent it from being hidden under the navbar */
-.main-content {
-  margin-top: 90px; /* Adjust this value to the height of your navbar */
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+  }
 }

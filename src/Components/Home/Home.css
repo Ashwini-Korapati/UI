@@ -4,7 +4,7 @@
 .bgcontainer {
     position: relative;
     width: 100%;
-    height: 80vh; 
+    height: 100vh; 
     overflow: hidden;
     
   }
@@ -52,7 +52,9 @@
   }
 
   .know-button{
-    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);    top: 0;
+    /* background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);     */
+    background-color: #0353a4;
+    top: 0;
     width: 250px;
     height: 50px;
     margin-top: 30px;

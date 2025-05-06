@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import "./Home.css"
 import AOS from "aos";
 import "aos/dist/aos.css";
-import video from "../../assets/event1.mp4"
+// import video from "../../assets/event1.mp4"
 import gift from "../../assets/OIP.jpeg"
 import dj from "../../assets/dj1.jpeg"
 import dj1 from "../../assets/dj2.jpeg"
