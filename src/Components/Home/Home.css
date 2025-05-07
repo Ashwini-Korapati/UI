@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .main{
   /* margin-top: 90px; */
 }
@@ -19,15 +23,20 @@
     height: auto;
     z-index: -1;
   }
-  .main-service{
+  .main-service {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
-    margin-left: -50px;
-  }
+    margin-top: 80px; /* Increased margin */
+    padding: 0 20px; /* Added horizontal padding */
+    background-color: #f8f8f8; /* Light background for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
   .main-images{
+    
+      display: flex; /* Ensure images are displayed as flex items */
+    flex-wrap: wrap; /* Allow images to wrap on smaller screens */
       margin: 30px;
 
   }
@@ -47,8 +56,17 @@
     flex-direction: row;
     margin-right: 20px;
   }
-  .serice-text{
-  width: 600px;
+  .serice-text {
+    width: 600px;
+    color: #333; /* Dark grey text for readability */
+    font-family: 'Arial', sans-serif; /* Modern, clean font */
+    line-height: 1.6; /* Increased line height for better readability */
+    padding: 20px; /* Added padding */
+    border-left: 2px solid #0353a4; /* Subtle border to separate from images */
+}
+
+.serice-text h1 {
+    margin-bottom: 20px; /* Space between heading and text */
   }
 
   .know-button{
@@ -71,6 +89,7 @@
     flex-direction: row;
     /* width: 80%; */
   }
+  
   .down-images{
     display: flex;
     flex-direction: row;
@@ -85,6 +104,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    transition: all 0.3s ease-in-out;
   }
   img{
     width: 400px;
@@ -93,7 +113,7 @@
   @media (max-width: 768px) {
     .main-service {
         flex-direction: column;
-        margin-left: 0;
+       
     }
 
     .images {
@@ -107,7 +127,7 @@
 
 @media (max-width: 480px) {
   .main-service{
-    margin-top: -150px;
+    margin-top: 50px;
     margin-right: 30px;
   }
    .main-images{
@@ -133,5 +153,10 @@
     width: 250px;
    }
 
+}
+
+.service-image:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 40px 0px;
 }
   
