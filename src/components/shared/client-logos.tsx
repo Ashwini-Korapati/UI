@@ -21,7 +21,6 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height =
       height={height}
       className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Added object-contain
       data-ai-hint="company logo"
-      // unoptimized // Removed unoptimized to allow Next.js optimization, as width/height are provided
     />
   </div>
 );
@@ -60,3 +59,4 @@ export function ClientLogos() {
     </div>
   );
 }
+
