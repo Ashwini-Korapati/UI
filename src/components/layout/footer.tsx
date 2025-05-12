@@ -1,19 +1,28 @@
 
 import Link from 'next/link';
-import { Mail, MapPin, Phone, Globe, Linkedin, Facebook, Instagram, Twitter } from 'lucide-react'; // Added social icons
+import { Mail, MapPin, Phone, Globe, Linkedin, Facebook, Instagram, Twitter } from 'lucide-react';
 import { ClientLogos } from '@/components/shared/client-logos';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-       {/* Client Logos Section */}
-       <div className="bg-secondary py-6 md:py-8">
+    <footer className="bg-primary text-primary-foreground relative overflow-hidden">
+      {/* Animated Bubbles */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true"> {/* Container for bubbles, non-interactive */}
+        <div className="footer-bubble bubble-1"></div>
+        <div className="footer-bubble bubble-2"></div>
+        <div className="footer-bubble bubble-3"></div>
+        <div className="footer-bubble bubble-4"></div>
+      </div>
+
+       {/* Client Logos Section - needs to be above bubbles */}
+       <div className="bg-secondary py-6 md:py-8 relative z-10">
          <ClientLogos />
        </div>
-      {/* Main Footer Content */}
-      <div className="container mx-auto py-4 md:py-6 px-4">
+
+      {/* Main Footer Content - needs to be above bubbles */}
+      <div className="container mx-auto py-4 md:py-6 px-4 relative z-10">
         {/* Reduced gap, added lg:grid-cols-4 to accommodate map */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
 
