@@ -17,15 +17,15 @@ export default function Home() {
             loop // Loops the video
             muted // Muted is often required for autoplay in browsers
             playsInline // Important for mobile browsers
-            className="absolute inset-0 w-full h-full object-cover opacity-50" // Increased opacity
+            className="absolute inset-0 w-full h-full object-cover opacity-50" // Video base opacity
             // Optional: Add a poster image for loading or unsupported browsers
             // poster="https://picsum.photos/1920/1080?random=poster"
            >
             <source src="/event1.mp4" type="video/mp4" /> {/* Updated video source */}
             Your browser does not support the video tag.
            </video>
-           {/* Reduced gradient opacity to make video more visible */}
-           <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+           {/* Gradient Overlay: Reduced opacity further to make video more visible */}
+           <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-30"></div>
         </div>
         <div className="relative z-10 container mx-auto px-4 text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary-foreground drop-shadow-md animate-fadeInUp [animation-delay:0.1s]">
