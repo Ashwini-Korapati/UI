@@ -2,7 +2,6 @@
 "use client"
 
 import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { cva } from "class-variance-authority"
 import { ChevronDown } from "lucide-react"
@@ -81,22 +80,10 @@ const NavigationMenuContent = React.forwardRef<
 ))
 NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName
 
-const NavigationMenuLink = React.forwardRef<
-  React.ElementRef<typeof NavigationMenuPrimitive.Link>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Link> & { active?: boolean }
->(({ className, active, ...props }, ref) => (
-  <NavigationMenuPrimitive.Link
-    ref={ref}
-    className={cn(
-      navigationMenuTriggerStyle(),
-      active ? "bg-accent/50 text-accent-foreground" : "", // Added active state style
-      className
-    )}
-    {...props}
-  />
-));
+// Use the Radix primitive link directly. Styling and active state will be handled in the usage.
+const NavigationMenuLink = NavigationMenuPrimitive.Link;
+NavigationMenuLink.displayName = NavigationMenuPrimitive.Link.displayName;
 
-NavigationMenuLink.displayName = NavigationMenuPrimitive.Link.displayName
 
 const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,

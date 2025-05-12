@@ -12,10 +12,10 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
+  NavigationMenuLink, // Use the Radix primitive alias
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
+  navigationMenuTriggerStyle, // Import the style utility
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -63,7 +63,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
           {/* Placeholder for logo - replace with actual logo if available */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -87,14 +87,15 @@ export function Navbar() {
           <NavigationMenuList>
             {navLinks.slice(0, 2).map((link) => (
               <NavigationMenuItem key={link.href}>
-                <Link href={link.href} passHref>
-                  <NavigationMenuLink
-                     active={pathname === link.href}
-                     className={navigationMenuTriggerStyle()}
+                {/* Use asChild on NavigationMenuLink and apply styles/active state to Link */}
+                <NavigationMenuLink asChild active={pathname === link.href}>
+                  <Link
+                    href={link.href}
+                    className={navigationMenuTriggerStyle()} // Apply styles directly
                   >
                     {link.label}
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
 
@@ -108,6 +109,7 @@ export function Navbar() {
                       key={component.title}
                       title={component.title}
                       href={component.href}
+                      onClick={closeMobileMenu} // Close mobile menu if open, primarily for consistency
                     >
                       {component.description}
                     </ListItem>
@@ -118,14 +120,15 @@ export function Navbar() {
 
              {navLinks.slice(2).map((link) => (
               <NavigationMenuItem key={link.href}>
-                 <Link href={link.href} passHref>
-                  <NavigationMenuLink
-                     active={pathname === link.href}
-                     className={navigationMenuTriggerStyle()}
+                 {/* Use asChild on NavigationMenuLink and apply styles/active state to Link */}
+                <NavigationMenuLink asChild active={pathname === link.href}>
+                   <Link
+                    href={link.href}
+                    className={navigationMenuTriggerStyle()} // Apply styles directly
                   >
                     {link.label}
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
@@ -196,8 +199,8 @@ const ListItem = React.forwardRef<
 >(({ className, title, children, href, ...props }, ref) => {
   return (
     <li>
+      {/* Use NavigationMenuLink with asChild wrapping Next Link */}
       <NavigationMenuLink asChild>
-        {/* Use Link directly for navigation */}
         <Link
           href={href || '#'}
           ref={ref}
