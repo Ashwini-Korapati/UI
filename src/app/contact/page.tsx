@@ -49,8 +49,8 @@ export default function ContactPage() {
               <h3 className="text-xl font-semibold mb-3 text-primary flex items-center">
                 <Mail className="h-5 w-5 mr-3 text-accent" /> Email
               </h3>
-              <a href="mailto:hello@eventsunlimited.in" className="block text-lg text-accent hover:underline">
-                  hello@eventsunlimited.in
+              <a href="mailto:eventsunlimited365@gmail.com" className="block text-lg text-accent hover:underline break-all">
+                  eventsunlimited365@gmail.com
               </a>
             </div>
 

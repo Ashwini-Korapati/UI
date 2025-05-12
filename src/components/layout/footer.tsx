@@ -82,7 +82,7 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 shrink-0 text-accent-foreground/90" />
-                <a href="mailto:hello@eventsunlimited.in" className="hover:text-accent-foreground/80 transition-colors break-all">hello@eventsunlimited.in</a>
+                <a href="mailto:eventsunlimited365@gmail.com" className="hover:text-accent-foreground/80 transition-colors break-all">eventsunlimited365@gmail.com</a>
               </li>
                <li className="flex items-center space-x-2">
                  <Globe className="h-4 w-4 shrink-0 text-accent-foreground/90" />
