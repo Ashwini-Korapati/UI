@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Globe, Linkedin, Facebook, Instagram, Twitter } from 'lucide-react'; // Added social icons
 import { ClientLogos } from '@/components/shared/client-logos';
 
 export function Footer() {
@@ -8,15 +8,16 @@ export function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-       {/* Reduce padding in ClientLogos wrapper */}
+       {/* Client Logos Section */}
        <div className="bg-secondary py-6 md:py-8">
          <ClientLogos />
        </div>
-      {/* Reduce padding in main footer container */}
+      {/* Main Footer Content */}
       <div className="container mx-auto py-6 md:py-8 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        {/* Reduced gap for tighter layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
           {/* About Section */}
-          <div>
+          <div className="lg:col-span-1">
             <h4 className="text-lg font-semibold mb-3 text-accent-foreground/90">Events Unlimited</h4>
             <p className="text-sm text-primary-foreground/80">
               Crafting memorable moments. We specialize in creating unforgettable experiences for every occasion, connecting you with India’s best vendors.
@@ -24,7 +25,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+           <div className="lg:col-span-1">
             <h4 className="text-lg font-semibold mb-3 text-accent-foreground/90">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/" className="hover:text-accent-foreground/80 transition-colors">Home</Link></li>
@@ -36,7 +37,7 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+           <div className="lg:col-span-1">
             <h4 className="text-lg font-semibold mb-3 text-accent-foreground/90">Contact Us</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
@@ -54,16 +55,42 @@ export function Footer() {
                 <a href="mailto:hello@eventsunlimited.in" className="hover:text-accent-foreground/80 transition-colors">hello@eventsunlimited.in</a>
               </li>
                <li className="flex items-center space-x-2">
-                 {/* Placeholder for Website Icon */}
-                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                 <Globe className="h-4 w-4 shrink-0" />
                 <a href="https://geventsunlimited.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-foreground/80 transition-colors">geventsunlimited.com</a>
               </li>
             </ul>
           </div>
+
+           {/* Follow Us Section - Added as a new column */}
+           <div className="lg:col-span-1">
+            <h4 className="text-lg font-semibold mb-3 text-accent-foreground/90">Follow Us</h4>
+             <div className="flex space-x-4">
+                {/* Using placeholder links, replace with actual URLs */}
+                <a href="#" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                 <Linkedin className="h-6 w-6" />
+                 <span className="sr-only">LinkedIn</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                 <Facebook className="h-6 w-6" />
+                 <span className="sr-only">Facebook</span>
+                </a>
+                {/* Using the provided Instagram link */}
+                <a href="https://www.instagram.com/events_unlimited_365?igsh=MWYybzdnODYyc3dpMA==" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                 <Instagram className="h-6 w-6" />
+                 <span className="sr-only">Instagram</span>
+                </a>
+                 <a href="#" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                 <Twitter className="h-6 w-6" />
+                 <span className="sr-only">Twitter</span>
+                </a>
+             </div>
+           </div>
+
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-primary-foreground/20 pt-6 text-center text-sm text-primary-foreground/70">
+        {/* Reduced padding top */}
+        <div className="border-t border-primary-foreground/20 pt-4 text-center text-sm text-primary-foreground/70">
           © {currentYear} Events Unlimited. All rights reserved.
         </div>
       </div>
