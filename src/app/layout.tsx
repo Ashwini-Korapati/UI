@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google"; // Use Inter font for clean typography
 import "./globals.css";
+import { ThemeProvider } from "next-themes"; // Import ThemeProvider
 
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/navbar";
@@ -31,12 +32,19 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <div className="relative flex min-h-screen flex-col">
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-         <Toaster /> {/* Add Toaster here */}
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+        >
+          <div className="relative flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+          <Toaster /> {/* Add Toaster here */}
+        </ThemeProvider>
       </body>
     </html>
   );
