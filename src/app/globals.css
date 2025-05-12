@@ -126,22 +126,22 @@ body {
     overflow: hidden;
     position: relative;
     white-space: nowrap;
+    width: 100%; /* Ensure marquee takes full width */
   }
 
   .marquee-content {
-    display: inline-block;
+    display: inline-block; /* Changed from flex to inline-block for animation */
     animation: marquee 30s linear infinite;
+    /* Removed flex and items-center, rely on ClientLogo component for alignment if needed */
   }
 
-  .marquee-content > * {
-    display: inline-block;
-    margin-right: 2rem; /* Adjust spacing between logos */
-    vertical-align: middle;
-  }
+  /* ClientLogo component itself handles spacing now (mx-4) */
+  /* .marquee-content > * removed */
+
 
   @keyframes marquee {
     0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(-100%); } /* Adjust based on content width if needed */
   }
 
   /* Pause animation on hover */
