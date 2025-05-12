@@ -87,7 +87,7 @@ export function Navbar() {
           <NavigationMenuList>
             {navLinks.slice(0, 2).map((link) => (
               <NavigationMenuItem key={link.href}>
-                <Link href={link.href} legacyBehavior passHref>
+                <Link href={link.href} passHref>
                   <NavigationMenuLink
                      active={pathname === link.href}
                      className={navigationMenuTriggerStyle()}
@@ -101,7 +101,8 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Corporate Events</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                 {/* Changed layout from grid to single column */}
+                <ul className="flex flex-col w-[300px] gap-1 p-4 md:w-[350px] lg:w-[400px]">
                   {corporateEventComponents.map((component) => (
                     <ListItem
                       key={component.title}
@@ -117,7 +118,7 @@ export function Navbar() {
 
              {navLinks.slice(2).map((link) => (
               <NavigationMenuItem key={link.href}>
-                <Link href={link.href} legacyBehavior passHref>
+                 <Link href={link.href} passHref>
                   <NavigationMenuLink
                      active={pathname === link.href}
                      className={navigationMenuTriggerStyle()}
@@ -173,7 +174,7 @@ export function Navbar() {
                         <Link
                             href={component.href}
                             className="text-base text-foreground/70 hover:text-primary"
-                            onClick={closeMobileMenu}
+                            onClick={closeMobileMenu} // Ensure mobile links also close the menu and navigate
                         >
                             {component.title}
                         </Link>
@@ -192,11 +193,13 @@ export function Navbar() {
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, children, href, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        {/* Use Link directly for navigation */}
+        <Link
+          href={href || '#'}
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
@@ -208,7 +211,7 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
