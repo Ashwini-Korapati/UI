@@ -44,6 +44,17 @@ export function Footer() {
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
                 <span>42, 4th Temple St Rd, Vyalikaval, Kodandarampura, Malleshwaram, Bengaluru, Karnataka 560003</span>
               </li>
+               {/* Google Maps Embed */}
+              <li className="mt-4">
+                <div className="maps w-full aspect-video rounded overflow-hidden border border-primary-foreground/20">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9889.73841034661!2d77.5657754066365!3d13.002696760010618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae179898500811%3A0x1ae97c253f82d79b!2sEvents%20unlimited!5e0!3m2!1sen!2sin!4v1720808098342!5m2!1sen!2sin"
+                    title="Events Unlimited Location"
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </li>
               <li className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 shrink-0" />
                 <a href="tel:+917647367436" className="hover:text-accent-foreground/80 transition-colors">+91 7647367436</a>
@@ -61,28 +72,26 @@ export function Footer() {
             </ul>
           </div>
 
-           {/* Follow Us Section - Added as a new column */}
+           {/* Follow Us Section */}
            <div className="lg:col-span-1">
             <h4 className="text-lg font-semibold mb-3 text-accent-foreground/90">Follow Us</h4>
              <div className="flex space-x-4">
-                {/* Using placeholder links, replace with actual URLs */}
-                <a href="#" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
-                 <Linkedin className="h-6 w-6" />
-                 <span className="sr-only">LinkedIn</span>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
-                 <Facebook className="h-6 w-6" />
-                 <span className="sr-only">Facebook</span>
-                </a>
-                {/* Using the provided Instagram link */}
-                <a href="https://www.instagram.com/events_unlimited_365?igsh=MWYybzdnODYyc3dpMA==" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
-                 <Instagram className="h-6 w-6" />
-                 <span className="sr-only">Instagram</span>
-                </a>
-                 <a href="#" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
-                 <Twitter className="h-6 w-6" />
-                 <span className="sr-only">Twitter</span>
-                </a>
+                 <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                     <Linkedin className="h-6 w-6" />
+                     <span className="sr-only">LinkedIn</span>
+                 </a>
+                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                     <Facebook className="h-6 w-6" />
+                     <span className="sr-only">Facebook</span>
+                 </a>
+                 <a href="https://www.instagram.com/events_unlimited_365?igsh=MWYybzdnODYyc3dpMA==" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                     <Instagram className="h-6 w-6" />
+                     <span className="sr-only">Instagram</span>
+                 </a>
+                 <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                     <Twitter className="h-6 w-6" />
+                     <span className="sr-only">Twitter</span>
+                 </a>
              </div>
            </div>
 
