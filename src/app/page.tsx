@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section id="hero" className="relative h-screen w-full overflow-hidden bg-primary/10 flex items-center justify-center text-center">
+      <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-primary/10 flex items-center justify-center text-center">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
            <video
@@ -21,7 +21,7 @@ export default function Home() {
             // Optional: Add a poster image for loading or unsupported browsers
             // poster="https://picsum.photos/1920/1080?random=poster"
            >
-            <source src="/video.mp4" type="video/mp4" /> {/* Path relative to /public */}
+            <source src="/event1.mp4" type="video/mp4" /> {/* Updated video source */}
             Your browser does not support the video tag.
            </video>
            <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
