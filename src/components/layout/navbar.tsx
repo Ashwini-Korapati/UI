@@ -64,22 +64,23 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between"> {/* Changed flex alignment */}
-        {/* Logo and Brand Name */}
-        <Link href="/" className="flex items-center space-x-2" onClick={closeMobileMenu}> {/* Added space-x-2 */}
+      <div className="container flex h-16 items-center justify-between">
+        {/* Logo Only */}
+        <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
           <Image
             src="/logoimg.jpeg" // Path relative to public directory
             alt="Events Unlimited Logo"
-            width={50} // Increased width
-            height={50} // Increased height
-            className=" rounded-sm object-contain" // Updated class to match size
+            width={45} // Increased width
+            height={45} // Increased height
+            className="rounded-sm object-contain" // Ensure logo fits
             data-ai-hint="company logo"
             unoptimized // Ensure image is served as is
+            priority // Load logo quickly
           />
-          <span className="font-bold text-primary text-lg">Events Unlimited</span> {/* Increased font size */}
+          {/* Removed "Events Unlimited" text */}
         </Link>
 
-        {/* Desktop Navigation & Controls (Pushed to the right) */}
+        {/* Desktop Navigation & Controls */}
         <div className="hidden md:flex items-center space-x-4">
           <NavigationMenu>
             <NavigationMenuList>
@@ -105,13 +106,13 @@ export function Navbar() {
                   Corporate Events
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[300px] gap-3 p-4 md:w-[350px] md:grid-cols-1 lg:w-[400px]"> {/* Changed to grid for column layout */}
+                  <ul className="grid w-[300px] gap-3 p-4 md:w-[350px] md:grid-cols-1 lg:w-[400px]">
                     {corporateEventComponents.map((component) => (
                       <ListItem
                         key={component.title}
                         title={component.title}
                         href={component.href}
-                        onClick={closeMobileMenu} // Ensure mobile menu closes if clicked from there
+                        onClick={closeMobileMenu}
                       >
                         {component.description}
                       </ListItem>
@@ -139,34 +140,35 @@ export function Navbar() {
           <ThemeToggle />
         </div>
 
-        {/* Mobile Menu Trigger (Stays on the right) */}
+        {/* Mobile Menu Trigger */}
         <div className="flex items-center md:hidden">
           <ThemeToggle />
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="ml-2"> {/* Added margin */}
+              <Button variant="ghost" size="icon" className="ml-2">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs p-6 bg-background">
               <div className="flex justify-between items-center mb-6">
-                <Link href="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
+                 {/* Mobile Menu Logo - Increased size */}
+                 <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
                    <Image
                        src="/logoimg.jpeg"
                        alt="Events Unlimited Logo Mobile"
-                       width={30}
-                       height={30}
-                       className="h-7 w-7 rounded-sm object-contain"
+                       width={35} // Increased width
+                       height={35} // Increased height
+                       className="rounded-sm object-contain"
                        data-ai-hint="company logo"
                        unoptimized // Ensure image is served as is
                     />
-                   <span className="font-bold text-primary">Events Unlimited</span>
-               </Link>
-               <Button variant="ghost" size="icon" onClick={closeMobileMenu}>
-                 <X className="h-6 w-6" />
-                 <span className="sr-only">Close Menu</span>
-               </Button>
+                    {/* Removed "Events Unlimited" text */}
+                 </Link>
+                 <Button variant="ghost" size="icon" onClick={closeMobileMenu}>
+                   <X className="h-6 w-6" />
+                   <span className="sr-only">Close Menu</span>
+                 </Button>
              </div>
              <nav className="flex flex-col space-y-4">
                {navLinks.map((link) => (
@@ -211,31 +213,29 @@ const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   Omit<React.ComponentPropsWithoutRef<"a">, "href"> & { href: string }
 >(({ className, title, children, href, onClick, ...props }, ref) => {
-  const routerPath = href?.split('#')[0]; // Get the base path without the hash
+  const routerPath = href?.split('#')[0];
   const currentPath = usePathname();
-  const isActive = currentPath === routerPath; // Check if the base path matches the current route
+  const isActive = currentPath === routerPath;
 
-  // Handler to close the menu if needed, especially for mobile
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick) {
-      onClick(e); // Existing onClick handler (for mobile menu close)
+      onClick(e);
     }
-    // No need to manually close desktop dropdown here, Radix handles it
-    // Navigation will happen via the Link component
   };
 
   return (
     <li>
       <NavigationMenuLink asChild>
+        {/* Use NextLink directly for correct navigation handling */}
         <Link
           href={href}
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-             isActive ? "bg-accent/50 text-accent-foreground" : "", // Optional: highlight if the base route is active
+             isActive ? "bg-accent/50 text-accent-foreground" : "",
              className
           )}
-          onClick={handleClick} // Use the combined click handler
+          onClick={handleClick}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
@@ -248,4 +248,3 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem";
-
