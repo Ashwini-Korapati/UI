@@ -27,20 +27,21 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 100, height =
 
 // Updated logos to use local paths relative to the /public directory
 // Assumes images named 1.jpeg, 2.jpeg, etc., exist directly in public/
+// Updated alt text based on previous user input/context
 const logos = [
-  { src: '/1.jpeg', alt: 'Blackline Logo' }, // Updated alt text
-  { src: '/2.jpeg', alt: 'Agilon Health Logo' }, // Updated alt text
-  { src: '/3.jpeg', alt: 'Archer Logo' }, // Updated alt text
-  { src: '/4.jpeg', alt: 'CDM Smith Logo' }, // Updated alt text
-  { src: '/5.jpeg', alt: 'RSA Logo' }, // Updated alt text
-  { src: '/6.jpeg', alt: 'Razorpay Logo' }, // Updated alt text
-  { src: '/7.jpeg', alt: 'Client Logo 7' }, // Keep generic if unknown
-  { src: '/8.jpeg', alt: 'Client Logo 8' }, // Keep generic if unknown
-  { src: '/9.jpeg', alt: 'Client Logo 9' }, // Keep generic if unknown
-  { src: '/10.jpeg', alt: 'Client Logo 10' }, // Keep generic if unknown
-  { src: '/11.jpeg', alt: 'Client Logo 11' }, // Keep generic if unknown
-  { src: '/12.jpeg', alt: 'Client Logo 12' }, // Keep generic if unknown
-  { src: '/13.jpeg', alt: 'Client Logo 13' }, // Keep generic if unknown
+  { src: '/1.jpeg', alt: 'Blackline Logo' },
+  { src: '/2.jpeg', alt: 'Agilon Health Logo' },
+  { src: '/3.jpeg', alt: 'Archer Logo' },
+  { src: '/4.jpeg', alt: 'CDM Smith Logo' },
+  { src: '/5.jpeg', alt: 'RSA Logo' },
+  { src: '/6.jpeg', alt: 'Razorpay Logo' },
+  { src: '/7.jpeg', alt: 'Client Logo 7' }, // Keep generic if unknown or provide specific name
+  { src: '/8.jpeg', alt: 'Client Logo 8' },
+  { src: '/9.jpeg', alt: 'Client Logo 9' },
+  { src: '/10.jpeg', alt: 'Client Logo 10' },
+  { src: '/11.jpeg', alt: 'Client Logo 11' },
+  { src: '/12.jpeg', alt: 'Client Logo 12' },
+  { src: '/13.jpeg', alt: 'Client Logo 13' },
 ];
 
 export function ClientLogos() {
