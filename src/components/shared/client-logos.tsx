@@ -51,7 +51,7 @@ export function ClientLogos() {
 
   return (
     <div className="container mx-auto">
-      <h3 className="text-center text-xl md:text-2xl font-bold text-primary mb-10">Trusted By</h3> {/* Increased size and made bold */}
+      <h3 className="text-center text-2xl md:text-3xl font-bold text-primary mb-10">Trusted By</h3> {/* Increased size and made bold */}
       {/* Re-introduce marquee structure */}
       <div className="marquee">
         <div className="marquee-content">
