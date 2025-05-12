@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden bg-primary/10 flex items-center justify-center text-center">
+      <section className="relative h-screen w-full overflow-hidden bg-primary/10 flex items-center justify-center text-center">
         {/* Placeholder for Video Background - Replace with actual video if available */}
         <div className="absolute inset-0 z-0">
            <Image
