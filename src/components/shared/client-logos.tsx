@@ -6,10 +6,11 @@ import { cn } from '@/lib/utils';
 interface ClientLogoProps {
   src: string; // src will be a string path relative to the public folder
   alt: string;
-  width?: number;
-  height?: number;
+  width?: number; // Add width prop
+  height?: number; // Add height prop
 }
 
+// Increased default width and height for logos
 const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height = 60 }) => (
   <div className="relative mx-4 flex items-center justify-center"> {/* Added mx-4 for spacing and centering */}
     <Image
