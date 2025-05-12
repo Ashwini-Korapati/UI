@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -51,7 +52,8 @@ export function ClientLogos() {
 
   return (
     <div className="container mx-auto">
-      <h3 className="text-center text-2xl md:text-3xl font-bold text-primary mb-10">Trusted By</h3> {/* Increased size and made bold */}
+      {/* Increased font size and ensured boldness */}
+      <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-10">Trusted By</h3>
       {/* Re-introduce marquee structure */}
       <div className="marquee">
         <div className="marquee-content">
