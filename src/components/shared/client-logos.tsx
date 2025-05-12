@@ -19,20 +19,22 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height =
       objectFit="contain"
       className="grayscale hover:grayscale-0 transition-all duration-300"
       data-ai-hint="company logo"
+      unoptimized // Added because local images might not be optimized by default build process
     />
   </div>
 );
 
-// Placeholder logos - replace with actual client logos - Updated random seeds
+// Updated logos to use local paths relative to the /public directory
+// Assumes images named 1.png, 2.png, etc., exist in public/assets/client/
 const logos = [
-  { src: 'https://picsum.photos/120/60?random=9', alt: 'Client Logo 1' },
-  { src: 'https://picsum.photos/120/60?random=10', alt: 'Client Logo 2' },
-  { src: 'https://picsum.photos/120/60?random=11', alt: 'Client Logo 3' },
-  { src: 'https://picsum.photos/120/60?random=12', alt: 'Client Logo 4' },
-  { src: 'https://picsum.photos/120/60?random=13', alt: 'Client Logo 5' },
-  { src: 'https://picsum.photos/120/60?random=14', alt: 'Client Logo 6' },
-  { src: 'https://picsum.photos/120/60?random=15', alt: 'Client Logo 7' },
-  { src: 'https://picsum.photos/120/60?random=16', alt: 'Client Logo 8' },
+  { src: '/assets/client/1.png', alt: 'Client Logo 1' },
+  { src: '/assets/client/2.png', alt: 'Client Logo 2' },
+  { src: '/assets/client/3.png', alt: 'Client Logo 3' },
+  { src: '/assets/client/4.png', alt: 'Client Logo 4' },
+  { src: '/assets/client/5.png', alt: 'Client Logo 5' },
+  { src: '/assets/client/6.png', alt: 'Client Logo 6' },
+  { src: '/assets/client/7.png', alt: 'Client Logo 7' },
+  { src: '/assets/client/8.png', alt: 'Client Logo 8' },
 ];
 
 export function ClientLogos() {
@@ -53,3 +55,4 @@ export function ClientLogos() {
     </div>
   );
 }
+
