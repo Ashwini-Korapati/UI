@@ -5,7 +5,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import Image from "next/image"; 
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -65,13 +65,14 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
+        {/* Added space-x-2 for gap between logo and text */}
         <Link href="/" className="mr-6 flex items-center space-x-2" onClick={closeMobileMenu}>
           <Image
             src="/logoimg.jpeg" // Path relative to public directory
             alt="Events Unlimited Logo"
-            width={36} 
-            height={36} 
-            className="h-9 w-9 rounded-sm object-contain" 
+            width={36} // Increased width
+            height={36} // Increased height
+            className="h-9 w-9 rounded-sm object-contain" // Updated class to match size
             data-ai-hint="company logo"
           />
           <span className="font-bold text-primary">Events Unlimited</span>
@@ -108,7 +109,7 @@ export function Navbar() {
                       key={component.title}
                       title={component.title}
                       href={component.href}
-                      onClick={closeMobileMenu} 
+                      onClick={closeMobileMenu}
                     >
                       {component.description}
                     </ListItem>
@@ -146,13 +147,14 @@ export function Navbar() {
               </SheetTrigger>
               <SheetContent side="right" className="w-full max-w-xs p-6 bg-background">
                   <div className="flex justify-between items-center mb-6">
+                     {/* Added space-x-2 for gap */}
                      <Link href="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
                         <Image
                             src="/logoimg.jpeg" // Path relative to public directory
                             alt="Events Unlimited Logo Mobile"
-                            width={30}
+                            width={30} // Kept mobile logo slightly smaller
                             height={30}
-                            className="h-7 w-7 rounded-sm object-contain"
+                            className="h-7 w-7 rounded-sm object-contain" // Kept mobile logo slightly smaller
                             data-ai-hint="company logo"
                          />
                         <span className="font-bold text-primary">Events Unlimited</span>
@@ -216,9 +218,11 @@ const ListItem = React.forwardRef<
               className
           )}
           onClick={(e) => {
+            // Close mobile menu if onClick handler exists (likely from mobile nav)
             if (onClick) {
               (onClick as React.MouseEventHandler<HTMLAnchorElement>)(e);
             }
+            // No need to manually close desktop nav dropdown here, Radix handles it.
           }}
             {...props}
         >
@@ -232,4 +236,3 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem";
-
