@@ -3,10 +3,12 @@ import React from 'react';
 import Image, { type StaticImageData } from 'next/image';
 import { cn } from '@/lib/utils';
 
-// Images will be referenced by their public path strings
+// Correct way to import static images if they are not in public folder (which is not the case here, but shown for reference)
+// If images were in src/assets/clients, you would import them like this:
+// import img1 from '@/assets/clients/1.jpeg';
 
 interface ClientLogoProps {
-  src: string; // src will be a string path
+  src: string; // src will be a string path relative to the public folder
   alt: string;
   width?: number;
   height?: number;
@@ -21,25 +23,26 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height =
       height={height}
       className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Added object-contain
       data-ai-hint="company logo"
+      unoptimized // Added unoptimized as images might be causing issues
     />
   </div>
 );
 
-// Use string paths relative to the /public directory
-const logos: { src: string; alt: string }[] = [
-  { src: '/assets/clients/1.jpeg', alt: 'Client Logo 1' },
-  { src: '/assets/clients/2.jpeg', alt: 'Client Logo 2' },
-  { src: '/assets/clients/3.jpeg', alt: 'Client Logo 3' },
-  { src: '/assets/clients/4.jpeg', alt: 'Client Logo 4' },
-  { src: '/assets/clients/5.jpeg', alt: 'Client Logo 5' },
-  { src: '/assets/clients/6.jpeg', alt: 'Client Logo 6' },
-  { src: '/assets/clients/7.jpeg', alt: 'Client Logo 7' },
-  { src: '/assets/clients/8.jpeg', alt: 'Client Logo 8' },
-  { src: '/assets/clients/9.jpeg', alt: 'Client Logo 9' },
-  { src: '/assets/clients/10.jpeg', alt: 'Client Logo 10' },
-  { src: '/assets/clients/11.jpeg', alt: 'Client Logo 11' },
-  { src: '/assets/clients/12.jpeg', alt: 'Client Logo 12' },
-  { src: '/assets/clients/13.jpeg', alt: 'Client Logo 13' },
+// Updated logos to use paths relative to the /public directory, removing /assets
+const logos = [
+  { src: '/clients/1.jpeg', alt: 'Client Logo 1' },
+  { src: '/clients/2.jpeg', alt: 'Client Logo 2' },
+  { src: '/clients/3.jpeg', alt: 'Client Logo 3' },
+  { src: '/clients/4.jpeg', alt: 'Client Logo 4' },
+  { src: '/clients/5.jpeg', alt: 'Client Logo 5' },
+  { src: '/clients/6.jpeg', alt: 'Client Logo 6' },
+  { src: '/clients/7.jpeg', alt: 'Client Logo 7' },
+  { src: '/clients/8.jpeg', alt: 'Client Logo 8' },
+  { src: '/clients/9.jpeg', alt: 'Client Logo 9' },
+  { src: '/clients/10.jpeg', alt: 'Client Logo 10' },
+  { src: '/clients/11.jpeg', alt: 'Client Logo 11' },
+  { src: '/clients/12.jpeg', alt: 'Client Logo 12' },
+  { src: '/clients/13.jpeg', alt: 'Client Logo 13' },
 ];
 
 export function ClientLogos() {
