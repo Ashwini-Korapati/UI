@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -74,6 +73,7 @@ export function Navbar() {
             height={40} // Increased height
             className="h-10 w-10 rounded-sm object-contain" // Updated class to match size
             data-ai-hint="company logo"
+            unoptimized // Ensure image is served as is
           />
           <span className="font-bold text-primary text-lg">Events Unlimited</span> {/* Increased font size */}
         </Link>
@@ -158,6 +158,7 @@ export function Navbar() {
                        height={30}
                        className="h-7 w-7 rounded-sm object-contain"
                        data-ai-hint="company logo"
+                       unoptimized // Ensure image is served as is
                     />
                    <span className="font-bold text-primary">Events Unlimited</span>
                </Link>
