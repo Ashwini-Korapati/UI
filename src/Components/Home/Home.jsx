@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import "./Home.css"
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import video from "../../assets/event1.mp4"
 import gift from "../../assets/OIP.jpeg"
 import dj from "../../assets/dj1.jpeg"
 import dj1 from "../../assets/dj2.jpeg"
@@ -29,25 +28,23 @@ const Home = () => {
     };
     const handlePrintingsClick = () => {
         navigate("/events#printings");
-      };
-      const handleGiftClick = () => {
+    };
+    const handleGiftClick = () => {
         navigate("/events#giftings");
-      };
-      const handleAnchorClick = () => {
+    };
+    const handleAnchorClick = () => {
         navigate("/events#anchor");
-      };
-      const handleGamesClick = () => {
+    };
+    const handleGamesClick = () => {
         navigate("/events#games");
-      };
-      const handleDjClick = () => {
+    };
+    const handleDjClick = () => {
         navigate("/events#dj");
-      };
-      
+    };
 
     return (
         <div className='main'>
             <div className='bgcontainer' data-aos="zoom-in">
-                {/* <video src={video} autoPlay loop muted ></video> */}
                 <Home1 />
             </div>
 
@@ -64,13 +61,10 @@ const Home = () => {
                     <br />
                     <div>
                         <p>Planning a successful corporate event is a meticulous process that involves setting clear objectives, budgeting, selecting a venue and theme, and crafting an engaging agenda and content.</p>
-
                         <p>Additionally, managing logistics, operations, marketing, sales process, and promotion is essential to ensure the event runs smoothly and achieves its desired outcomes.</p>
                     </div>
-
                     <div>
                         <p>Corporate events are gatherings of individuals with a specific purpose, such as sales meetings, networking, product launches, or team building. These events play a pivotal role in the growth and success of businesses, enabling them to reach new markets, strengthen customer relationships, and enhance employee morale.</p>
-
                         <p>Organizing a successful corporate event requires careful planning and attention to detail. Many factors must be considered, from selecting the right venue to creating an engaging agenda. It is important to ensure that the event is successful.</p>
                     </div>
                     <button className="know-button" onClick={handleKnowMoreClick}>
@@ -84,11 +78,11 @@ const Home = () => {
                 <div className="services-images">
                     <div className="up-images">
                         <div className="service-image" data-aos="fade-down-right">
-                            <img src={cevent} alt=""  className="service-img"/>
+                            <img src={cevent} alt="" className="service-img"/>
                             <h3>Corporate events</h3>
                         </div>
                         <div className="service-image" data-aos="zoom-in" onClick={handleDjClick}>
-                            <img src={dj1} alt=""  className="service-img"/>
+                            <img src={dj1} alt="" className="service-img"/>
                             <h3>DJ</h3>
                         </div>
                         <div className="service-image" data-aos="fade-down-left" onClick={handlePrintingsClick}>
@@ -98,11 +92,11 @@ const Home = () => {
                     </div>
                     <div className="down-images">
                         <div className="service-image" data-aos="fade-down-right" onClick={handleAnchorClick}>
-                            <img src={anchor1} alt=""  className="service-img"/>
+                            <img src={anchor1} alt="" className="service-img"/>
                             <h3>Anchoring</h3>
                         </div>
                         <div className="service-image" data-aos="zoom-in" onClick={handleGiftClick}>
-                            <img src={gift1} alt=""  className="service-img"/>
+                            <img src={gift1} alt="" className="service-img"/>
                             <h3>Giftings</h3>
                         </div>
                         <div className="service-image" data-aos="fade-down-left" onClick={handleGamesClick}>
@@ -114,7 +108,7 @@ const Home = () => {
                 <Clients />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Home;

@@ -20,7 +20,7 @@ const AboutUs = () => {
 
       <div className='about-image'>
         <div className='about-text'  data-aos="fade-right">
-          <h1>Events_Unlimited</h1>
+          <h1 className="about-h1">Events_Unlimited</h1>
           <p>"Crafting Memorable Moments." - We specialize in creating unforgettable experiences for every occasion.</p>
           <hr />
           <p>Welcome to <span>EventsUnlimited!</span> We’ve been your partner in crafting exceptional event experiences from our base in Bangalore. Our goal is simple yet powerful: connecting you with India’s best vendors to create extraordinary moments without the extravagant price tag. Corporate events, we blend affordability with excellence, ensuring your event is etched in hearts forever.</p>

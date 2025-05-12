@@ -3,17 +3,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f0f0f0;
-  /* background-color: rgba(0, 24, 69, 0.8);  */
-  height: 70px; /* Reduced height */
+  background: rgba(255, 255, 255, 0.7); /* Transparent white background */
+  backdrop-filter: blur(10px); /* Glass effect */
+  height: 70px; /* Height remains the same */
   padding: 0 30px; /* Increased padding */
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduced shadow */
-  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  transition: all 0.4s ease; /* Smooth transition for navbar effects */
 }
 
 /* Logo */
@@ -22,15 +22,21 @@
   align-items: center;
 }
 
-.navbar .logo img {
-  width: 140px; /* Reduced size */
+.image{
+  width: 160px; /* Logo image size */
   height: auto;
-  /*border-radius: 5px; Removed border radius from logo */
-  transition: transform 0.3s ease-in-out;
+  margin-right: 10px; /* Space between logo and text */
+}
+
+.navbar .logo img {
+  width: 140px; /* Size remains unchanged */
+  height: auto;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Added filter transition */
 }
 
 .navbar .logo img:hover {
-  transform: scale(1.05); /* Reduced scale on hover */
+  transform: scale(1.1); /* Increased scale on hover */
+  filter: brightness(1.1); /* Brightness filter for hover */
 }
 
 /* Navbar Menu */
@@ -48,23 +54,22 @@
 
 .navbar ul li a {
   text-decoration: none;
-  color: black; /* Light grey text */
-  font-size: 16px; /* Reduced font size */
+  color: #008080; /* Text color set to #008080 */
+  font-size: 16px; /* Font size same as before */
   font-weight: 500;
-  padding: 8px 15px; /* Adjusted padding */
+  padding: 10px 20px; /* Increased padding for buttons */
   border-radius: 25px; /* Rounded corners */
   transition: all 0.3s ease-in-out;
-  /* background-color: rgba(255, 255, 255, 0.1);  Slightly transparent white background */
-  margin-right: 5px;
-  display: block; /* Make the link a block level element */
+  background-color: rgba(255, 255, 255, 0.3); /* Slight transparent background */
 }
 
+/* Hover and active states */
 .navbar ul li a:hover,
 .navbar ul li a.active {
-  background-color: #0353a4;
-  /* background-color: #64b5f6; A lighter blue for hover */
-  color: white;  /* Dark blue text */
-  transform: scale(1.05);
+  background-color: rgba(0, 139, 139, 0.2); /* Light hover background with #008080 */
+  color: #008080; /* Keep text color for active links */
+  transform: scale(1.05); /* Slightly larger on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
 }
 
 /* Dropdown */
@@ -73,9 +78,9 @@
   position: absolute;
   top: 100%;
   left: 0;
-background-color: whitesmoke;
-  color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  background-color: rgba(255, 255, 255, 0.9); /* Light transparent background for dropdown */
+  color: #333; /* Dark text for dropdown items (initial state) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for dropdown */
   border-radius: 5px;
   overflow: hidden;
   min-width: 180px;
@@ -83,25 +88,24 @@ background-color: whitesmoke;
 }
 
 .navbar ul li:hover .dropdown {
-  display: block;
-  /* background-color: #0353a4; */
+  display: block; /* Display dropdown on hover */
 }
 
 .dropdown li {
-  padding: 0; /* Remove padding */
+  padding: 0; /* No padding on dropdown items */
 }
 
 .dropdown li a {
   display: block;
-  padding: 10px 15px; /* Adjusted padding */
-  color: #f0f0f0; /* Light grey text */
+  padding: 10px 15px;
+  color: black; /* Set dropdown text color to black */
   font-size: 14px;
   transition: background-color 0.3s ease;
 }
 
 .dropdown li a:hover {
-  background-color: #64b5f6; /* A lighter blue for hover */
-  color: #001845; /* Dark blue text */
+  background-color: rgba(0, 139, 139, 0.2); /* Light grey on hover for dropdown items */
+  color: #008080; /* Change text color on hover for dropdown items */
 }
 
 /* Menu Icon for Mobile */
@@ -109,42 +113,36 @@ background-color: whitesmoke;
   display: none;
   font-size: 24px;
   cursor: pointer;
-  color: #f0f0f0; /* Light grey color for the icon */
-}
-
-.image {
-  width: 140px; /* Reduced size */
-  height: auto;
-  /* border-radius: 50%; */
-  /*background-color: white; Removed background-color */
+  color: #008080; /* Color for the menu icon */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .menu {
-    display: block;
+      display: block; /* Show menu icon on mobile */
   }
 
   .navbar ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px; /* Adjust the top position to match the navbar height */
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 24, 69, 0.95); /* Semi-transparent dark blue mobile menu */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    padding: 0; /* Reset padding */
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px; 
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 24, 69, 0.95); /* Dark background for mobile */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Dark shadow for mobile menu */
+      padding: 0; 
   }
 
+  /* Show menu on toggle */
   .navbar ul.open {
-    display: flex;
+      display: flex; /* Opens on toggle */
   }
 
   .navbar ul li {
-    text-align: center;
-    width: 100%;
-    padding: 10px 0;
+      text-align: center;
+      width: 100%;
+      padding: 15px 0; /* Increase padding for mobile */
   }
 
   .navbar ul li a {
@@ -152,8 +150,8 @@ background-color: whitesmoke;
   }
 
   .dropdown {
-    position: static;
-    box-shadow: none;
-    width: 100%;
+      position: static;
+      box-shadow: none;
+      width: 100%; /* Full width for dropdown on mobile */
   }
 }
