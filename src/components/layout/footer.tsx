@@ -8,8 +8,12 @@ export function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-       <ClientLogos />
-      <div className="container mx-auto py-8 md:py-12 px-4">
+       {/* Reduce padding in ClientLogos wrapper */}
+       <div className="bg-secondary py-6 md:py-8">
+         <ClientLogos />
+       </div>
+      {/* Reduce padding in main footer container */}
+      <div className="container mx-auto py-6 md:py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* About Section */}
           <div>

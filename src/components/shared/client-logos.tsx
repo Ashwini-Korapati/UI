@@ -40,15 +40,14 @@ export function ClientLogos() {
   const extendedLogos = [...logos, ...logos];
 
   return (
-    <div className="bg-secondary py-8 md:py-12">
-      <div className="container mx-auto">
-        <h3 className="text-center text-lg md:text-xl font-semibold text-muted-foreground mb-6">Trusted By</h3>
-        <div className="marquee">
-          <div className="marquee-content">
-            {extendedLogos.map((logo, index) => (
-              <ClientLogo key={`${logo.alt}-${index}`} src={logo.src} alt={logo.alt} />
-            ))}
-          </div>
+    // Removed bg-secondary and padding classes, moved to Footer component
+    <div className="container mx-auto">
+      <h3 className="text-center text-lg md:text-xl font-semibold text-muted-foreground mb-6">Trusted By</h3>
+      <div className="marquee">
+        <div className="marquee-content">
+          {extendedLogos.map((logo, index) => (
+            <ClientLogo key={`${logo.alt}-${index}`} src={logo.src} alt={logo.alt} />
+          ))}
         </div>
       </div>
     </div>
