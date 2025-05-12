@@ -20,13 +20,13 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 100, height =
       height={height} // Pass height prop
       className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Ensure object-contain is used
       data-ai-hint="company logo"
-      // removed unoptimized prop to let Next.js handle image optimization
+      unoptimized // Add unoptimized prop to bypass Next.js optimization for debugging
     />
   </div>
 );
 
 // Updated logos to use local paths relative to the /public directory
-// Assumes images named 1.jpeg, 2.jpeg, etc., exist in public/
+// Assumes images named 1.jpeg, 2.jpeg, etc., exist directly in public/
 const logos = [
   { src: '/1.jpeg', alt: 'Client Logo 1' },
   { src: '/2.jpeg', alt: 'Client Logo 2' },
@@ -53,7 +53,8 @@ export function ClientLogos() {
       <div className="marquee">
         <div className="marquee-content flex items-center"> {/* Added flex items-center */}
           {extendedLogos.map((logo, index) => (
-            <ClientLogo key={`${logo.alt}-${index}`} src={logo.src} alt={logo.alt} />
+            // Ensure width and height are explicitly passed here, using defaults from ClientLogo
+             <ClientLogo key={`${logo.alt}-${index}`} src={logo.src} alt={logo.alt} />
           ))}
         </div>
       </div>
