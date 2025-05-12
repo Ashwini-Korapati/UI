@@ -3,10 +3,6 @@ import React from 'react';
 import Image, { type StaticImageData } from 'next/image';
 import { cn } from '@/lib/utils';
 
-// Correct way to import static images if they are not in public folder (which is not the case here, but shown for reference)
-// If images were in src/assets/clients, you would import them like this:
-// import img1 from '@/assets/clients/1.jpeg';
-
 interface ClientLogoProps {
   src: string; // src will be a string path relative to the public folder
   alt: string;
@@ -15,20 +11,20 @@ interface ClientLogoProps {
 }
 
 const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height = 60 }) => (
-  <div className="relative mx-4" style={{ width: `${width}px`, height: `${height}px` }}> {/* Added mx-4 for spacing */}
+  <div className="relative mx-4 flex items-center justify-center"> {/* Added mx-4 for spacing and centering */}
     <Image
       src={src} // Use the string path directly
       alt={alt}
-      width={width}
-      height={height}
-      className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Added object-contain
+      width={width} // Pass width prop
+      height={height} // Pass height prop
+      className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Removed fixed height h-[50vh]
       data-ai-hint="company logo"
       unoptimized // Added unoptimized as images might be causing issues
     />
   </div>
 );
 
-// Updated logos to use paths relative to the /public directory, removing /clients
+// Updated logos to use paths relative to the /public directory, removing leading /
 const logos = [
   { src: '/1.jpeg', alt: 'Client Logo 1' },
   { src: '/2.jpeg', alt: 'Client Logo 2' },
@@ -62,4 +58,3 @@ export function ClientLogos() {
     </div>
   );
 }
-

@@ -64,16 +64,16 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex items-center justify-between">
         {/* Logo Only */}
         <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
           {/* Increased width and height for the logo */}
           <Image
             src="/logoimg.jpeg" // Path relative to public directory
             alt="Events Unlimited Logo"
-            width={45} // Increased width
-            height={45} // Increased height
-            className="rounded-sm object-contain" // Ensure logo fits
+            width={120}
+            height={120}
+            className="rounded-sm object-contain ml-4 mt-3" // Ensure logo fits
             data-ai-hint="company logo"
             unoptimized // Ensure image is served as is
             priority // Load logo quickly
