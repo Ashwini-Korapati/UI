@@ -204,7 +204,7 @@ export function Navbar() {
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   Omit<React.ComponentPropsWithoutRef<"a">, "href"> & { href: string }
->(({ className, title, children, href, ...props }, ref) => {
+>(({ className, title, children, href, onClick, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -215,6 +215,11 @@ const ListItem = React.forwardRef<
               "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
               className
           )}
+          onClick={(e) => {
+            if (onClick) {
+              (onClick as React.MouseEventHandler<HTMLAnchorElement>)(e);
+            }
+          }}
             {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
