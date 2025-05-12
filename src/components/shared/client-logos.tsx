@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils';
 interface ClientLogoProps {
   src: string; // src will be a string path relative to the public folder
   alt: string;
-  width?: number; // Add width prop
-  height?: number; // Add height prop
+  width?: number; // Add width prop back
+  height?: number; // Add height prop back
 }
 
 // Updated default width and height for logos to 100
