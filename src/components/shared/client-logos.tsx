@@ -1,4 +1,4 @@
-
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -32,18 +32,18 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 150, height =
 // Removed 3rd logo (Archer) and one LSEG logo
 const logos = [
   { src: '/1.jpeg', alt: 'Blackline Logo' },
-  { src: '/2.jpeg', alt: 'Agilon Health Logo' },
+ { src: '/2.jpeg', alt: 'Agilon Health Logo' },
   // { src: '/3.jpeg', alt: 'Archer Logo' }, // Removed 3rd logo
   { src: '/4.jpeg', alt: 'CDM Smith Logo' },
   { src: '/5.jpeg', alt: 'RSA Logo' },
   { src: '/6.jpeg', alt: 'Razorpay Logo' },
   { src: '/7.jpeg', alt: 'LSEG Logo' },
-  // { src: '/8.jpeg', alt: 'LSEG Logo' }, // Removed duplicate LSEG logo
+ { src: '/8.jpeg', alt: 'LSEG Logo' }, // Removed duplicate LSEG logo
   { src: '/9.jpeg', alt: 'Client Logo 9' },
   { src: '/10.jpeg', alt: 'Client Logo 10' },
   { src: '/11.jpeg', alt: 'Client Logo 11' },
   { src: '/12.jpeg', alt: 'Client Logo 12' },
-  { src: '/13.jpeg', alt: 'Client Logo 13' },
+  // { src: '/13.jpeg', alt: 'Client Logo 13' },
 ];
 
 export function ClientLogos() {
@@ -53,12 +53,46 @@ export function ClientLogos() {
   return (
     <div className="container mx-auto">
       {/* Increased font size and ensured boldness */}
-      <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-40">Trusted By</h3>
+      <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-40 animate-fade-in">
+        Trusted By
+      </h3>
+      <style jsx>{`
+        .animate-fade-in {
+          animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        .marquee {
+          overflow: hidden;
+          display: flex; /* Use flexbox for horizontal alignment */
+          align-items: center; /* Center items vertically */
+        }
+        .marquee-content {
+          display: flex;
+          align-items: center; /* Ensure items within marquee-content are vertically aligned */
+        }
+        /* Optional: Add vertical alignment to the images or their containers */
+        .marquee-content > div { /* Target the container div for each logo */
+          vertical-align: middle;
+        }
+      `}</style>
       {/* Re-introduce marquee structure */}
       <div className="marquee">
         <div className="marquee-content">
           {extendedLogos.map((logo, index) => ( // Iterate over duplicated logos for marquee
-            <ClientLogo key={`${logo.alt}-${index}`} src={logo.src} alt={logo.alt} />
+ <ClientLogo
+ key={`${logo.alt}-${index}`}
+ src={logo.src}
+ alt={logo.alt}
+ width={['/1.jpeg', '/4.jpeg', '/5.jpeg', '/11.jpeg', '/12.jpeg'].includes(logo.src) ? 200 : 150}
+ height={['/1.jpeg', '/4.jpeg', '/5.jpeg', '/11.jpeg', '/12.jpeg'].includes(logo.src) ? 200 : 150}
+            />
           ))}
         </div>
       </div>

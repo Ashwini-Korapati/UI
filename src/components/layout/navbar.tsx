@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -56,8 +55,10 @@ export function Navbar() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
+    { href: "/corporate-events", label: "Corporate Events" },
     { href: "/contact", label: "Contact Us" },
     { href: "/become-vendor", label: "Become a Vendor" },
+    { href: "/#clients", label: "Clients" },
   ];
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -67,74 +68,64 @@ export function Navbar() {
       <div className="container flex items-center justify-between">
         {/* Logo Only */}
         <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
-          {/* Increased width and height for the logo */}
           <Image
             src="/logoimg.jpeg" // Path relative to public directory
             alt="Events Unlimited Logo"
-            width={120}
-            height={120}
-            className="rounded-sm object-contain ml-4 mt-3" // Ensure logo fits
+            width={120} 
+            height={120} 
+            className="rounded-sm object-contain ml-4 mt-3" 
             data-ai-hint="company logo"
-            unoptimized // Ensure image is served as is
-            priority // Load logo quickly
+            unoptimized 
+            priority 
           />
           {/* Removed "Events Unlimited" text */}
         </Link>
 
-        {/* Desktop Navigation & Controls */}
+        {/* Desktop Navigation & Controls - Moved to the right */}
         <div className="hidden md:flex items-center space-x-4">
           <NavigationMenu>
-            <NavigationMenuList>
-              {navLinks.slice(0, 2).map((link) => (
-                <NavigationMenuItem key={link.href}>
-                  <Link href={link.href} legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={cn(
-                        navigationMenuTriggerStyle(),
-                        pathname === link.href ? "bg-accent/50 text-accent-foreground" : ""
-                      )}
-                    >
-                      {link.label}
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-              ))}
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className={cn(pathname.startsWith("/corporate-events") ? "bg-accent/50 text-accent-foreground" : "")}
-                >
-                  Corporate Events
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[300px] gap-3 p-4 md:w-[350px] md:grid-cols-1 lg:w-[400px]">
-                    {corporateEventComponents.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                        onClick={closeMobileMenu}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              {navLinks.slice(2).map((link) => (
-                <NavigationMenuItem key={link.href}>
-                  <Link href={link.href} legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={cn(
-                        navigationMenuTriggerStyle(),
-                        pathname === link.href ? "bg-accent/50 text-accent-foreground" : ""
-                      )}
-                    >
-                      {link.label}
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
+            <NavigationMenuList className="flex items-center">
+              {navLinks.map((link) => (
+                 <NavigationMenuItem key={link.href}>
+                 {link.label === "Corporate Events" ? (
+                   <>
+                     <NavigationMenuTrigger
+                       className={cn(
+                         navigationMenuTriggerStyle(),
+                         pathname.startsWith("/corporate-events") ? "bg-accent/50 text-accent-foreground" : ""
+                       )}
+                     >
+                       Corporate Events
+                     </NavigationMenuTrigger>
+                     <NavigationMenuContent>
+                       <ul className="grid w-[300px] gap-3 p-4 md:w-[350px] md:grid-cols-1 lg:w-[400px]">
+                         {corporateEventComponents.map((component) => (
+                           <ListItem
+                             key={component.title}
+                             title={component.title}
+                             href={component.href}
+                             onClick={closeMobileMenu}
+                           >
+                             {component.description}
+                           </ListItem>
+                         ))}
+                       </ul>
+                     </NavigationMenuContent>
+                   </>
+                 ) : (
+                   <Link href={link.href} legacyBehavior passHref>
+                     <NavigationMenuLink
+                       className={cn(
+                         navigationMenuTriggerStyle(), 
+                         pathname === link.href || (link.href === '/#clients' && pathname === '/') ? "bg-accent/50 text-accent-foreground" : "",
+                         link.href === '/' && pathname === '/' ? "bg-accent/50 text-accent-foreground" : "" 
+                       )}
+                     >
+                       {link.label}
+                     </NavigationMenuLink>
+                   </Link>
+                 )}
+               </NavigationMenuItem>
               ))}
             </NavigationMenuList>
           </NavigationMenu>
@@ -153,18 +144,16 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs p-6 bg-background">
               <div className="flex justify-between items-center mb-6">
-                 {/* Mobile Menu Logo - Increased size */}
                  <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
                    <Image
                        src="/logoimg.jpeg"
                        alt="Events Unlimited Logo Mobile"
-                       width={35} // Increased width
-                       height={35} // Increased height
+                       width={60} 
+                       height={60} 
                        className="rounded-sm object-contain"
                        data-ai-hint="company logo"
-                       unoptimized // Ensure image is served as is
+                       unoptimized 
                     />
-                    {/* Removed "Events Unlimited" text */}
                  </Link>
                  <Button variant="ghost" size="icon" onClick={closeMobileMenu}>
                    <X className="h-6 w-6" />
@@ -173,6 +162,7 @@ export function Navbar() {
              </div>
              <nav className="flex flex-col space-y-4">
                {navLinks.map((link) => (
+                  link.label === "Corporate Events" ? null : 
                  <Link
                    key={link.href}
                    href={link.href}
@@ -190,13 +180,13 @@ export function Navbar() {
                   <ul className="flex flex-col space-y-3 pl-2">
                      {corporateEventComponents.map((component) => (
                       <li key={component.title}>
-                         <Link
-                             href={component.href}
-                             className="text-base text-foreground/70 hover:text-primary"
-                             onClick={closeMobileMenu}
-                         >
-                             {component.title}
-                         </Link>
+                        <Link
+                          href={component.href}
+                          className="text-base text-foreground/70 hover:text-primary"
+                          onClick={closeMobileMenu} 
+                        >
+                          {component.title}
+                        </Link>
                       </li>
                      ))}
                   </ul>
@@ -214,37 +204,32 @@ const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   Omit<React.ComponentPropsWithoutRef<"a">, "href"> & { href: string }
 >(({ className, title, children, href, onClick, ...props }, ref) => {
-  const routerPath = href?.split('#')[0];
-  const currentPath = usePathname();
-  const isActive = currentPath === routerPath;
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick) {
-      onClick(e);
+      onClick(e); 
     }
-    // Optionally close mobile menu if it's open after click
-    // closeMobileMenu(); // If closeMobileMenu is accessible here
   };
 
   return (
     <li>
-      {/* Use NextLink directly for correct navigation handling */}
-      <Link
-        href={href}
-        ref={ref}
-        className={cn(
-          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-          // isActive ? "bg-accent/50 text-accent-foreground" : "", // Removed active style for list item
-          className
-        )}
-        onClick={handleClick}
-        {...props}
-      >
-        <div className="text-sm font-medium leading-none">{title}</div>
-        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-          {children}
-        </p>
-      </Link>
+      <NavigationMenuLink asChild>
+         <Link 
+          href={href}
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          onClick={handleClick} 
+          {...props} 
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </Link>
+      </NavigationMenuLink>
     </li>
   );
 });
