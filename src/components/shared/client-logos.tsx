@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -10,8 +9,8 @@ interface ClientLogoProps {
   height?: number; // Add height prop
 }
 
-// Updated default width and height for logos to 100
-const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 100, height = 100 }) => (
+// Updated default width and height for logos to 150
+const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 150, height = 150 }) => (
   <div className="relative mx-4 flex items-center justify-center" style={{ width: `${width}px`, height: `${height}px` }}> {/* Added mx-4 for spacing and centering */}
     <Image
       src={src} // Use the string path directly
@@ -57,7 +56,7 @@ export function ClientLogos() {
       <div className="marquee">
         <div className="marquee-content">
           {extendedLogos.map((logo, index) => ( // Iterate over duplicated logos for marquee
-            <ClientLogo key={`${logo.alt}-${index}`} src={logo.src} alt={logo.alt} width={100} height={100} />
+            <ClientLogo key={`${logo.alt}-${index}`} src={logo.src} alt={logo.alt} />
           ))}
         </div>
       </div>
