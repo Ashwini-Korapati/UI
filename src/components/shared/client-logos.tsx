@@ -17,9 +17,9 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height =
       alt={alt}
       width={width}
       height={height}
-      className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Added object-contain for aspect ratio
+      className="grayscale hover:grayscale-0 transition-all duration-300 object-contain"
       data-ai-hint="company logo"
-      unoptimized // Re-added unoptimized prop
+      unoptimized 
     />
   </div>
 );
@@ -27,7 +27,7 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height =
 // Updated logos to use local paths relative to the /public directory
 // Assumes images named 1.jpeg, 2.jpeg, etc., exist in public/assets/clients/
 const logos = [
-  { src: '/assets/clients/1.jpeg', alt: 'Client Logo 1' },
+  { src: '/assets/clients/1.jpeg', alt: 'Client Logo 1' }, 
   { src: '/assets/clients/2.jpeg', alt: 'Client Logo 2' },
   { src: '/assets/clients/3.jpeg', alt: 'Client Logo 3' },
   { src: '/assets/clients/4.jpeg', alt: 'Client Logo 4' },
@@ -47,7 +47,6 @@ export function ClientLogos() {
   const extendedLogos = [...logos, ...logos];
 
   return (
-    // Removed bg-secondary and padding classes, moved to Footer component
     <div className="container mx-auto">
       <h3 className="text-center text-lg md:text-xl font-semibold text-muted-foreground mb-6">Trusted By</h3>
       <div className="marquee">
@@ -60,4 +59,3 @@ export function ClientLogos() {
     </div>
   );
 }
-
