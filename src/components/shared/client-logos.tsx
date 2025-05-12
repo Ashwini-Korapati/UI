@@ -10,22 +10,23 @@ interface ClientLogoProps {
   height?: number; // Add height prop
 }
 
-// Increased default width and height for logos
-const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height = 60 }) => (
+// Updated default width and height for logos
+const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 50, height = 50 }) => ( // Set default width and height to 50
   <div className="relative mx-4 flex items-center justify-center"> {/* Added mx-4 for spacing and centering */}
     <Image
       src={src} // Use the string path directly
       alt={alt}
       width={width} // Pass width prop
       height={height} // Pass height prop
-      className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Removed fixed height h-[50vh]
+      className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Ensure object-contain is used
       data-ai-hint="company logo"
       unoptimized // Added unoptimized as images might be causing issues
     />
   </div>
 );
 
-// Updated logos to use paths relative to the /public directory, removing leading /
+// Updated logos to use local paths relative to the /public directory
+// Assumes images named 1.jpeg, 2.jpeg, etc., exist in public/
 const logos = [
   { src: '/1.jpeg', alt: 'Client Logo 1' },
   { src: '/2.jpeg', alt: 'Client Logo 2' },
