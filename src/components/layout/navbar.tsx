@@ -5,7 +5,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import Image from "next/image"; // Import next/image
+import Image from "next/image"; 
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -67,7 +67,7 @@ export function Navbar() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2" onClick={closeMobileMenu}>
           <Image
-            src="/assets/logoimg.jpeg" // Path relative to public directory
+            src="/logoimg.jpeg" // Path relative to public directory
             alt="Events Unlimited Logo"
             width={36} 
             height={36} 
@@ -148,7 +148,7 @@ export function Navbar() {
                   <div className="flex justify-between items-center mb-6">
                      <Link href="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
                         <Image
-                            src="/assets/logoimg.jpeg" // Path relative to public directory
+                            src="/logoimg.jpeg" // Path relative to public directory
                             alt="Events Unlimited Logo Mobile"
                             width={30}
                             height={30}
@@ -232,3 +232,4 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem";
+
