@@ -3,100 +3,104 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth; /* Add smooth scrolling */
+  }
+
   :root {
-    /* Professional Dark Blue Theme */
-    --background: 0 0% 100%; /* White */
-    --foreground: 210 40% 10%; /* Very Dark Blue */
+    /* Professional Lavender Theme (Light) */
+    --background: 255 100% 100%; /* White */
+    --foreground: 255 20% 25%;  /* Dark Lavender Gray */
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 40% 10%;
+    --card: 255 100% 100%;
+    --card-foreground: 255 20% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 10%;
+    --popover: 255 100% 100%;
+    --popover-foreground: 255 20% 25%;
 
-    --primary: 210 100% 20%; /* Dark Blue #003366 */
-    --primary-foreground: 0 0% 98%; /* Almost White */
+    --primary: 255 80% 60%;  /* Lavender */
+    --primary-foreground: 255 100% 98%; /* Almost White */
 
-    --secondary: 210 15% 96%; /* Light Grey #f2f2f2 */
-    --secondary-foreground: 210 40% 20%; /* Darker Grey-Blue Text */
+    --secondary: 255 50% 96%; /* Light Lavender Gray */
+    --secondary-foreground: 255 30% 40%; /* Medium Lavender Gray */
 
-    --muted: 210 15% 96%; /* Light Grey */
-    --muted-foreground: 210 25% 55%; /* Muted Grey-Blue */
+    --muted: 255 50% 96%;
+    --muted-foreground: 255 25% 65%; /* Muted Lavender Gray */
 
-    --accent: 180 100% 25%; /* Teal #008080 */
-    --accent-foreground: 180 100% 98%; /* Very Light Cyan/White */
+    --accent: 275 80% 65%;  /* Deeper Purple */
+    --accent-foreground: 275 100% 98%; /* Very Light Purple/White */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 20% 88%; /* Light Grey-Blue Border */
-    --input: 210 20% 92%; /* Slightly Darker Grey-Blue Input */
-    --ring: 180 100% 25%; /* Teal Ring */
+    --border: 255 40% 90%; /* Light Lavender Border */
+    --input: 255 40% 94%; /* Slightly Darker Lavender Input */
+    --ring: 255 80% 60%; /* Lavender Ring */
 
-    --chart-1: 210 100% 20%; /* Dark Blue */
-    --chart-2: 180 100% 25%; /* Teal */
-    --chart-3: 210 40% 50%; /* Medium Grey-Blue */
-    --chart-4: 195 80% 40%; /* Brighter Blue */
-    --chart-5: 200 60% 75%; /* Light Steel Blue */
+    --chart-1: 255 80% 60%; /* Lavender */
+    --chart-2: 275 80% 65%; /* Deeper Purple */
+    --chart-3: 255 40% 70%; /* Medium Lavender */
+    --chart-4: 265 70% 75%; /* Brighter Lavender */
+    --chart-5: 250 60% 85%; /* Light Lilac */
 
     --radius: 0.5rem;
 
-    /* Sidebar specific - inherit from main theme */
-    --sidebar-background: 210 20% 98%; /* Very Light Grey-Blue for Sidebar */
-    --sidebar-foreground: 210 40% 20%; /* Darker Grey-Blue Text */
-    --sidebar-primary: 210 100% 20%; /* Dark Blue */
-    --sidebar-primary-foreground: 0 0% 98%; /* Almost White */
-    --sidebar-accent: 210 15% 90%; /* Lighter accent for sidebar */
-    --sidebar-accent-foreground: 210 40% 15%; /* Darker accent text */
-    --sidebar-border: 210 20% 85%; /* Grey-Blue Border */
-    --sidebar-ring: 180 100% 25%; /* Teal Ring */
+    /* Sidebar specific */
+    --sidebar-background: 255 30% 98%; /* Very Light Lavender Gray */
+    --sidebar-foreground: 255 20% 30%;
+    --sidebar-primary: 255 80% 60%;
+    --sidebar-primary-foreground: 255 100% 98%;
+    --sidebar-accent: 255 40% 92%;
+    --sidebar-accent-foreground: 255 20% 20%;
+    --sidebar-border: 255 40% 88%;
+    --sidebar-ring: 275 80% 65%;
   }
 
   .dark {
     /* Dark Mode Theme */
-    --background: 210 40% 8%; /* Very Dark Blue-Gray */
-    --foreground: 0 0% 95%; /* Light Gray */
+    --background: 255 10% 8%; /* Very Dark Desaturated Lavender */
+    --foreground: 255 15% 95%; /* Light Gray */
 
-    --card: 210 40% 12%; /* Slightly lighter dark */
-    --card-foreground: 0 0% 95%;
+    --card: 255 10% 12%; /* Slightly lighter dark */
+    --card-foreground: 255 15% 95%;
 
-    --popover: 210 40% 10%; /* Darker Popover */
-    --popover-foreground: 0 0% 95%;
+    --popover: 255 10% 10%;
+    --popover-foreground: 255 15% 95%;
 
-    --primary: 210 90% 65%; /* Lighter Blue */
-    --primary-foreground: 210 20% 15%; /* Dark Text on Primary */
+    --primary: 255 70% 70%; /* Lighter Lavender */
+    --primary-foreground: 255 10% 15%; /* Dark Text on Primary */
 
-    --secondary: 210 20% 18%; /* Dark Grey */
-    --secondary-foreground: 210 10% 80%; /* Lighter Grey Text */
+    --secondary: 255 10% 18%; /* Dark Gray */
+    --secondary-foreground: 255 10% 80%; /* Lighter Gray Text */
 
-    --muted: 210 20% 18%; /* Dark Grey */
-    --muted-foreground: 210 15% 65%; /* Muted Light Grey */
+    --muted: 255 10% 18%;
+    --muted-foreground: 255 10% 65%; /* Muted Light Gray */
 
-    --accent: 180 80% 55%; /* Brighter Teal */
-    --accent-foreground: 180 100% 10%; /* Very Dark Text on Accent */
+    --accent: 275 70% 75%; /* Brighter Purple */
+    --accent-foreground: 275 100% 10%; /* Very Dark Text on Accent */
 
     --destructive: 0 70% 50%; /* Darker Red */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 20% 25%; /* Dark Grey-Blue Border */
-    --input: 210 20% 22%; /* Slightly Darker Input */
-    --ring: 180 80% 55%; /* Brighter Teal Ring */
+    --border: 255 15% 25%; /* Dark Lavender Border */
+    --input: 255 15% 22%; /* Slightly Darker Input */
+    --ring: 255 70% 70%; /* Lighter Lavender Ring */
 
-    --chart-1: 210 90% 65%; /* Lighter Blue */
-    --chart-2: 180 80% 55%; /* Brighter Teal */
-    --chart-3: 210 40% 60%; /* Medium Grey-Blue */
-    --chart-4: 195 70% 60%; /* Medium Blue */
-    --chart-5: 200 50% 55%; /* Muted Steel Blue */
+    --chart-1: 255 70% 70%;
+    --chart-2: 275 70% 75%;
+    --chart-3: 255 40% 60%;
+    --chart-4: 265 60% 65%;
+    --chart-5: 250 50% 55%;
 
-    /* Sidebar specific - inherit from dark theme */
-    --sidebar-background: 210 40% 13%; /* Darker Sidebar */
-    --sidebar-foreground: 0 0% 90%; /* Light Text */
-    --sidebar-primary: 210 90% 65%; /* Lighter Blue */
-    --sidebar-primary-foreground: 210 20% 15%; /* Dark Text */
-    --sidebar-accent: 210 20% 25%; /* Darker Accent */
-    --sidebar-accent-foreground: 0 0% 95%; /* Light Accent Text */
-    --sidebar-border: 210 20% 30%; /* Darker Border */
-    --sidebar-ring: 180 80% 55%; /* Brighter Teal Ring */
+    /* Sidebar specific */
+    --sidebar-background: 255 10% 13%;
+    --sidebar-foreground: 255 15% 90%;
+    --sidebar-primary: 255 70% 70%;
+    --sidebar-primary-foreground: 255 10% 15%;
+    --sidebar-accent: 255 15% 25%;
+    --sidebar-accent-foreground: 255 15% 95%;
+    --sidebar-border: 255 15% 30%;
+    --sidebar-ring: 275 70% 75%;
   }
 }
 
@@ -105,7 +109,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground min-h-screen; /* Ensure body takes full height */
   }
 }
 
@@ -137,7 +141,8 @@
 
 .marquee-content {
   display: flex;
-  animation: marquee 30s linear infinite;
+  align-items: center; /* Center logos vertically */
+  animation: marquee 40s linear infinite; /* Slower animation */
   /* Adjust duration as needed - faster speed = lower duration */
   width: max-content; /* Ensure content doesn't wrap prematurely */
 }
@@ -160,7 +165,7 @@
 /* Style for individual logos within the marquee */
 .marquee-content > div {
   flex-shrink: 0; /* Prevent logos from shrinking */
-  padding: 0 1rem; /* Add some space between logos */
+  padding: 0 1.5rem; /* Add some space between logos */
 }
 
 /* Bubble Animation */
@@ -179,34 +184,77 @@
   bottom: -150px; /* Start below the footer */
   width: 40px;
   height: 40px;
-  background-color: hsla(var(--primary-foreground), 0.2); /* Use foreground with low opacity */
+  background-color: hsla(var(--primary-foreground), 0.15); /* Slightly more visible */
   border-radius: 50%;
-  opacity: 0.5;
-  animation: rise 10s infinite ease-in;
+  opacity: 0.6; /* Slightly more visible */
+  animation: rise 15s infinite ease-in; /* Slower rise */
 }
 
-.bubble:nth-child(1) { left: 10%; animation-duration: 8s; width: 20px; height: 20px; }
-.bubble:nth-child(2) { left: 20%; animation-duration: 5s; animation-delay: 1s; opacity: 0.3; }
-.bubble:nth-child(3) { left: 25%; animation-duration: 7s; animation-delay: 2s; }
-.bubble:nth-child(4) { left: 40%; animation-duration: 11s; width: 30px; height: 30px; opacity: 0.6; }
-.bubble:nth-child(5) { left: 50%; animation-duration: 6s; }
-.bubble:nth-child(6) { left: 55%; animation-duration: 9s; animation-delay: 1s; width: 25px; height: 25px; }
-.bubble:nth-child(7) { left: 70%; animation-duration: 12s; animation-delay: 2s; opacity: 0.4; }
-.bubble:nth-child(8) { left: 80%; animation-duration: 6s; width: 35px; height: 35px; }
-.bubble:nth-child(9) { left: 90%; animation-duration: 9s; animation-delay: 1s; }
-.bubble:nth-child(10) { left: 95%; animation-duration: 8s; }
+/* More bubbles, adjusted timings */
+.bubble:nth-child(1) { left: 10%; animation-duration: 12s; width: 25px; height: 25px; }
+.bubble:nth-child(2) { left: 20%; animation-duration: 8s; animation-delay: 1s; opacity: 0.4; }
+.bubble:nth-child(3) { left: 25%; animation-duration: 10s; animation-delay: 2s; }
+.bubble:nth-child(4) { left: 40%; animation-duration: 14s; width: 35px; height: 35px; opacity: 0.7; }
+.bubble:nth-child(5) { left: 50%; animation-duration: 9s; }
+.bubble:nth-child(6) { left: 55%; animation-duration: 11s; animation-delay: 1s; width: 30px; height: 30px; }
+.bubble:nth-child(7) { left: 70%; animation-duration: 15s; animation-delay: 2s; opacity: 0.5; }
+.bubble:nth-child(8) { left: 80%; animation-duration: 7s; width: 45px; height: 45px; }
+.bubble:nth-child(9) { left: 90%; animation-duration: 10s; animation-delay: 1s; }
+.bubble:nth-child(10) { left: 95%; animation-duration: 13s; }
+/* Add more bubbles */
+.bubble:nth-child(11) { left: 15%; animation-duration: 9s; animation-delay: 3s; width: 20px; height: 20px; opacity: 0.3; }
+.bubble:nth-child(12) { left: 35%; animation-duration: 13s; animation-delay: 0.5s; }
+.bubble:nth-child(13) { left: 65%; animation-duration: 7s; animation-delay: 1.5s; width: 40px; height: 40px; opacity: 0.6; }
+.bubble:nth-child(14) { left: 85%; animation-duration: 11s; animation-delay: 2.5s; }
+.bubble:nth-child(15) { left: 5%; animation-duration: 16s; animation-delay: 1s; width: 28px; height: 28px; }
+
 
 @keyframes rise {
   0% {
-    bottom: -100px;
+    bottom: -150px;
     transform: translateX(0);
+    opacity: 0.6;
   }
   50% {
-    transform: translateX(50px); /* Gentle horizontal drift */
+    transform: translateX(40px); /* Gentle horizontal drift */
+  }
+  99% {
+     opacity: 0.1; /* Fade out near the top */
   }
   100% {
     bottom: 100%; /* Rise above the top */
-    transform: translateX(-50px); /* Drift back */
+    transform: translateX(-40px); /* Drift back */
     opacity: 0;
   }
 }
+
+/* Text Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Staggered animation for children */
+.stagger-children > * {
+  opacity: 0; /* Start hidden */
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Apply delay based on child index */
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+/* Add more if needed */

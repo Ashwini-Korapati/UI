@@ -8,12 +8,17 @@ export function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground relative overflow-hidden">
-      {/* Removed Animated Bubbles Container */}
+       {/* Animated Bubbles Container */}
+       <div className="bubbles">
+         {Array.from({ length: 15 }).map((_, i) => (
+           <div key={i} className="bubble"></div>
+         ))}
+      </div>
 
-       {/* Client Logos Section */}
-       <div className="bg-secondary py-12 md:py-16 relative z-10 min-h-screen flex items-center justify-center">
+       {/* Client Logos Section - Now the scroll target */}
+       <section id="clients" className="bg-secondary py-12 md:py-16 relative z-10 min-h-screen flex items-center justify-center">
          <ClientLogos />
-       </div>
+       </section>
 
       {/* Main Footer Content */}
       <div className="container mx-auto py-4 md:py-6 px-4 relative z-10">
@@ -25,23 +30,23 @@ export function Footer() {
             <p className="text-sm text-primary-foreground/80">
               Crafting memorable moments. We specialize in creating unforgettable experiences for every occasion, connecting you with India’s best vendors.
             </p>
-            {/* Follow Us Section */}
+             {/* Follow Us Section */}
             <div className="mt-4">
-                <h4 className="text-md font-semibold mb-2 text-accent-foreground/90">Follow Us</h4>
-                <div className="flex space-x-3">
-                    <a href="https://www.linkedin.com/in/eventsunlimited365" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="LinkedIn">
-                        <Linkedin className="h-5 w-5" />
-                    </a>
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Facebook">
-                        <Facebook className="h-5 w-5" />
-                    </a>
-                    <a href="https://www.instagram.com/events_unlimited_365?igsh=MWYybzdnODYyc3dpMA==" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Instagram">
-                        <Instagram className="h-5 w-5" />
-                    </a>
-                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Twitter">
-                        <Twitter className="h-5 w-5" />
-                    </a>
-                </div>
+                 <h4 className="text-md font-semibold mb-2 text-accent-foreground/90">Follow Us</h4>
+                 <div className="flex space-x-3">
+                     <a href="https://www.linkedin.com/in/eventsunlimited365" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="LinkedIn">
+                         <Linkedin className="h-5 w-5" />
+                     </a>
+                     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Facebook">
+                         <Facebook className="h-5 w-5" />
+                     </a>
+                     <a href="https://www.instagram.com/events_unlimited_365?igsh=MWYybzdnODYyc3dpMA==" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Instagram">
+                         <Instagram className="h-5 w-5" />
+                     </a>
+                     <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Twitter">
+                         <Twitter className="h-5 w-5" />
+                     </a>
+                 </div>
             </div>
           </div>
 
@@ -54,6 +59,7 @@ export function Footer() {
               <li><Link href="/corporate-events" className="hover:text-accent-foreground/80 transition-colors">Corporate Events</Link></li>
               <li><Link href="/contact" className="hover:text-accent-foreground/80 transition-colors">Contact Us</Link></li>
               <li><Link href="/become-vendor" className="hover:text-accent-foreground/80 transition-colors">Become a Vendor</Link></li>
+              <li><Link href="/#clients" className="hover:text-accent-foreground/80 transition-colors">Clients</Link></li> {/* Scroll link */}
             </ul>
           </div>
 

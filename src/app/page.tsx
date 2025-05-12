@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden bg-primary/10 flex items-center justify-center text-center">
+      <section id="hero" className="relative h-screen w-full overflow-hidden bg-primary/10 flex items-center justify-center text-center">
         {/* Placeholder for Video Background - Replace with actual video if available */}
         <div className="absolute inset-0 z-0">
            <Image
@@ -35,44 +35,47 @@ export default function Home() {
            <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
         </div>
         <div className="relative z-10 container mx-auto px-4 text-white">
-          {/* Removed animate-in classes */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary-foreground drop-shadow-md">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary-foreground drop-shadow-md animate-fadeInUp [animation-delay:0.1s]">
             Events should be memorable and engaging
           </h1>
-          <p className="text-lg md:text-2xl mb-6 text-primary-foreground/90 drop-shadow-sm">
+          <p className="text-lg md:text-2xl mb-6 text-primary-foreground/90 drop-shadow-sm animate-fadeInUp [animation-delay:0.3s]">
             Coming together is a beginning; working together is success.
           </p>
-          <Button asChild size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="/about">Learn More</Link>
-          </Button>
+          <div className="animate-fadeInUp [animation-delay:0.5s]">
+            <Button asChild size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Link href="/about">Learn More</Link>
+            </Button>
+           </div>
         </div>
       </section>
 
        {/* Intro Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section id="intro" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center">
         <div className="container mx-auto px-4 text-center">
-           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary animate-fadeInUp">
              Events_Unlimited
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 italic">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 italic animate-fadeInUp [animation-delay:0.1s]">
             "Crafting Memorable Moments."
           </p>
-          <p className="max-w-3xl mx-auto text-lg text-foreground/80 mb-6">
-            We specialize in creating unforgettable experiences for every occasion. Welcome to EventsUnlimited! We’ve been your partner in crafting exceptional event experiences from our base in Bangalore. Our goal is simple yet powerful: connecting you with India’s best vendors to create extraordinary moments without the extravagant price tag.
-          </p>
-           <p className="max-w-3xl mx-auto text-lg text-foreground/80 mb-6">
-            For corporate events, we blend affordability with excellence, ensuring your event is etched in hearts forever. At EventsUnlimited, we understand your event is as unique as you are. Our dedicated team is adept at turning visions into reality, making your dream event a seamless, unforgettable reality.
-          </p>
-          <p className="max-w-3xl mx-auto text-lg text-foreground/80">
-            Thank you for choosing EventsUnlimited – let’s embark on this exciting journey together!
-          </p>
+          <div className="max-w-3xl mx-auto space-y-6 animate-fadeInUp [animation-delay:0.2s]">
+            <p className="text-lg text-foreground/80">
+              We specialize in creating unforgettable experiences for every occasion. Welcome to EventsUnlimited! We’ve been your partner in crafting exceptional event experiences from our base in Bangalore. Our goal is simple yet powerful: connecting you with India’s best vendors to create extraordinary moments without the extravagant price tag.
+            </p>
+            <p className="text-lg text-foreground/80">
+              For corporate events, we blend affordability with excellence, ensuring your event is etched in hearts forever. At EventsUnlimited, we understand your event is as unique as you are. Our dedicated team is adept at turning visions into reality, making your dream event a seamless, unforgettable reality.
+            </p>
+            <p className="text-lg text-foreground/80">
+              Thank you for choosing EventsUnlimited – let’s embark on this exciting journey together!
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Who We Are Section */}
-      <section className="py-16 md:py-24 bg-secondary">
+      <section id="who-we-are" className="py-16 md:py-24 bg-secondary min-h-screen flex items-center">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-           <div>
+           <div className="animate-fadeInUp">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Who We Are</h2>
               <p className="text-lg text-foreground/80 mb-4">
                 We are a dedicated team of professionals driven by a singular goal: to exceed your expectations and make your events unforgettable.
@@ -81,22 +84,22 @@ export default function Home() {
                  Our team of experts meticulously handpicks a selection of top-tier vendors, ensuring that you have access to a wide range of services and products that cater to your specific event needs.
               </p>
            </div>
-            <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+            <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg animate-fadeInUp [animation-delay:0.2s]">
                  <Image
                   src="https://picsum.photos/600/400?random=team"
                   alt="Events Unlimited Team"
                   layout="fill"
                   objectFit="cover"
-                   data-ai-hint="team meeting"
+                  data-ai-hint="team meeting"
                 />
             </div>
         </div>
       </section>
 
        {/* Vision & Mission Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section id="vision-mission" className="py-16 md:py-24 bg-background min-h-screen flex items-center">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-           <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg order-last md:order-first">
+           <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg order-last md:order-first animate-fadeInUp [animation-delay:0.2s]">
                  <Image
                   src="https://picsum.photos/600/400?random=vision"
                   alt="Vision and Mission concept"
@@ -105,12 +108,12 @@ export default function Home() {
                   data-ai-hint="target goal"
                 />
             </div>
-           <div>
+           <div className="animate-fadeInUp">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Our Vision & Our Mission</h2>
               <p className="text-lg text-foreground/80 mb-6">
                 At Events Unlimited, our mission is to simplify event planning and execution by:
               </p>
-              <ul className="space-y-3 text-lg text-foreground/80">
+              <ul className="space-y-3 text-lg text-foreground/80 stagger-children">
                 <li className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-accent mr-3 mt-1 shrink-0" />
                   Providing a comprehensive platform with a curated selection of top-notch vendors offering the best prices and packages.
@@ -134,10 +137,10 @@ export default function Home() {
       </section>
 
        {/* What We Offer Section */}
-      <section className="py-16 md:py-24 bg-secondary">
+      <section id="what-we-offer" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center">
         <div className="container mx-auto px-4 text-center">
-           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-primary">What We Offer</h2>
-           <div className="grid md:grid-cols-3 gap-8">
+           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-primary animate-fadeInUp">What We Offer</h2>
+           <div className="grid md:grid-cols-3 gap-8 stagger-children">
              <div className="bg-background p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 <h3 className="text-xl font-semibold mb-3 text-primary">Event Vendors</h3>
                 <p className="text-foreground/80">
@@ -161,10 +164,10 @@ export default function Home() {
       </section>
 
         {/* Why Choose Us Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section id="why-choose-us" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center">
         <div className="container mx-auto px-4">
-           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Why Choose Us?</h2>
-           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary animate-fadeInUp">Why Choose Us?</h2>
+           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
               {[
                 { title: "Extensive Network", description: "With a vast network of trusted event vendors, we cater to events of any scale.", icon: CheckCircle },
                 { title: "Find the Best Vendors", description: "Photographers, caterers, decorators, entertainers - explore our extensive network.", icon: CheckCircle },
@@ -186,33 +189,36 @@ export default function Home() {
       </section>
 
        {/* Customer Satisfaction Section */}
-       <section className="py-16 md:py-24 bg-secondary">
+       <section id="customer-satisfaction" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center">
         <div className="container mx-auto px-4 text-center">
-           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Customer Satisfaction</h2>
-           <p className="max-w-3xl mx-auto text-lg text-foreground/80 mb-6">
-              Customer satisfaction is at the heart of everything we do. We take pride in delivering exceptional customer service and ensuring that each interaction with us is a positive one.
-           </p>
-            <p className="max-w-3xl mx-auto text-lg text-foreground/80">
-             Our team is always ready to listen to your feedback and address any concerns promptly.
-            </p>
+           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary animate-fadeInUp">Customer Satisfaction</h2>
+           <div className="max-w-3xl mx-auto space-y-6 animate-fadeInUp [animation-delay:0.1s]">
+             <p className="text-lg text-foreground/80">
+                Customer satisfaction is at the heart of everything we do. We take pride in delivering exceptional customer service and ensuring that each interaction with us is a positive one.
+             </p>
+              <p className="text-lg text-foreground/80">
+               Our team is always ready to listen to your feedback and address any concerns promptly.
+              </p>
+            </div>
         </div>
       </section>
 
        {/* Join Us & CTA Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section id="join-us" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Join Us on Our Journey</h2>
-          <p className="max-w-3xl mx-auto text-lg text-foreground/80 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary animate-fadeInUp">Join Us on Our Journey</h2>
+          <p className="max-w-3xl mx-auto text-lg text-foreground/80 mb-8 animate-fadeInUp [animation-delay:0.1s]">
             We invite you to be a part of our exciting journey as we continue to evolve and make a positive impact. Whether you are a customer, partner, or team member, we look forward to building meaningful connections and achieving great things together.
           </p>
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="/contact">Contact Us</Link>
-          </Button>
+          <div className="animate-fadeInUp [animation-delay:0.2s]">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Link href="/contact">Contact Us</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
-       {/* Client Logos are rendered within the Footer component */}
-       {/* <ClientLogos /> */}
+       {/* Client Logos are rendered within the Footer component, which has id="clients" */}
     </>
   );
 }
