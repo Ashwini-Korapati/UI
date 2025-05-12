@@ -43,12 +43,12 @@
 .navbar ul li {
   padding: 5px 0;
   position: relative;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .navbar ul li a {
   text-decoration: none;
-  color: white; /* Light grey text */
+  color: black; /* Light grey text */
   font-size: 16px; /* Reduced font size */
   font-weight: 500;
   padding: 8px 15px; /* Adjusted padding */
@@ -63,7 +63,7 @@
 .navbar ul li a.active {
   background-color: #008080;
   /* background-color: #64b5f6; A lighter blue for hover */
-  color: white;  /* Dark blue text */
+  color: white; /* Dark blue text */
   transform: scale(1.05);
 }
 
@@ -73,8 +73,8 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #008080;
-  color: white;
+  background-color: #006666; /* Slightly darker green for the dropdown background */
+  color: black;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
   border-radius: 5px;
   overflow: hidden;
@@ -88,13 +88,14 @@
 }
 
 .dropdown li {
-  padding: 0; /* Remove padding */
+  padding: 0;
+  background-color: #198C8C; /* Background color for list items */
 }
 
 .dropdown li a {
   display: block;
   padding: 10px 15px; /* Adjusted padding */
-  color: white;
+  color: black;
   font-size: 14px;
   transition: background-color 0.3s ease;
 }
