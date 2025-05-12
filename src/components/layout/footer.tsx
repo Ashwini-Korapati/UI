@@ -16,8 +16,8 @@ export function Footer() {
         <div className="footer-bubble bubble-4"></div>
       </div>
 
-       {/* Client Logos Section - needs z-index to be above bubbles */}
-       <div className="bg-secondary py-6 md:py-8 relative z-10">
+       {/* Client Logos Section - needs z-index, min-h-screen and centering */}
+       <div className="bg-secondary py-12 md:py-16 relative z-10 min-h-screen flex items-center justify-center">
          <ClientLogos />
        </div>
 
