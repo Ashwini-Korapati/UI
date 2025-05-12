@@ -29,13 +29,13 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 100, height =
 // Assumes images named 1.jpeg, 2.jpeg, etc., exist directly in public/
 // Updated alt text based on previous user input/context
 const logos = [
-  { src: '/1.jpeg', alt: 'Blackline Logo' },
-  { src: '/2.jpeg', alt: 'Agilon Health Logo' },
-  { src: '/3.jpeg', alt: 'Archer Logo' },
-  { src: '/4.jpeg', alt: 'CDM Smith Logo' },
-  { src: '/5.jpeg', alt: 'RSA Logo' },
-  { src: '/6.jpeg', alt: 'Razorpay Logo' },
-  { src: '/7.jpeg', alt: 'Client Logo 7' }, // Keep generic if unknown or provide specific name
+  { src: '/1.jpeg', alt: 'Blackline Logo' }, // Assuming 1.jpeg is Blackline based on previous context
+  { src: '/2.jpeg', alt: 'Agilon Health Logo' }, // Assuming 2.jpeg is Agilon Health
+  { src: '/3.jpeg', alt: 'Archer Logo' }, // Updated alt text
+  { src: '/4.jpeg', alt: 'CDM Smith Logo' }, // Assuming 4.jpeg is CDM Smith
+  { src: '/5.jpeg', alt: 'RSA Logo' }, // Assuming 5.jpeg is RSA
+  { src: '/6.jpeg', alt: 'Razorpay Logo' }, // Assuming 6.jpeg is Razorpay
+  { src: '/7.jpeg', alt: 'Client Logo 7' }, // Keep generic or provide specific name
   { src: '/8.jpeg', alt: 'Client Logo 8' },
   { src: '/9.jpeg', alt: 'Client Logo 9' },
   { src: '/10.jpeg', alt: 'Client Logo 10' },

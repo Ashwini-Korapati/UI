@@ -40,9 +40,9 @@
     --sidebar-ring: 255 70% 60%; /* Lavender Ring */
   }
   .dark {
-     /* Dark Lavender Theme */
-    --background: 250 20% 10%; /* Very Dark Purple/Gray */
-    --foreground: 250 30% 95%; /* Light Lavender-Gray Text */
+     /* Dark Lavender Theme - Keeping background same as light mode */
+    --background: 240 100% 99%; /* Use Light Mode Background */
+    --foreground: 250 30% 20%; /* Use Light Mode Foreground */
     --card: 250 20% 12%; /* Slightly lighter dark */
     --card-foreground: 250 30% 95%;
     --popover: 250 20% 10%;
@@ -83,4 +83,51 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Keyframes for floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Class to apply the floating animation */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Marquee Animation */
+.marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  /* Adjust duration as needed */
+  width: max-content; /* Ensure content doesn't wrap prematurely */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move exactly half the width */
+  }
+}
+
+/* Style for individual logos within the marquee */
+.marquee-content > div {
+  flex-shrink: 0; /* Prevent logos from shrinking */
+  padding: 0 1rem; /* Add some space between logos */
 }
