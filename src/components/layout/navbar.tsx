@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -65,7 +66,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between"> {/* Changed flex alignment */}
         {/* Logo and Brand Name */}
-        <Link href="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
+        <Link href="/" className="flex items-center space-x-2" onClick={closeMobileMenu}> {/* Added space-x-2 */}
           <Image
             src="/logoimg.jpeg" // Path relative to public directory
             alt="Events Unlimited Logo"
