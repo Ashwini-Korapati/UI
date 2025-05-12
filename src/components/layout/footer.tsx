@@ -8,20 +8,20 @@ export function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground relative overflow-hidden">
-      {/* Animated Bubbles */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true"> {/* Container for bubbles, non-interactive */}
+      {/* Animated Bubbles Container - Must be inside the relatively positioned footer */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="footer-bubble bubble-1"></div>
         <div className="footer-bubble bubble-2"></div>
         <div className="footer-bubble bubble-3"></div>
         <div className="footer-bubble bubble-4"></div>
       </div>
 
-       {/* Client Logos Section - needs to be above bubbles */}
+       {/* Client Logos Section - needs z-index to be above bubbles */}
        <div className="bg-secondary py-6 md:py-8 relative z-10">
          <ClientLogos />
        </div>
 
-      {/* Main Footer Content - needs to be above bubbles */}
+      {/* Main Footer Content - needs z-index to be above bubbles */}
       <div className="container mx-auto py-4 md:py-6 px-4 relative z-10">
         {/* Reduced gap, added lg:grid-cols-4 to accommodate map */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
@@ -36,6 +36,7 @@ export function Footer() {
             <div className="mt-4">
                 <h4 className="text-md font-semibold mb-2 text-accent-foreground/90">Follow Us</h4>
                 <div className="flex space-x-3">
+                    {/* Using lucide-react icons as requested */}
                     <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="LinkedIn">
                         <Linkedin className="h-5 w-5" />
                     </a>
@@ -99,6 +100,7 @@ export function Footer() {
                 title="Events Unlimited Location"
                 className="w-full h-full border-0"
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade" // Added for good practice
                 ></iframe>
             </div>
            </div>

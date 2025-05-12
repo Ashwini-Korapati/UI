@@ -104,6 +104,23 @@ body {
      @apply leading-relaxed text-foreground/90; /* Slightly lighter foreground for paragraphs */
    }
 
+   /* Text Animation */
+   .animate-slide-in {
+      animation: slideIn 0.8s ease-out forwards;
+      opacity: 0; /* Start hidden */
+   }
+
+   @keyframes slideIn {
+     from {
+       transform: translateY(20px);
+       opacity: 0;
+     }
+     to {
+       transform: translateY(0);
+       opacity: 1;
+     }
+   }
+
   /* Client Logo Animation */
   .marquee {
     overflow: hidden;
@@ -132,21 +149,23 @@ body {
     animation-play-state: paused;
   }
 
-  /* Footer Bubble Animation */
+   /* Footer Bubble Animation */
   .footer-bubble {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.1; /* Subtle opacity for bubbles */
+    opacity: 0.15; /* Slightly increased opacity */
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    will-change: transform; /* Optimize animation performance */
+    will-change: transform, opacity; /* Optimize animation performance */
+    z-index: 0; /* Ensure bubbles are behind content */
+    pointer-events: none; /* Make sure they don't interfere with clicks */
   }
 
   .footer-bubble.bubble-1 {
     width: 150px;
     height: 150px;
-    background: hsl(var(--accent));
-    bottom: -75px;
+    background: hsl(var(--accent) / 0.7); /* Slightly more opaque accent */
+    bottom: -75px; /* Halfway hidden */
     left: 10%;
     animation-name: float-bubble-1;
     animation-duration: 20s;
@@ -155,8 +174,8 @@ body {
   .footer-bubble.bubble-2 {
     width: 200px;
     height: 200px;
-    background: hsl(var(--secondary-foreground) / 0.5); /* Different color/opacity for variety */
-    bottom: -100px;
+    background: hsl(var(--secondary-foreground) / 0.3); /* Secondary color bubble */
+    bottom: -100px; /* Halfway hidden */
     right: 15%;
     animation-name: float-bubble-2;
     animation-duration: 25s;
@@ -166,50 +185,52 @@ body {
   .footer-bubble.bubble-3 {
     width: 100px;
     height: 100px;
-    background: hsl(var(--accent));
-    bottom: -50px;
+    background: hsl(var(--accent) / 0.6); /* Slightly more opaque accent */
+    bottom: -50px; /* Halfway hidden */
     left: 40%;
     animation-name: float-bubble-3;
     animation-duration: 18s;
     animation-delay: 1s;
   }
 
-  .footer-bubble.bubble-4 {
+   .footer-bubble.bubble-4 {
     width: 120px;
     height: 120px;
-    background: hsl(var(--secondary-foreground) / 0.5);
-    bottom: -60px;
-    right: 50%; /* Adjusted to be more centered */
+    background: hsl(var(--secondary-foreground) / 0.25); /* Secondary color bubble */
+    bottom: -60px; /* Halfway hidden */
+    right: 50%;
     animation-name: float-bubble-4;
     animation-duration: 22s;
     animation-delay: 5s;
   }
 
   @keyframes float-bubble-1 {
-    0% { transform: translateY(0) translateX(0) scale(1); }
-    25% { transform: translateY(-30px) translateX(10px) scale(1.05); }
-    50% { transform: translateY(-60px) translateX(-5px) scale(1); }
-    75% { transform: translateY(-30px) translateX(-10px) scale(0.95); }
-    100% { transform: translateY(0) translateX(0) scale(1); }
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
+    25% { transform: translateY(-30px) translateX(10px) scale(1.05); opacity: 0.2; }
+    50% { transform: translateY(-60px) translateX(-5px) scale(1); opacity: 0.1; }
+    75% { transform: translateY(-30px) translateX(-10px) scale(0.95); opacity: 0.2; }
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
   }
 
   @keyframes float-bubble-2 {
-    0% { transform: translateY(0) translateX(0) scale(1); }
-    25% { transform: translateY(-40px) translateX(-15px) scale(0.9); }
-    50% { transform: translateY(-80px) translateX(10px) scale(1.1); }
-    75% { transform: translateY(-40px) translateX(5px) scale(1); }
-    100% { transform: translateY(0) translateX(0) scale(1); }
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.1; }
+    25% { transform: translateY(-40px) translateX(-15px) scale(0.9); opacity: 0.15; }
+    50% { transform: translateY(-80px) translateX(10px) scale(1.1); opacity: 0.05; }
+    75% { transform: translateY(-40px) translateX(5px) scale(1); opacity: 0.15; }
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.1; }
   }
 
+   /* Added more noticeable movement */
   @keyframes float-bubble-3 {
-    0% { transform: translateY(0) scale(1) rotate(0deg); }
-    50% { transform: translateY(-50px) scale(1.1) rotate(90deg); }
-    100% { transform: translateY(0) scale(1) rotate(180deg); }
+    0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 0.15; }
+    50% { transform: translateY(-50px) scale(1.1) rotate(45deg); opacity: 0.2; }
+    100% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 0.15; }
   }
 
+   /* Added more noticeable movement */
   @keyframes float-bubble-4 {
-    0% { transform: translateY(0) scale(1) rotate(0deg); }
-    50% { transform: translateY(-70px) scale(0.95) rotate(-90deg); }
-    100% { transform: translateY(0) scale(1) rotate(-180deg); }
+    0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 0.1; }
+    50% { transform: translateY(-70px) scale(0.95) rotate(-45deg); opacity: 0.15; }
+    100% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 0.1; }
   }
 }
