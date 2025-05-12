@@ -17,9 +17,9 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height =
       alt={alt}
       width={width}
       height={height}
-      unoptimized // Added to prevent URL construction errors with local paths
       className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Added object-contain for aspect ratio
       data-ai-hint="company logo"
+      unoptimized // Re-added unoptimized prop
     />
   </div>
 );
