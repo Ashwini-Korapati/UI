@@ -67,6 +67,7 @@ export function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo Only */}
         <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
+          {/* Increased width and height for the logo */}
           <Image
             src="/logoimg.jpeg" // Path relative to public directory
             alt="Events Unlimited Logo"
@@ -221,29 +222,29 @@ const ListItem = React.forwardRef<
     if (onClick) {
       onClick(e);
     }
+    // Optionally close mobile menu if it's open after click
+    // closeMobileMenu(); // If closeMobileMenu is accessible here
   };
 
   return (
     <li>
-      <NavigationMenuLink asChild>
-        {/* Use NextLink directly for correct navigation handling */}
-        <Link
-          href={href}
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-             isActive ? "bg-accent/50 text-accent-foreground" : "",
-             className
-          )}
-          onClick={handleClick}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </Link>
-      </NavigationMenuLink>
+      {/* Use NextLink directly for correct navigation handling */}
+      <Link
+        href={href}
+        ref={ref}
+        className={cn(
+          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+          // isActive ? "bg-accent/50 text-accent-foreground" : "", // Removed active style for list item
+          className
+        )}
+        onClick={handleClick}
+        {...props}
+      >
+        <div className="text-sm font-medium leading-none">{title}</div>
+        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          {children}
+        </p>
+      </Link>
     </li>
   );
 });
