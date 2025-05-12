@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 interface ClientLogoProps {
-  src: string; // src will be a string path relative to the public folder
+  src: string;
   alt: string;
-  width?: number; // Add width prop back
-  height?: number; // Add height prop back
+  width?: number; // Add width prop
+  height?: number; // Add height prop
 }
 
 // Updated default width and height for logos to 100
@@ -20,7 +20,7 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 100, height =
       height={height} // Pass height prop
       className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Ensure object-contain is used
       data-ai-hint="company logo"
-      unoptimized // Add unoptimized prop to bypass Next.js optimization for debugging
+      unoptimized // Add unoptimized prop to bypass Next.js optimization
     />
   </div>
 );
@@ -45,19 +45,18 @@ const logos = [
 ];
 
 export function ClientLogos() {
-  // Duplicate logos for seamless looping effect
+  // Duplicate logos for seamless looping effect - kept in case needed later
   const extendedLogos = [...logos, ...logos];
 
   return (
     <div className="container mx-auto">
       <h3 className="text-center text-lg md:text-xl font-semibold text-muted-foreground mb-6">Trusted By</h3>
-      <div className="marquee">
-        <div className="marquee-content flex items-center"> {/* Added flex items-center */}
-          {extendedLogos.map((logo, index) => (
-            // Ensure width and height are explicitly passed here, using defaults from ClientLogo
-             <ClientLogo key={`${logo.alt}-${index}`} src={logo.src} alt={logo.alt} width={100} height={100} />
-          ))}
-        </div>
+      {/* Removed marquee container and content wrapper */}
+      <div className="flex flex-wrap items-center justify-center gap-4"> {/* Use flex-wrap for responsiveness */}
+        {logos.map((logo, index) => ( // Iterate over original logos
+          // Ensure width and height are explicitly passed here, using defaults from ClientLogo
+           <ClientLogo key={`${logo.alt}-${index}`} src={logo.src} alt={logo.alt} width={100} height={100} />
+        ))}
       </div>
     </div>
   );

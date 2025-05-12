@@ -35,13 +35,14 @@ export default function Home() {
            <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
         </div>
         <div className="relative z-10 container mx-auto px-4 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary-foreground drop-shadow-md animate-in fade-in duration-1000">
+          {/* Removed animate-in classes */}
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary-foreground drop-shadow-md">
             Events should be memorable and engaging
           </h1>
-          <p className="text-lg md:text-2xl mb-6 text-primary-foreground/90 drop-shadow-sm animate-in fade-in duration-1000 delay-300">
+          <p className="text-lg md:text-2xl mb-6 text-primary-foreground/90 drop-shadow-sm">
             Coming together is a beginning; working together is success.
           </p>
-          <Button asChild size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground animate-in fade-in duration-1000 delay-500">
+          <Button asChild size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href="/about">Learn More</Link>
           </Button>
         </div>
@@ -210,7 +211,7 @@ export default function Home() {
         </div>
       </section>
 
-       {/* Client Logos are likely rendered within the Footer component */}
+       {/* Client Logos are rendered within the Footer component */}
        {/* <ClientLogos /> */}
     </>
   );

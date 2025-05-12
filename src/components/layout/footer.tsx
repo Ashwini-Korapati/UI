@@ -8,22 +8,15 @@ export function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground relative overflow-hidden">
-      {/* Animated Bubbles Container - Must be inside the relatively positioned footer */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="footer-bubble bubble-1"></div>
-        <div className="footer-bubble bubble-2"></div>
-        <div className="footer-bubble bubble-3"></div>
-        <div className="footer-bubble bubble-4"></div>
-      </div>
+      {/* Removed Animated Bubbles Container */}
 
-       {/* Client Logos Section - needs z-index, min-h-screen and centering */}
+       {/* Client Logos Section */}
        <div className="bg-secondary py-12 md:py-16 relative z-10 min-h-screen flex items-center justify-center">
          <ClientLogos />
        </div>
 
-      {/* Main Footer Content - needs z-index to be above bubbles */}
+      {/* Main Footer Content */}
       <div className="container mx-auto py-4 md:py-6 px-4 relative z-10">
-        {/* Reduced gap, added lg:grid-cols-4 to accommodate map */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
 
           {/* About Section */}
@@ -32,11 +25,10 @@ export function Footer() {
             <p className="text-sm text-primary-foreground/80">
               Crafting memorable moments. We specialize in creating unforgettable experiences for every occasion, connecting you with India’s best vendors.
             </p>
-            {/* Follow Us Section - Moved under About for better flow on smaller screens */}
+            {/* Follow Us Section */}
             <div className="mt-4">
                 <h4 className="text-md font-semibold mb-2 text-accent-foreground/90">Follow Us</h4>
                 <div className="flex space-x-3">
-                    {/* Using lucide-react icons as requested */}
                     <a href="https://www.linkedin.com/in/eventsunlimited365" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="LinkedIn">
                         <Linkedin className="h-5 w-5" />
                     </a>
@@ -91,7 +83,7 @@ export function Footer() {
             </ul>
           </div>
 
-           {/* Map Section - Moved to the 4th column */}
+           {/* Map Section */}
            <div className="lg:col-span-1">
              <h4 className="text-lg font-semibold mb-3 text-accent-foreground/90">Our Location</h4>
              <div className="w-full aspect-video rounded overflow-hidden border border-primary-foreground/20">
@@ -100,14 +92,14 @@ export function Footer() {
                 title="Events Unlimited Location"
                 className="w-full h-full border-0"
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade" // Added for good practice
+                referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
             </div>
            </div>
 
         </div>
 
-        {/* Copyright - Reduced padding top */}
+        {/* Copyright */}
         <div className="border-t border-primary-foreground/20 pt-4 text-center text-xs text-primary-foreground/70">
           © {currentYear} Events Unlimited. All rights reserved.
         </div>
