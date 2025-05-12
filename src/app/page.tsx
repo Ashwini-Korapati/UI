@@ -10,28 +10,20 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section id="hero" className="relative h-screen w-full overflow-hidden bg-primary/10 flex items-center justify-center text-center">
-        {/* Placeholder for Video Background - Replace with actual video if available */}
+        {/* Video Background */}
         <div className="absolute inset-0 z-0">
-           <Image
-              src="https://picsum.photos/1920/1080?random=hero"
-              alt="Event background"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-30"
-              priority
-              data-ai-hint="event celebration"
-            />
-           {/* <video
+           <video
             autoPlay
             loop
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-30"
-            poster="https://picsum.photos/1920/1080?random=poster" // Optional poster image
+            // Optional: Add a poster image for loading or unsupported browsers
+            // poster="https://picsum.photos/1920/1080?random=poster"
            >
-            <source src="/placeholder-video.mp4" type="video/mp4" /> // Replace with actual video path
+            <source src="/video.mp4" type="video/mp4" /> {/* Path relative to /public */}
             Your browser does not support the video tag.
-           </video> */}
+           </video>
            <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
         </div>
         <div className="relative z-10 container mx-auto px-4 text-white">
