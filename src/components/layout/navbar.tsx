@@ -70,9 +70,9 @@ export function Navbar() {
           <Image
             src="/logoimg.jpeg" // Path relative to public directory
             alt="Events Unlimited Logo"
-            width={40} // Increased width
-            height={40} // Increased height
-            className="h-10 w-10 rounded-sm object-contain" // Updated class to match size
+            width={50} // Increased width
+            height={50} // Increased height
+            className=" rounded-sm object-contain" // Updated class to match size
             data-ai-hint="company logo"
             unoptimized // Ensure image is served as is
           />
