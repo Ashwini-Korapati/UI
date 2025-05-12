@@ -14,10 +14,11 @@ export function Footer() {
        </div>
       {/* Main Footer Content */}
       <div className="container mx-auto py-6 md:py-8 px-4">
-        {/* Reduced gap for tighter layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+        {/* Adjusted gap for better spacing on smaller screens, maintained grid structure */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+
           {/* About Section */}
-          <div className="lg:col-span-1">
+          <div>
             <h4 className="text-lg font-semibold mb-3 text-accent-foreground/90">Events Unlimited</h4>
             <p className="text-sm text-primary-foreground/80">
               Crafting memorable moments. We specialize in creating unforgettable experiences for every occasion, connecting you with India’s best vendors.
@@ -25,7 +26,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-           <div className="lg:col-span-1">
+           <div>
             <h4 className="text-lg font-semibold mb-3 text-accent-foreground/90">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/" className="hover:text-accent-foreground/80 transition-colors">Home</Link></li>
@@ -37,12 +38,28 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-           <div className="lg:col-span-1">
+           <div>
             <h4 className="text-lg font-semibold mb-3 text-accent-foreground/90">Contact Us</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground/90" />
                 <span>42, 4th Temple St Rd, Vyalikaval, Kodandarampura, Malleshwaram, Bengaluru, Karnataka 560003</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Phone className="h-4 w-4 shrink-0 text-accent-foreground/90" />
+                <div className="flex flex-wrap gap-x-1">
+                     <a href="tel:+917647367436" className="hover:text-accent-foreground/80 transition-colors">+91 7647367436</a>
+                    <span className="text-primary-foreground/60">/</span>
+                    <a href="tel:+919845925252" className="hover:text-accent-foreground/80 transition-colors">+91 9845925252</a>
+                </div>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 shrink-0 text-accent-foreground/90" />
+                <a href="mailto:hello@eventsunlimited.in" className="hover:text-accent-foreground/80 transition-colors break-all">hello@eventsunlimited.in</a>
+              </li>
+               <li className="flex items-center space-x-2">
+                 <Globe className="h-4 w-4 shrink-0 text-accent-foreground/90" />
+                <a href="https://geventsunlimited.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-foreground/80 transition-colors break-all">geventsunlimited.com</a>
               </li>
                {/* Google Maps Embed */}
               <li className="mt-4">
@@ -55,42 +72,24 @@ export function Footer() {
                   ></iframe>
                 </div>
               </li>
-              <li className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 shrink-0" />
-                <a href="tel:+917647367436" className="hover:text-accent-foreground/80 transition-colors">+91 7647367436</a>
-                <span className="text-primary-foreground/60">/</span>
-                 <a href="tel:+919845925252" className="hover:text-accent-foreground/80 transition-colors">+91 9845925252</a>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 shrink-0" />
-                <a href="mailto:hello@eventsunlimited.in" className="hover:text-accent-foreground/80 transition-colors">hello@eventsunlimited.in</a>
-              </li>
-               <li className="flex items-center space-x-2">
-                 <Globe className="h-4 w-4 shrink-0" />
-                <a href="https://geventsunlimited.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-foreground/80 transition-colors">geventsunlimited.com</a>
-              </li>
             </ul>
           </div>
 
            {/* Follow Us Section */}
-           <div className="lg:col-span-1">
+           <div>
             <h4 className="text-lg font-semibold mb-3 text-accent-foreground/90">Follow Us</h4>
              <div className="flex space-x-4">
-                 <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                 <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="LinkedIn">
                      <Linkedin className="h-6 w-6" />
-                     <span className="sr-only">LinkedIn</span>
                  </a>
-                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Facebook">
                      <Facebook className="h-6 w-6" />
-                     <span className="sr-only">Facebook</span>
                  </a>
-                 <a href="https://www.instagram.com/events_unlimited_365?igsh=MWYybzdnODYyc3dpMA==" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                 <a href="https://www.instagram.com/events_unlimited_365?igsh=MWYybzdnODYyc3dpMA==" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Instagram">
                      <Instagram className="h-6 w-6" />
-                     <span className="sr-only">Instagram</span>
                  </a>
-                 <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors">
+                 <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Twitter">
                      <Twitter className="h-6 w-6" />
-                     <span className="sr-only">Twitter</span>
                  </a>
              </div>
            </div>
@@ -98,8 +97,8 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        {/* Reduced padding top */}
-        <div className="border-t border-primary-foreground/20 pt-4 text-center text-sm text-primary-foreground/70">
+        {/* Adjusted padding top */}
+        <div className="border-t border-primary-foreground/20 pt-6 text-center text-sm text-primary-foreground/70">
           © {currentYear} Events Unlimited. All rights reserved.
         </div>
       </div>
