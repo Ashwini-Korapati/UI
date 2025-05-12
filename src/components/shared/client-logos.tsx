@@ -28,21 +28,21 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height =
   </div>
 );
 
-// Updated logos to use paths relative to the /public directory, removing /assets
+// Updated logos to use paths relative to the /public directory, removing /clients
 const logos = [
-  { src: '/clients/1.jpeg', alt: 'Client Logo 1' },
-  { src: '/clients/2.jpeg', alt: 'Client Logo 2' },
-  { src: '/clients/3.jpeg', alt: 'Client Logo 3' },
-  { src: '/clients/4.jpeg', alt: 'Client Logo 4' },
-  { src: '/clients/5.jpeg', alt: 'Client Logo 5' },
-  { src: '/clients/6.jpeg', alt: 'Client Logo 6' },
-  { src: '/clients/7.jpeg', alt: 'Client Logo 7' },
-  { src: '/clients/8.jpeg', alt: 'Client Logo 8' },
-  { src: '/clients/9.jpeg', alt: 'Client Logo 9' },
-  { src: '/clients/10.jpeg', alt: 'Client Logo 10' },
-  { src: '/clients/11.jpeg', alt: 'Client Logo 11' },
-  { src: '/clients/12.jpeg', alt: 'Client Logo 12' },
-  { src: '/clients/13.jpeg', alt: 'Client Logo 13' },
+  { src: '/1.jpeg', alt: 'Client Logo 1' },
+  { src: '/2.jpeg', alt: 'Client Logo 2' },
+  { src: '/3.jpeg', alt: 'Client Logo 3' },
+  { src: '/4.jpeg', alt: 'Client Logo 4' },
+  { src: '/5.jpeg', alt: 'Client Logo 5' },
+  { src: '/6.jpeg', alt: 'Client Logo 6' },
+  { src: '/7.jpeg', alt: 'Client Logo 7' },
+  { src: '/8.jpeg', alt: 'Client Logo 8' },
+  { src: '/9.jpeg', alt: 'Client Logo 9' },
+  { src: '/10.jpeg', alt: 'Client Logo 10' },
+  { src: '/11.jpeg', alt: 'Client Logo 11' },
+  { src: '/12.jpeg', alt: 'Client Logo 12' },
+  { src: '/13.jpeg', alt: 'Client Logo 13' },
 ];
 
 export function ClientLogos() {
@@ -62,3 +62,4 @@ export function ClientLogos() {
     </div>
   );
 }
+
