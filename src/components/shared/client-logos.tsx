@@ -23,16 +23,16 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height =
   </div>
 );
 
-// Placeholder logos - replace with actual client logos
+// Placeholder logos - replace with actual client logos - Updated random seeds
 const logos = [
-  { src: 'https://picsum.photos/120/60?random=1', alt: 'Client Logo 1' },
-  { src: 'https://picsum.photos/120/60?random=2', alt: 'Client Logo 2' },
-  { src: 'https://picsum.photos/120/60?random=3', alt: 'Client Logo 3' },
-  { src: 'https://picsum.photos/120/60?random=4', alt: 'Client Logo 4' },
-  { src: 'https://picsum.photos/120/60?random=5', alt: 'Client Logo 5' },
-  { src: 'https://picsum.photos/120/60?random=6', alt: 'Client Logo 6' },
-  { src: 'https://picsum.photos/120/60?random=7', alt: 'Client Logo 7' },
-  { src: 'https://picsum.photos/120/60?random=8', alt: 'Client Logo 8' },
+  { src: 'https://picsum.photos/120/60?random=9', alt: 'Client Logo 1' },
+  { src: 'https://picsum.photos/120/60?random=10', alt: 'Client Logo 2' },
+  { src: 'https://picsum.photos/120/60?random=11', alt: 'Client Logo 3' },
+  { src: 'https://picsum.photos/120/60?random=12', alt: 'Client Logo 4' },
+  { src: 'https://picsum.photos/120/60?random=13', alt: 'Client Logo 5' },
+  { src: 'https://picsum.photos/120/60?random=14', alt: 'Client Logo 6' },
+  { src: 'https://picsum.photos/120/60?random=15', alt: 'Client Logo 7' },
+  { src: 'https://picsum.photos/120/60?random=16', alt: 'Client Logo 8' },
 ];
 
 export function ClientLogos() {
