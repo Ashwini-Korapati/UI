@@ -15,11 +15,11 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 120, height =
     <Image
       src={src}
       alt={alt}
-      layout="fill"
-      objectFit="contain"
-      className="grayscale hover:grayscale-0 transition-all duration-300"
+      width={width}
+      height={height}
+      className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Added object-contain for aspect ratio
       data-ai-hint="company logo"
-      unoptimized // Added because local images might not be optimized by default build process
+      // Removed unoptimized and layout="fill"
     />
   </div>
 );
@@ -60,3 +60,4 @@ export function ClientLogos() {
     </div>
   );
 }
+
