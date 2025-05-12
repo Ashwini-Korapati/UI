@@ -18,7 +18,8 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 100, height =
       alt={alt}
       width={width} // Pass width prop
       height={height} // Pass height prop
-      className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" // Ensure object-contain is used
+      // Removed grayscale, added hover scale and transition
+      className="transition-transform duration-300 ease-in-out hover:scale-110 object-contain"
       data-ai-hint="company logo"
       unoptimized // Add unoptimized prop to bypass Next.js optimization
     />
@@ -45,18 +46,19 @@ const logos = [
 ];
 
 export function ClientLogos() {
-  // Duplicate logos for seamless looping effect - kept in case needed later
+  // Duplicate logos for seamless looping effect
   const extendedLogos = [...logos, ...logos];
 
   return (
     <div className="container mx-auto">
-      <h3 className="text-center text-lg md:text-xl font-semibold text-muted-foreground mb-6">Trusted By</h3>
-      {/* Removed marquee container and content wrapper */}
-      <div className="flex flex-wrap items-center justify-center gap-4"> {/* Use flex-wrap for responsiveness */}
-        {logos.map((logo, index) => ( // Iterate over original logos
-          // Ensure width and height are explicitly passed here, using defaults from ClientLogo
-           <ClientLogo key={`${logo.alt}-${index}`} src={logo.src} alt={logo.alt} width={100} height={100} />
-        ))}
+      <h3 className="text-center text-lg md:text-xl font-semibold text-muted-foreground mb-10">Trusted By</h3>
+      {/* Re-introduce marquee structure */}
+      <div className="marquee">
+        <div className="marquee-content">
+          {extendedLogos.map((logo, index) => ( // Iterate over duplicated logos for marquee
+            <ClientLogo key={`${logo.alt}-${index}`} src={logo.src} alt={logo.alt} width={100} height={100} />
+          ))}
+        </div>
       </div>
     </div>
   );
