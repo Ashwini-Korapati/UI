@@ -51,7 +51,7 @@ const corporateEventComponents: { title: string; href: string; description: stri
 export function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-
+ 
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
@@ -69,15 +69,15 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex items-center justify-between h-20 md:h-24"> {/* Adjusted height for better logo fit */}
-        {/* Logo Only */}
+    <header className="sticky top-0 z-50  w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex items-center justify-between h-16 md:h-20"> {/* Adjusted height for better logo fit */}
+ {/* Logo Only */}
         <Link href="/" className="flex items-center ml-0 md:ml-4" onClick={scheduleCloseMobileMenu}> {/* Added md:ml-4 for desktop, ml-0 for mobile, schedule close */}
           <Image
             src="/logoimg.jpeg"
             alt="Events Unlimited Logo"
-            width={100} // Increased width
-            height={100} // Increased height
+            width={170} // Increased width
+            height={170} // Increased height
             className="rounded-sm object-contain" // object-contain to maintain aspect ratio
             data-ai-hint="company logo"
             unoptimized
@@ -121,8 +121,7 @@ export function Navbar() {
                      <NavigationMenuLink
                         onClick={isMobileMenuOpen ? scheduleCloseMobileMenu : undefined} // schedule close only if mobile menu might be open
                        className={cn(
-                         navigationMenuTriggerStyle(),
-                         pathname === link.href || (link.href.startsWith('/#') && pathname === '/') ? "bg-accent/50 text-accent-foreground" : "",
+ navigationMenuTriggerStyle(),
                          link.href === '/' && pathname === '/' ? "bg-accent/50 text-accent-foreground" : ""
                        )}
                      >
@@ -153,8 +152,8 @@ export function Navbar() {
                    <Image
                        src="/logoimg.jpeg"
                        alt="Events Unlimited Logo Mobile"
-                       width={60}
-                       height={60}
+                       width={180}
+                       height={180}
                        className="rounded-sm object-contain"
                        data-ai-hint="company logo"
                        unoptimized
@@ -173,7 +172,7 @@ export function Navbar() {
                    href={link.href}
                    className={cn(
                      "text-lg font-medium transition-colors hover:text-primary",
-                     pathname === link.href || (link.href.startsWith('/#') && pathname === '/') ? "text-primary" : "text-foreground/70"
+                     pathname === link.href || (link.href.startsWith('/#') && pathname === '/') ? "text-primary" : "text-foreground/70" // Keep this logic for mobile for now, as it seems intentional.
                    )}
                    onClick={scheduleCloseMobileMenu} // Use scheduled close
                  >

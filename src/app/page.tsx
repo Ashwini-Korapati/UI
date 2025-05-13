@@ -75,7 +75,6 @@ export default function Home() {
            <video
             autoPlay
             loop
-            muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover" // Video covers fully
            >
@@ -143,7 +142,6 @@ export default function Home() {
                  <video
                     autoPlay
                     loop
-                    muted
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover" // Ensure video covers the div
                   >
