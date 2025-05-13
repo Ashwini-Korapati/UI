@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { CheckCircle, HelpCircle, CalendarDays, GanttChartSquare, Handshake, Palette, ScreenShare, Users, Gift, Printer, Puzzle, Building, Rocket, UsersRound, Target } from 'lucide-react';
+import { CheckCircle, HelpCircle, CalendarDays, GanttChartSquare, Handshake, Palette, ScreenShare, Users, Gift, Printer, Puzzle, Building, Rocket, UsersRound, Target, TrendingUp, CalendarCheck, UserCheck } from 'lucide-react';
 import { ClientLogos } from '@/components/shared/client-logos';
 import {
   Accordion,
@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { StatsSection } from '@/components/shared/stats-section';
 
 
 const whatWeOfferItems = [
@@ -121,6 +122,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Stats Section - Full Width */}
+      <StatsSection />
+
 
       {/* Who We Are Section - Full Width */}
       <section id="who-we-are" className="py-16 md:py-24 bg-secondary min-h-screen flex items-center px-4">
