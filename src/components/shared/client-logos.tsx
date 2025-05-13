@@ -40,25 +40,22 @@ const logos = [
 ];
 
 export function ClientLogos() {
-  // Duplicate logos for seamless looping effect
-  const extendedLogos = [...logos, ...logos];
   return (
     <div className="w-full max-w-screen-xl mx-auto">
       <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-16 animate-fadeInUp">
         Trusted By
       </h3>
-      <div className="marquee">
-        <div className="marquee-content">
-          {extendedLogos.map((logo, index) => (
-            <ClientLogo
-              key={`${logo.alt}-${index}`}
-              src={logo.src}
-              alt={logo.alt}
-              width={['/1.jpeg', '/4.jpeg', '/5.jpeg', '/11.jpeg', '/12.jpeg'].includes(logo.src) ? 200 : 150}
-              height={['/1.jpeg', '/4.jpeg', '/5.jpeg', '/11.jpeg', '/12.jpeg'].includes(logo.src) ? 200 : 150}
-            />
-          ))}
-        </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center">
+        {logos.map((logo, index) => (
+          <ClientLogo
+            key={`${logo.alt}-${index}`}
+            src={logo.src}
+            alt={logo.alt}
+            // Dynamically adjust size for specific logos or maintain a consistent size
+            width={['/1.jpeg', '/4.jpeg', '/5.jpeg', '/11.jpeg', '/12.jpeg'].includes(logo.src) ? 200 : 150}
+            height={['/1.jpeg', '/4.jpeg', '/5.jpeg', '/11.jpeg', '/12.jpeg'].includes(logo.src) ? 200 : 150}
+          />
+        ))}
       </div>
     </div>
   );

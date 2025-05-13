@@ -304,28 +304,3 @@
 .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
 .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
 /* Add more if needed */
-
-/* Marquee Animation for Client Logos */
-.marquee {
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.marquee-content {
-  display: inline-block;
-  animation: marquee 30s linear infinite; /* Adjust duration as needed */
-}
-
-.marquee-content > * {
-  display: inline-block; /* Ensures logos are side-by-side */
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%); /* Moves the duplicated content */
-  }
-}
