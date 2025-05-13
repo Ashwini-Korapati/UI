@@ -18,8 +18,8 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 150, height =
       alt={alt}
       width={width} // Pass width prop
       height={height} // Pass height prop
-      // Removed grayscale, added hover scale and transition
-      className="transition-transform duration-300 ease-in-out hover:scale-110 object-contain"
+      // Use object-fit: cover to fill container and clip, simulating crop
+      className="transition-transform duration-300 ease-in-out hover:scale-110 object-cover"
       data-ai-hint="company logo"
       unoptimized // Add unoptimized prop to bypass Next.js optimization
     />
@@ -38,7 +38,7 @@ const logos = [
   { src: '/5.jpeg', alt: 'RSA Logo' },
   { src: '/6.jpeg', alt: 'Razorpay Logo' },
   { src: '/7.jpeg', alt: 'LSEG Logo' },
- { src: '/8.jpeg', alt: 'LSEG Logo' }, // Removed duplicate LSEG logo
+ // { src: '/8.jpeg', alt: 'LSEG Logo' }, // Removed duplicate LSEG logo
   { src: '/9.jpeg', alt: 'Client Logo 9' },
   { src: '/10.jpeg', alt: 'Client Logo 10' },
   { src: '/11.jpeg', alt: 'Client Logo 11' },
@@ -90,6 +90,7 @@ export function ClientLogos() {
  key={`${logo.alt}-${index}`}
  src={logo.src}
  alt={logo.alt}
+ // Define specific sizes for certain logos if needed, otherwise use default
  width={['/1.jpeg', '/4.jpeg', '/5.jpeg', '/11.jpeg', '/12.jpeg'].includes(logo.src) ? 200 : 150}
  height={['/1.jpeg', '/4.jpeg', '/5.jpeg', '/11.jpeg', '/12.jpeg'].includes(logo.src) ? 200 : 150}
             />
