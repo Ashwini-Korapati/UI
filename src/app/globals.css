@@ -8,99 +8,99 @@
   }
 
   :root {
-    /* Lavender Light Theme */
-    --background: 240 60% 97%; /* #f0f0fa - Very Light Lavender */
-    --foreground: 240 10% 20%; /* #2d2d36 - Dark Greyish Lavender */
+    /* Violet Light Theme */
+    --background: 270 75% 96%; /* #f5f0fc - Pure Light Violet */
+    --foreground: 270 20% 25%; /* #3a3340 - Dark Muted Violet */
 
-    --card: 240 60% 100%; /* #ffffff - White */
-    --card-foreground: 240 10% 20%; /* #2d2d36 */
+    --card: 270 75% 100%; /* #ffffff - White (can be slightly violet-tinted if needed by border) */
+    --card-foreground: 270 20% 25%; /* #3a3340 */
 
-    --popover: 240 60% 100%; /* #ffffff */
-    --popover-foreground: 240 10% 20%; /* #2d2d36 */
+    --popover: 270 75% 100%; /* #ffffff */
+    --popover-foreground: 270 20% 25%; /* #3a3340 */
 
-    --primary: 250 65% 55%; /* #8a63d2 - Medium Lavender */
-    --primary-foreground: 240 60% 98%; /* #f0f4f8 - Light Grey Lavender for contrast */
+    --primary: 260 80% 60%; /* #7a4dff - Vibrant Violet */
+    --primary-foreground: 260 80% 98%; /* #f6f3ff - Very Light Violet */
 
-    --secondary: 240 30% 92%; /* #e0e0ee - Light Lavender Grey */
-    --secondary-foreground: 250 30% 30%; /* #423b4f - Darker Muted Lavender */
+    --secondary: 270 50% 92%; /* #eae5f5 - Softer Light Violet */
+    --secondary-foreground: 270 15% 35%; /* #4d4759 - Darker Muted Violet */
 
-    --muted: 240 30% 92%; /* #e0e0ee */
-    --muted-foreground: 240 15% 50%; /* #72728c - Greyish Lavender */
+    --muted: 270 50% 92%; /* #eae5f5 */
+    --muted-foreground: 270 20% 55%; /* #7e738c - Greyish Violet */
 
-    --accent: 270 70% 65%; /* #b380f2 - Brighter Lavender/Violet */
+    --accent: 280 85% 65%; /* #aa4dff - Brighter Magenta-Violet */
     --accent-foreground: 0 0% 100%; /* White */
 
-    --destructive: 0 70% 60%; /* A contrasting red, adjust if needed */
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 60%; /* #e54d4d - A contrasting red */
+    --destructive-foreground: 0 0% 98%; /* #fdf2f2 */
 
-    --border: 240 20% 85%; /* #cdd5e0 - Light Lavender Grey Border */
-    --input: 240 20% 92%; /* #e1e7ed - Lighter Lavender Grey Input */
-    --ring: 250 65% 55%; /* #8a63d2 - Medium Lavender Ring */
+    --border: 270 40% 85%; /* #d3cce6 - Violet-tinted Grey Border */
+    --input: 270 60% 94%; /* #f0eaf9 - Light Violet Input Background */
+    --ring: 260 80% 60%; /* #7a4dff - Primary Violet Ring */
 
-    --chart-1: 250 65% 55%; /* Medium Lavender */
-    --chart-2: 270 70% 65%; /* Brighter Lavender/Violet */
-    --chart-3: 250 50% 70%; /* Lighter Medium Lavender */
-    --chart-4: 270 50% 75%; /* Lighter Brighter Lavender */
-    --chart-5: 240 40% 80%; /* Soft Lavender */
+    --chart-1: 260 80% 60%; /* Vibrant Violet - Primary */
+    --chart-2: 280 85% 65%; /* Brighter Magenta-Violet - Accent */
+    --chart-3: 290 70% 65%; /* #c355e0 - Another violet/magenta shade */
+    --chart-4: 250 60% 70%; /* #9980e6 - A bluer violet */
+    --chart-5: 270 50% 75%; /* #b2a0cc - A softer, central violet */
 
     --radius: 0.5rem;
 
     /* Sidebar specific */
-    --sidebar-background: 240 40% 96%; /* Very Light Lavender Grey */
-    --sidebar-foreground: 240 10% 25%;
-    --sidebar-primary: 250 65% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 20% 90%;
-    --sidebar-accent-foreground: 250 20% 15%;
-    --sidebar-border: 240 15% 80%;
-    --sidebar-ring: 270 70% 65%;
+    --sidebar-background: 270 60% 97%; /* #f7f5fa - Very light violet, slightly off main bg */
+    --sidebar-foreground: 270 20% 30%; /* #403a47 */
+    --sidebar-primary: 260 80% 60%; /* hsl(var(--primary)) */
+    --sidebar-primary-foreground: 260 80% 98%; /* hsl(var(--primary-foreground)) */
+    --sidebar-accent: 270 40% 92%; /* #e8e0f5 - Lighter version of secondary */
+    --sidebar-accent-foreground: 270 15% 35%; /* #4d4759 */
+    --sidebar-border: 270 30% 88%; /* #dad2e8 */
+    --sidebar-ring: 280 85% 65%; /* hsl(var(--accent)) */
   }
 
   .dark {
-    /* Lavender Dark Theme */
-    --background: 240 10% 10%; /* #14141a - Very Dark Lavender */
-    --foreground: 240 20% 90%; /* #dbdbe6 - Light Greyish Lavender */
+    /* Violet Dark Theme */
+    --background: 270 30% 12%; /* #1c1821 - Deep Dark Violet */
+    --foreground: 270 50% 90%; /* #e0d9f2 - Light Soft Violet */
 
-    --card: 240 10% 15%; /* #1f1f29 - Darker Lavender */
-    --card-foreground: 240 20% 90%;
+    --card: 270 25% 18%; /* #26212e - Dark Violet for cards */
+    --card-foreground: 270 50% 90%; /* #e0d9f2 */
 
-    --popover: 240 10% 12%; /* #1a1a21 - Even Darker Lavender */
-    --popover-foreground: 240 20% 90%;
+    --popover: 270 25% 15%; /* #211c26 - Slightly darker Violet for popovers */
+    --popover-foreground: 270 50% 90%; /* #e0d9f2 */
 
-    --primary: 250 70% 70%; /* #b399e6 - Lighter Lavender */
-    --primary-foreground: 240 10% 10%; /* #14141a */
+    --primary: 260 80% 70%; /* #a37dff - Lighter, vibrant Violet */
+    --primary-foreground: 270 20% 10%; /* #17141a - Very Dark Violet for text on primary */
 
-    --secondary: 240 10% 20%; /* #292933 - Dark Grey Lavender */
-    --secondary-foreground: 240 15% 80%; /* #c3c3d9 - Light Grey Lavender */
+    --secondary: 270 20% 22%; /* #2e2938 - Darker Greyish Violet */
+    --secondary-foreground: 270 40% 80%; /* #bfb3d9 - Muted Light Violet */
 
-    --muted: 240 10% 20%;
-    --muted-foreground: 240 10% 65%; /* #9898b2 - Muted Light Grey Lavender */
+    --muted: 270 20% 22%; /* #2e2938 */
+    --muted-foreground: 270 30% 70%; /* #a699b8 - Greyish Light Violet */
 
-    --accent: 270 75% 75%; /* #c8a0f5 - Brighter Lilac */
-    --accent-foreground: 270 100% 5%; /* Very Dark Violet */
+    --accent: 280 85% 75%; /* #d180ff - Lighter, brighter Violet/Magenta */
+    --accent-foreground: 280 100% 10%; /* #220033 - Very Dark Violet/Magenta for accent text */
 
-    --destructive: 0 60% 50%; /* Darker Red */
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 60% 50%; /* #cc3333 - Darker Red */
+    --destructive-foreground: 0 0% 98%; /* #fdf2f2 */
 
-    --border: 240 10% 25%; /* #333340 - Dark Grey Lavender Border */
-    --input: 240 10% 22%; /* #2e2e3a - Slightly Darker Input */
-    --ring: 250 70% 70%; /* Lighter Lavender Ring */
+    --border: 270 20% 30%; /* #403a47 - Dark Violet-Grey Border */
+    --input: 270 20% 25%; /* #363040 - Darker Violet-Grey Input Background */
+    --ring: 260 80% 70%; /* #a37dff - Primary Violet Ring */
 
-    --chart-1: 250 70% 70%;
-    --chart-2: 270 75% 75%;
-    --chart-3: 250 50% 80%;
-    --chart-4: 270 50% 85%;
-    --chart-5: 240 40% 60%;
+    --chart-1: 260 80% 70%; /* Lighter, vibrant Violet - Primary */
+    --chart-2: 280 85% 75%; /* Lighter, brighter Violet/Magenta - Accent */
+    --chart-3: 290 70% 70%; /* #d980e8 - Lighter magenta shade */
+    --chart-4: 250 60% 75%; /* #ad99e6 - Lighter bluer violet */
+    --chart-5: 270 50% 80%; /* #ccc0d9 - Lighter softer, central violet */
 
     /* Sidebar specific */
-    --sidebar-background: 240 10% 13%;
-    --sidebar-foreground: 240 20% 85%;
-    --sidebar-primary: 250 70% 70%;
-    --sidebar-primary-foreground: 240 10% 10%;
-    --sidebar-accent: 240 10% 25%;
-    --sidebar-accent-foreground: 240 20% 95%;
-    --sidebar-border: 240 10% 30%;
-    --sidebar-ring: 270 75% 75%;
+    --sidebar-background: 270 28% 15%; /* #221e29 - Slightly lighter than main dark bg */
+    --sidebar-foreground: 270 45% 85%; /* #d1c9e3 */
+    --sidebar-primary: 260 80% 70%; /* hsl(var(--primary)) */
+    --sidebar-primary-foreground: 270 20% 10%; /* hsl(var(--primary-foreground)) */
+    --sidebar-accent: 270 20% 25%; /* #363040 - Darker secondary */
+    --sidebar-accent-foreground: 270 40% 88%; /* #d9d1e8 */
+    --sidebar-border: 270 18% 35%; /* #4e4659 */
+    --sidebar-ring: 280 85% 75%; /* hsl(var(--accent)) */
   }
 }
 
@@ -333,6 +333,7 @@
 
 /* Custom Sparkle Button CSS */
 .custom-sparkle-button {
+  /* --button-base-bg-color: hsla(0 0% 12% / 1); Using foreground */
   --button-base-bg-color: hsl(var(--foreground)); /* Mapped to theme foreground */
   --button-border-radius: 9999px;
   --button-transition: 0.3s ease-in-out;
