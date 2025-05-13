@@ -82,7 +82,7 @@ export default function Home() {
             Your browser does not support the video tag.
            </video>
            {/* Gradient Overlay: primary color covering approx 50% from left, fading out. Opacity controls blend with video. */}
-           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent opacity-80 md:opacity-70"></div>
+           <div className="absolute inset-0 bg-gradient-to-r from-primary/50 via-primary/30 to-transparent opacity-60 md:opacity-50"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto p-4"> {/* Text container, text will be on gradient */}
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary-foreground drop-shadow-lg animate-fadeInUp [animation-delay:0.1s]">
@@ -307,3 +307,4 @@ export default function Home() {
     </>
   );
 }
+
