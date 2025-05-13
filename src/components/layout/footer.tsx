@@ -34,7 +34,7 @@ export function Footer() {
             <div className="mt-4">
                  <h4 className="text-md font-semibold mb-2 text-accent-foreground/90">Follow Us</h4>
                  <div className="flex space-x-3">
-                     <a href="https://www.linkedin.com/in/eventsunlimited365" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="LinkedIn">
+                     <a href="https://www.linkedin.com/in/eventsunlimited365/" aria-label="LinkedIn">
                          <Linkedin className="h-5 w-5" />
                      </a>
                      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Facebook">
