@@ -18,7 +18,7 @@ const StatCard: React.FC<StatCardProps> = ({ largeText, smallText, backgroundIma
       style={{ backgroundImage: `url(${backgroundImageUrl})` }}
       data-ai-hint={aiHint}
     >
-      <div className="absolute inset-0 bg-black/60 z-0 group-hover:bg-black/75 transition-colors duration-300 ease-in-out"></div> {/* Overlay for text readability on card, darkens on hover */}
+      <div className="absolute inset-0 bg-black/60 z-0 group-hover:bg-black/75 transition-colors duration-300 ease-in-out"></div> {/* Overlay for text readability, darkens on hover */}
       <CardHeader className="relative z-10">
         {/* Ensure text color contrasts with the overlay/image */}
         <CardTitle className="text-4xl md:text-5xl font-bold text-primary-foreground">{largeText}</CardTitle>
