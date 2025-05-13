@@ -13,12 +13,12 @@ interface StatCardProps {
 
 const StatCard: React.FC<StatCardProps> = ({ largeText, smallText, backgroundImageUrl, aiHint }) => {
   return (
-    <Card 
-      className="text-center border-border/50 shadow-xl h-full flex flex-col justify-center relative bg-cover bg-center rounded-lg overflow-hidden"
+    <Card
+      className="text-center border-border/50 shadow-xl h-full flex flex-col justify-center relative bg-cover bg-center rounded-lg overflow-hidden group transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
       style={{ backgroundImage: `url(${backgroundImageUrl})` }}
       data-ai-hint={aiHint}
     >
-      <div className="absolute inset-0 bg-black/60 z-0"></div> {/* Overlay for text readability on card */}
+      <div className="absolute inset-0 bg-black/60 z-0 group-hover:bg-black/75 transition-colors duration-300 ease-in-out"></div> {/* Overlay for text readability on card, darkens on hover */}
       <CardHeader className="relative z-10">
         {/* Ensure text color contrasts with the overlay/image */}
         <CardTitle className="text-4xl md:text-5xl font-bold text-primary-foreground">{largeText}</CardTitle>
@@ -57,11 +57,8 @@ export function StatsSection() {
     <section
       id="stats"
       className="relative py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4"
-      // Removed background image from section
     >
-      {/* Removed overlay from section */}
       <div className="relative z-10 w-full max-w-7xl mx-auto text-center">
-        {/* Changed text color for heading as section background is now lighter */}
         <h2 className="text-3xl md:text-4xl font-bold mb-16 text-primary animate-fadeInUp">
           Our Achievements
         </h2>
