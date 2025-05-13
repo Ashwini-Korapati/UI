@@ -25,7 +25,7 @@ export default function Home() {
             Your browser does not support the video tag.
            </video>
            {/* Gradient Overlay: Reduced opacity further to make video more visible */}
-           <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-30"></div>
+           <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-10"></div> {/* Reduced opacity from 30 to 10 */}
         </div>
         <div className="relative z-10 container mx-auto px-4 text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary-foreground drop-shadow-md animate-fadeInUp [animation-delay:0.1s]">
