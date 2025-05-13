@@ -97,11 +97,11 @@ export default function Home() {
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
            <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg order-last md:order-first animate-fadeInUp [animation-delay:0.2s]">
                  <Image
-                  src="https://picsum.photos/600/400?random=vision"
+                  src="https://picsum.photos/600/400?random=strategy"
                   alt="Vision and Mission concept"
                   layout="fill"
                   objectFit="cover"
-                  data-ai-hint="target goal"
+                  data-ai-hint="business vision"
                 />
             </div>
            <div className="animate-fadeInUp">
