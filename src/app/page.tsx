@@ -252,7 +252,7 @@ export default function Home() {
 
 
        {/* Customer Satisfaction Section - Full Width */}
-       <section id="customer-satisfaction" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
+       <section id="customer-satisfaction" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center px-4">
         <div className="w-full text-center max-w-3xl mx-auto"> {/* Added max-width for content */}
            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary animate-fadeInUp">Customer Satisfaction</h2>
            <div className="space-y-6 animate-fadeInUp [animation-delay:0.1s]">
@@ -267,7 +267,7 @@ export default function Home() {
       </section>
 
        {/* Join Us & CTA Section - Full Width */}
-      <section id="join-us" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center px-4"> {/* Changed to secondary for alternation */}
+      <section id="join-us" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4"> {/* Changed to secondary for alternation */}
         <div className="w-full text-center max-w-3xl mx-auto"> {/* Added max-width for content */}
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary animate-fadeInUp">Join Us on Our Journey</h2>
           <p className="text-lg text-foreground/80 mb-8 animate-fadeInUp [animation-delay:0.1s]">
@@ -282,8 +282,8 @@ export default function Home() {
       </section>
 
       {/* FAQ Section - Full Width */}
-      <section id="faq" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
-        <div className="w-full max-w-3xl mx-auto"> {/* Added max-width for content */}
+      <section id="faq" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center px-4">
+        <div className="w-full max-w-5xl mx-auto"> {/* Increased max-width for FAQ card */}
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary animate-fadeInUp">
             Frequently Asked Questions
           </h2>
@@ -307,3 +307,4 @@ export default function Home() {
     </>
   );
 }
+

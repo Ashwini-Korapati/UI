@@ -6,8 +6,8 @@ export default function ContactPage() {
   return (
     <>
       {/* Page Header - Full Width */}
-      <section className="py-12 md:py-20 bg-secondary text-center px-4">
-        <div className="max-w-2xl mx-auto"> {/* Added max-width for content */}
+      <section className="py-12 md:py-20 bg-secondary text-center px-4 min-h-screen flex flex-col items-center justify-center">
+        <div className="max-w-2xl mx-auto w-full"> {/* Added max-width for content and w-full */}
           <h1 className="text-4xl md:text-5xl font-bold text-primary">Contact Us</h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground">
             We'd love to hear from you! Reach out with questions or to start planning your next unforgettable event.
@@ -16,8 +16,8 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section - Full Width */}
-      <section className="py-16 md:py-24 bg-background px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start max-w-7xl mx-auto"> {/* Added max-width */}
+      <section className="py-16 md:py-24 bg-background px-4 min-h-screen flex flex-col items-center justify-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start max-w-7xl mx-auto w-full"> {/* Added max-width and w-full */}
 
           {/* Contact Form */}
           <div className="bg-white p-6 md:p-8 rounded-lg shadow-md border border-border">
@@ -85,3 +85,4 @@ export default function ContactPage() {
     </>
   );
 }
+

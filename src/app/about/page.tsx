@@ -6,16 +6,16 @@ export default function AboutPage() {
   return (
     <>
       {/* Page Header - Full Width */}
-      <section className="py-12 md:py-20 bg-secondary text-center px-4">
-        <div className="max-w-4xl mx-auto"> {/* Added max-width for content */}
+      <section className="py-12 md:py-20 bg-secondary text-center px-4 min-h-screen flex flex-col items-center justify-center">
+        <div className="max-w-4xl mx-auto w-full"> {/* Added max-width for content and w-full */}
           <h1 className="text-4xl md:text-5xl font-bold text-primary">About Events Unlimited</h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground">Learn more about our team, mission, and values.</p>
         </div>
       </section>
 
       {/* Who We Are Section - Full Width */}
-      <section className="py-16 md:py-24 bg-background px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto"> {/* Added max-width */}
+      <section className="py-16 md:py-24 bg-background px-4 min-h-screen flex flex-col items-center justify-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto w-full"> {/* Added max-width and w-full */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Who We Are</h2>
             <p className="text-lg text-foreground/80 mb-4">
@@ -38,8 +38,8 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission Section - Full Width */}
-      <section className="py-16 md:py-24 bg-secondary px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto"> {/* Added max-width */}
+      <section className="py-16 md:py-24 bg-secondary px-4 min-h-screen flex flex-col items-center justify-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto w-full"> {/* Added max-width and w-full */}
           <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg order-last md:order-first">
             <Image
               src="https://picsum.photos/600/400?random=mission2"
@@ -77,8 +77,8 @@ export default function AboutPage() {
       </section>
 
         {/* Why Choose Us Section - Full Width */}
-      <section className="py-16 md:py-24 bg-background px-4">
-        <div className="max-w-5xl mx-auto"> {/* Kept max-width for centered content */}
+      <section className="py-16 md:py-24 bg-background px-4 min-h-screen flex flex-col items-center justify-center">
+        <div className="max-w-5xl mx-auto w-full"> {/* Kept max-width for centered content and w-full */}
            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Why Partner With Us?</h2>
            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -103,3 +103,4 @@ export default function AboutPage() {
     </>
   );
 }
+

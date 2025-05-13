@@ -84,7 +84,7 @@ export default function CorporateEventsPage() {
   return (
     <>
       {/* Page Header - Full Width */}
-      <section className="py-12 md:py-20 bg-secondary text-center px-4">
+      <section className="py-12 md:py-20 bg-secondary text-center px-4 min-h-screen flex flex-col items-center justify-center">
         <div className="max-w-3xl mx-auto"> {/* Added max-width */}
           <h1 className="text-4xl md:text-5xl font-bold text-primary">Corporate Event Services</h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground">
@@ -94,8 +94,8 @@ export default function CorporateEventsPage() {
       </section>
 
       {/* Services Section - Full Width */}
-      <section className="py-16 md:py-24 bg-background px-4">
-        <div className="max-w-5xl mx-auto"> {/* Kept max-width for centered content */}
+      <section className="py-16 md:py-24 bg-background px-4 min-h-screen flex flex-col items-center justify-center">
+        <div className="max-w-5xl mx-auto w-full"> {/* Kept max-width for centered content, added w-full */}
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Our Offerings</h2>
            <Accordion type="single" collapsible className="w-full">
              {corporateServices.map((service) => (
@@ -158,7 +158,7 @@ export default function CorporateEventsPage() {
 
       {/* FAQ Section - Full Width */}
       <section id="corporate-faq" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center px-4">
-        <div className="w-full max-w-3xl mx-auto"> {/* Kept max-width for centered content */}
+        <div className="w-full max-w-5xl mx-auto"> {/* Increased max-width for FAQ card */}
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary animate-fadeInUp">
             Frequently Asked Questions
           </h2>
@@ -180,3 +180,4 @@ export default function CorporateEventsPage() {
     </>
   );
 }
+
