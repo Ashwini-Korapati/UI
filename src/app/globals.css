@@ -399,7 +399,7 @@
     background-clip: text;
     color: transparent;
     z-index: 1; /* Ensure text is above ray */
-    margin-top: 0.5rem; /* Added margin top if image is above */
+    /* margin-top: 0.5rem; Removed margin-top that might have been added for an image */
   }
   
   .small-text-stat-card {
