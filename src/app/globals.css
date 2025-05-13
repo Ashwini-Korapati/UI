@@ -113,6 +113,20 @@
   }
 }
 
+/* Utilities for 3D flip animation */
+@layer utilities {
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
+  }
+  /* perspective can be applied using arbitrary values e.g., perspective-[1000px] */
+  /* rotate-y-180 is a built-in Tailwind utility */
+}
+
+
 /* Keyframes for floating animation */
 @keyframes float {
   0% {

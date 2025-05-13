@@ -95,17 +95,30 @@ export default function Home() {
        {/* Vision & Mission Section */}
       <section id="vision-mission" className="py-16 md:py-24 bg-background min-h-screen flex items-center">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-           <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg order-last md:order-first animate-fadeInUp [animation-delay:0.2s]">
-                 <Image
-                  src="https://picsum.photos/600/400?random=strategy"
-                  alt="Vision and Mission concept"
-                  layout="fill"
-                  objectFit="cover"
-                  data-ai-hint="business vision"
-                />
+          {/* Flippable Card */}
+          <div className="group perspective-[1000px] order-last md:order-first animate-fadeInUp [animation-delay:0.2s] flex items-center justify-center">
+            <div className="relative w-full max-w-md h-64 md:h-80 rounded-lg shadow-xl transition-transform duration-700 ease-in-out group-hover:rotate-y-180 preserve-3d">
+              {/* Front Side */}
+              <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-card p-6 rounded-lg backface-hidden shadow-md border border-border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-16 w-16 text-primary mb-4"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                <h3 className="text-2xl font-semibold text-primary">Our Vision</h3>
+                <p className="text-center text-sm text-muted-foreground mt-2">
+                  To be the leading partner in creating impactful and memorable event experiences.
+                </p>
+              </div>
+              {/* Back Side */}
+              <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-accent p-6 rounded-lg rotate-y-180 backface-hidden shadow-md border border-border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-16 w-16 text-accent-foreground mb-4"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                <h3 className="text-2xl font-semibold text-accent-foreground">Our Mission</h3>
+                <p className="text-center text-sm text-muted-foreground mt-2">
+                  Simplify planning, connect with the best, and ensure unforgettable events.
+                </p>
+              </div>
             </div>
+          </div>
+
            <div className="animate-fadeInUp">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Our Vision & Our Mission</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Our Vision &amp; Our Mission</h2>
               <p className="text-lg text-foreground/80 mb-6">
                 At Events Unlimited, our mission is to simplify event planning and execution by:
               </p>
