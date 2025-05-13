@@ -66,33 +66,28 @@ export default function Home() {
       </section>
 
       {/* Who We Are Section */}
-      <section id="who-we-are" className="relative py-16 md:py-24 bg-secondary min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-30" // Adjusted opacity
-          >
-            <source src="/event.mp4" type="video/mp4" /> {/* Video source */}
-            Your browser does not support the video tag.
-          </video>
-          <div className="absolute inset-0 bg-black/50"></div> {/* Dark overlay for text readability */}
-        </div>
-        <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-           <div className="animate-fadeInUp text-white md:text-left"> {/* Ensure text is white for contrast */}
+      <section id="who-we-are" className="py-16 md:py-24 bg-secondary min-h-screen flex items-center">
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+           <div className="animate-fadeInUp md:text-left">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Who We Are</h2>
-              <p className="text-lg text-primary-foreground/90 mb-4">
+              <p className="text-lg text-foreground/80 mb-4">
                 We are a dedicated team of professionals driven by a singular goal: to exceed your expectations and make your events unforgettable.
               </p>
-              <p className="text-lg text-primary-foreground/90">
+              <p className="text-lg text-foreground/80">
                  Our team of experts meticulously handpicks a selection of top-tier vendors, ensuring that you have access to a wide range of services and products that cater to your specific event needs.
               </p>
            </div>
-            {/* Optional: Keep a placeholder or graphic if needed, or remove this div entirely */}
-            <div className="hidden md:block relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg animate-fadeInUp [animation-delay:0.2s]">
-                 {/* This div can be used for another image, graphic, or left empty if text is on one side */}
+            <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg animate-fadeInUp [animation-delay:0.2s]">
+                 <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                  >
+                    <source src="/event.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
             </div>
         </div>
       </section>
