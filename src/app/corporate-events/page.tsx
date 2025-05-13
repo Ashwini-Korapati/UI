@@ -6,13 +6,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { CalendarDays, GanttChartSquare, Handshake, Palette, ScreenShare } from 'lucide-react'; // Added new icons
 
 const corporateServices = [
  {
     id: "dj",
     title: "DJ Services",
     description: "Our professional DJs curate the perfect soundtrack for your corporate event, from background ambiance to high-energy dance floors. We work with you to understand your audience and event theme, ensuring the music enhances the overall experience.",
-    imageUrl: "/dj1.jpeg", // Updated image path
+    imageUrl: "/dj1.jpeg",
     aiHint: "dj setup"
   },
   {
@@ -26,7 +27,7 @@ const corporateServices = [
     id: "gifting",
     title: "Corporate Gifting",
     description: "Make a lasting impression with thoughtfully curated corporate gifts. We offer a wide range of options, from branded merchandise to luxury items, tailored to your budget and recipient profile, perfect for attendees, speakers, or employees.",
-    imageUrls: Array.from({ length: 13 }, (_, i) => `/print${i + 1}.jpg`), 
+    imageUrls: Array.from({ length: 13 }, (_, i) => `/print${i + 1}.jpg`),
     aiHint: "gift boxes"
   },
   {
@@ -40,10 +41,44 @@ const corporateServices = [
     id: "games",
     title: "Games & Team Building",
     description: "Foster collaboration and fun with our engaging games and team-building activities. We design customized experiences, from icebreakers to complex challenges, perfect for boosting morale and strengthening team dynamics.",
-    imageUrl: "/games.JPG", // Updated image path
+    imageUrl: "/games.JPG",
     aiHint: "team building"
   },
 ];
+
+const faqItems = [
+  {
+    id: "faq-1",
+    question: "What types of corporate events do you manage?",
+    answer: "We manage a wide range of corporate events including Sports Day, Annual Day, Staff Parties, Product Launches, AGMs, Family Day events, and Tech Conferences.",
+    icon: GanttChartSquare,
+  },
+  {
+    id: "faq-2",
+    question: "How early should we book our event with you?",
+    answer: "For larger events, we recommend reaching out at least 2-3 months in advance. For smaller or mid-scale events, a lead time of 4-6 weeks usually works well. Ideally, 30 days is perfect for us to deliver the best results.",
+    icon: CalendarDays,
+  },
+  {
+    id: "faq-3",
+    question: "Can you help us choose the right venue?",
+    answer: "Yes, we do take care of the venue selection and other bookings as well to ensure it aligns with your event's requirements and budget.",
+    icon: Handshake,
+  },
+  {
+    id: "faq-4",
+    question: "Do you offer custom themes and creative concepts?",
+    answer: "Yes, we specialize in customized events. Most of the time, we tailor themes and creative concepts to match your brand and event objectives.",
+    icon: Palette,
+  },
+  {
+    id: "faq-5",
+    question: "What services do you provide as part of event management?",
+    answer: "We provide end-to-end event management services, covering everything from initial planning and vendor coordination to on-site execution and post-event analysis.",
+    icon: ScreenShare,
+  },
+];
+
 
 export default function CorporateEventsPage() {
   return (
@@ -120,6 +155,29 @@ export default function CorporateEventsPage() {
           </Accordion>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section id="corporate-faq" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary animate-fadeInUp">
+            Frequently Asked Questions
+          </h2>
+          <Accordion type="single" collapsible className="w-full bg-background p-6 rounded-lg shadow-md border border-border">
+            {faqItems.map((item) => (
+              <AccordionItem value={item.id} key={item.id} className="border-b border-border last:border-b-0">
+                <AccordionTrigger className="text-lg md:text-xl hover:no-underline text-primary hover:text-accent py-4 text-left">
+                  <item.icon className="h-5 w-5 mr-3 text-accent shrink-0" />
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-2 pb-4 text-base text-foreground/80">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
     </>
   );
 }
+
