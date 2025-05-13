@@ -250,42 +250,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Corporate Event Types Section */}
-      <section id="corporate-event-types" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-primary animate-fadeInUp">
-            Types of Corporate Events We Manage
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: "Sports Day", description: "Energizing sports events to boost team spirit and wellness.", image: "https://picsum.photos/400/300?random=sports", aiHint: "team sports" },
-              { title: "Annual Day", description: "Grand celebrations marking yearly milestones and achievements.", image: "https://picsum.photos/400/300?random=annualday", aiHint: "corporate celebration" },
-              { title: "Staff Parties", description: "Fun-filled parties for staff appreciation and bonding.", image: "https://picsum.photos/400/300?random=staffparty", aiHint: "office party" },
-              { title: "Product Launches", description: "Impactful launches to introduce new products to the market.", image: "https://picsum.photos/400/300?random=productlaunch", aiHint: "product showcase" },
-              { title: "AGMs (Annual General Meetings)", description: "Professionally organized AGMs for stakeholders.", image: "https://picsum.photos/400/300?random=agm", aiHint: "business meeting" },
-              { title: "Family Day", description: "Enjoyable family day events for employees and their loved ones.", image: "https://picsum.photos/400/300?random=familyday", aiHint: "family fun" },
-            ].map((item, index) => (
-              <div
-                key={item.title}
-                className="bg-background p-6 rounded-lg shadow-lg transform transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-105 animate-fadeInUp"
-                style={{animationDelay: `${0.2 + index * 0.1}s`}}
-              >
-                <div className="relative h-48 w-full rounded-md overflow-hidden mb-4 shadow-sm">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint={item.aiHint}
-                  />
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">{item.title}</h3>
-                <p className="text-foreground/80 text-sm">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
        {/* Customer Satisfaction Section */}
        <section id="customer-satisfaction" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center">
@@ -343,3 +307,4 @@ export default function Home() {
     </>
   );
 }
+
