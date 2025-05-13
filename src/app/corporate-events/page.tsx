@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { CalendarDays, GanttChartSquare, Handshake, Palette, ScreenShare, Zap, Users, Gift, Printer, Puzzle } from 'lucide-react'; // Added new icons
+import { CalendarDays, GanttChartSquare, Handshake, Palette, ScreenShare, Building, Users, Gift, Printer, Puzzle } from 'lucide-react'; // Added new icons
 
 const corporateServices = [
  {
@@ -63,7 +63,7 @@ const faqItems = [
     id: "faq-venue-selection",
     question: "Can you help us choose the right venue?",
     answer: "Yes, we do take care of the venue selection and other bookings as well to ensure it aligns with your event's requirements and budget.",
-    icon: Handshake,
+    icon: Building,
   },
   {
     id: "faq-custom-themes",

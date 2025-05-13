@@ -2,26 +2,67 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { CheckCircle } from 'lucide-react';
-import { ClientLogos } from '@/components/shared/client-logos'; // Re-importing here for clarity, assuming Footer handles display
+import { CheckCircle, HelpCircle, CalendarDays, GanttChartSquare, Handshake, Palette, ScreenShare, Users, Gift, Printer, Puzzle, Building, Rocket, UsersRound, Target } from 'lucide-react';
+import { ClientLogos } from '@/components/shared/client-logos';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 
 const whatWeOfferItems = [
-  { 
-    title: "Event Vendors", 
+  {
+    title: "Event Vendors",
     description: "We have carefully curated a diverse list of event vendors, including venues, caterers, decorators, photographers, entertainers, and more. All pre-screened for reliability and quality.",
     back_description: "Access our extensive network of pre-screened, high-quality event vendors tailored to your needs."
   },
-  { 
-    title: "Best Price Guarantee", 
+  {
+    title: "Best Price Guarantee",
     description: "Our commitment is to bring you the best deals. We negotiate with vendors on your behalf to secure the most competitive prices for your events.",
     back_description: "Benefit from our negotiation expertise to get the most competitive pricing for all vendor services."
   },
-  { 
-    title: "Custom Packages", 
+  {
+    title: "Custom Packages",
     description: "We understand each event is unique. We offer customized packages that cater to your specific needs, preferences, and budget.",
     back_description: "Let us tailor an event package that perfectly aligns with your vision, requirements, and budget."
   },
 ];
+
+const faqItems = [
+  {
+    id: "faq-event-types",
+    question: "What types of corporate events do you manage?",
+    answer: "We manage a wide range of corporate events including Sports Day, Annual Day, Staff Parties, Product Launches, AGMs, Family Day events, and Tech Conferences.",
+    icon: GanttChartSquare,
+  },
+  {
+    id: "faq-booking-time",
+    question: "How early should we book our event with you?",
+    answer: "For larger events, we recommend reaching out at least 2-3 months in advance. For smaller or mid-scale events, a lead time of 4-6 weeks usually works well. Ideally, 30 days is perfect for us to deliver the best results.",
+    icon: CalendarDays,
+  },
+  {
+    id: "faq-venue-selection",
+    question: "Can you help us choose the right venue?",
+    answer: "Yes, we do take care of the venue selection and other bookings as well to ensure it aligns with your event's requirements and budget.",
+    icon: Building,
+  },
+  {
+    id: "faq-custom-themes",
+    question: "Do you offer custom themes and creative concepts?",
+    answer: "Yes, we specialize in customized events. Most of the time, we tailor themes and creative concepts to match your brand and event objectives.",
+    icon: Palette,
+  },
+  {
+    id: "faq-event-services",
+    question: "What services do you provide as part of event management?",
+    answer: "We provide end-to-end event management services, covering everything from initial planning and vendor coordination to on-site execution and post-event analysis.",
+    icon: ScreenShare,
+  },
+];
+
 
 export default function Home() {
   return (
@@ -116,7 +157,7 @@ export default function Home() {
             <div className="relative w-full max-w-md h-full rounded-lg shadow-xl transition-transform duration-700 ease-in-out group-hover:rotate-y-180 preserve-3d">
               {/* Front Side */}
               <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-card p-6 rounded-lg backface-hidden shadow-md border border-border">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-16 w-16 text-primary mb-4"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                <Rocket className="h-16 w-16 text-primary mb-4" />
                 <h3 className="text-2xl font-semibold text-primary text-center">Our Vision</h3>
                 <p className="text-center text-sm text-muted-foreground mt-2">
                   To be the leading partner in creating impactful and memorable event experiences.
@@ -124,7 +165,7 @@ export default function Home() {
               </div>
               {/* Back Side */}
               <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-accent p-6 rounded-lg rotate-y-180 backface-hidden shadow-md border border-border">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-16 w-16 text-accent-foreground mb-4"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                 <Target className="h-16 w-16 text-accent-foreground mb-4" />
                 <h3 className="text-2xl font-semibold text-accent-foreground text-center">Our Mission</h3>
                 <p className="text-center text-sm text-accent-foreground/80 mt-2"> {/* Adjusted text color for better contrast */}
                   Simplify planning, connect with the best, and ensure unforgettable events.
@@ -161,20 +202,20 @@ export default function Home() {
            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-primary animate-fadeInUp">What We Offer</h2>
            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whatWeOfferItems.map((item, index) => (
-              <div 
-                key={index} 
-                className="group perspective-[1000px] w-full min-h-[280px] md:min-h-[300px] lg:min-h-[320px] animate-fadeInUp" // Adjusted min-height for different screen sizes
+              <div
+                key={index}
+                className="flip-card animate-fadeInUp"
                 style={{animationDelay: `${0.2 + index * 0.1}s`}}
               >
-                <div className="relative w-full h-full text-center transition-transform duration-700 ease-in-out group-hover:rotate-y-180 preserve-3d">
+                <div className="flip-card-inner">
                   {/* Front Side */}
-                  <div className="absolute inset-0 w-full h-full flex flex-col justify-center items-center bg-card text-card-foreground p-6 rounded-lg shadow-xl border border-border backface-hidden">
-                    <h3 className="text-2xl font-black text-center text-primary">{item.title}</h3>
-                    <p className="mt-3 text-sm text-foreground/80">{item.description}</p>
+                  <div className="flip-card-front">
+                    <h3 className="title">{item.title}</h3>
+                    <p className="mt-3 text-sm">{item.description}</p>
                   </div>
                   {/* Back Side */}
-                  <div className="absolute inset-0 w-full h-full flex flex-col justify-center items-center bg-accent text-accent-foreground p-6 rounded-lg shadow-xl border border-border rotate-y-180 backface-hidden">
-                    <h3 className="text-2xl font-black text-center">{item.title}</h3>
+                  <div className="flip-card-back">
+                    <h3 className="title">{item.title}</h3>
                     <p className="mt-3 text-sm opacity-90">{item.back_description}</p>
                   </div>
                 </div>
@@ -190,10 +231,10 @@ export default function Home() {
            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary animate-fadeInUp">Why Choose Us?</h2>
            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Removed stagger-children */}
               {[
-                { title: "Extensive Network", description: "With a vast network of trusted event vendors, we cater to events of any scale.", icon: CheckCircle },
-                { title: "Find the Best Vendors", description: "Photographers, caterers, decorators, entertainers - explore our extensive network.", icon: CheckCircle },
-                { title: "Stress-Free Planning", description: "Our user-friendly platform streamlines planning, saving you time and effort.", icon: CheckCircle },
-                { title: "Expert Assistance", description: "Our event experts are ready to help with vendor selection and planning tips.", icon: CheckCircle },
+                { title: "Extensive Network", description: "With a vast network of trusted event vendors, we cater to events of any scale.", icon: UsersRound },
+                { title: "Find the Best Vendors", description: "Photographers, caterers, decorators, entertainers - explore our extensive network.", icon: Handshake },
+                { title: "Stress-Free Planning", description: "Our user-friendly platform streamlines planning, saving you time and effort.", icon: Puzzle },
+                { title: "Expert Assistance", description: "Our event experts are ready to help with vendor selection and planning tips.", icon: HelpCircle },
                 { title: "Transparent Pricing", description: "No hidden costs. Make informed decisions that fit your budget.", icon: CheckCircle },
                 { title: "Genuine Reviews", description: "Access genuine client reviews to make well-informed decisions.", icon: CheckCircle },
               ].map((item, index) => (
@@ -224,8 +265,8 @@ export default function Home() {
               { title: "AGMs (Annual General Meetings)", description: "Professionally organized AGMs for stakeholders.", image: "https://picsum.photos/400/300?random=agm", aiHint: "business meeting" },
               { title: "Family Day", description: "Enjoyable family day events for employees and their loved ones.", image: "https://picsum.photos/400/300?random=familyday", aiHint: "family fun" },
             ].map((item, index) => (
-              <div 
-                key={item.title} 
+              <div
+                key={item.title}
                 className="bg-background p-6 rounded-lg shadow-lg transform transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-105 animate-fadeInUp"
                 style={{animationDelay: `${0.2 + index * 0.1}s`}}
               >
@@ -273,6 +314,28 @@ export default function Home() {
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary animate-fadeInUp">
+            Frequently Asked Questions
+          </h2>
+          <Accordion type="single" collapsible className="w-full bg-card p-6 rounded-lg shadow-md border border-border">
+            {faqItems.map((item) => (
+              <AccordionItem value={item.id} key={item.id} className="border-b border-border last:border-b-0">
+                <AccordionTrigger className="text-lg md:text-xl hover:no-underline text-primary hover:text-accent py-4 text-left">
+                  <item.icon className="h-5 w-5 mr-3 text-accent shrink-0" />
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-2 pb-4 text-base text-foreground/80">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

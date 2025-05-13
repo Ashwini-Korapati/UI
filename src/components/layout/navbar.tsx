@@ -24,27 +24,27 @@ import { ThemeToggle } from "@/components/layout/theme-toggle";
 const corporateEventComponents: { title: string; href: string; description: string }[] = [
   {
     title: "DJ Services",
-    href: "/corporate-events#dj-services", // Updated ID
+    href: "/corporate-events#dj-services",
     description: "Professional DJs to set the right mood for your event.",
   },
   {
     title: "Anchoring",
-    href: "/corporate-events#anchoring-hosting", // Updated ID
+    href: "/corporate-events#anchoring-hosting",
     description: "Experienced anchors to host and engage your audience.",
   },
   {
     title: "Gifting",
-    href: "/corporate-events#corporate-gifting", // Updated ID
+    href: "/corporate-events#corporate-gifting",
     description: "Curated corporate gifts for attendees and speakers.",
   },
   {
     title: "Printing",
-    href: "/corporate-events#event-printing", // Updated ID
+    href: "/corporate-events#event-printing",
     description: "High-quality printing solutions for event materials.",
   },
   {
     title: "Games & Activities",
-    href: "/corporate-events#games-team-building", // Updated ID
+    href: "/corporate-events#games-team-building",
     description: "Engaging games and team-building activities.",
   },
 ];
@@ -60,6 +60,7 @@ export function Navbar() {
     { href: "/contact", label: "Contact Us" },
     { href: "/become-vendor", label: "Become a Vendor" },
     { href: "/#clients", label: "Clients" },
+    { href: "/#faq", label: "FAQ" }, // Added FAQ link
   ];
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -70,14 +71,14 @@ export function Navbar() {
         {/* Logo Only */}
         <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
           <Image
-            src="/logoimg.jpeg" 
+            src="/logoimg.jpeg"
             alt="Events Unlimited Logo"
-            width={120} 
-            height={120} 
-            className="rounded-sm object-contain ml-4 mt-3" 
+            width={120}
+            height={120}
+            className="rounded-sm object-contain ml-4 mt-3"
             data-ai-hint="company logo"
-            unoptimized 
-            priority 
+            unoptimized
+            priority
           />
         </Link>
 
@@ -104,7 +105,7 @@ export function Navbar() {
                              key={component.title}
                              title={component.title}
                              href={component.href}
-                             onClick={closeMobileMenu} // Pass closeMobileMenu here
+                             onClick={closeMobileMenu}
                            >
                              {component.description}
                            </ListItem>
@@ -115,10 +116,11 @@ export function Navbar() {
                  ) : (
                    <Link href={link.href} legacyBehavior passHref>
                      <NavigationMenuLink
+                        onClick={closeMobileMenu}
                        className={cn(
-                         navigationMenuTriggerStyle(), 
-                         pathname === link.href || (link.href === '/#clients' && pathname === '/') ? "bg-accent/50 text-accent-foreground" : "",
-                         link.href === '/' && pathname === '/' ? "bg-accent/50 text-accent-foreground" : "" 
+                         navigationMenuTriggerStyle(),
+                         pathname === link.href || (link.href.startsWith('/#') && pathname === '/') ? "bg-accent/50 text-accent-foreground" : "",
+                         link.href === '/' && pathname === '/' ? "bg-accent/50 text-accent-foreground" : ""
                        )}
                      >
                        {link.label}
@@ -148,11 +150,11 @@ export function Navbar() {
                    <Image
                        src="/logoimg.jpeg"
                        alt="Events Unlimited Logo Mobile"
-                       width={60} 
-                       height={60} 
+                       width={60}
+                       height={60}
                        className="rounded-sm object-contain"
                        data-ai-hint="company logo"
-                       unoptimized 
+                       unoptimized
                     />
                  </Link>
                  <Button variant="ghost" size="icon" onClick={closeMobileMenu}>
@@ -162,13 +164,13 @@ export function Navbar() {
              </div>
              <nav className="flex flex-col space-y-4">
                {navLinks.map((link) => (
-                  link.label === "Corporate Events" ? null : 
+                  link.label === "Corporate Events" ? null :
                  <Link
                    key={link.href}
                    href={link.href}
                    className={cn(
                      "text-lg font-medium transition-colors hover:text-primary",
-                     pathname === link.href ? "text-primary" : "text-foreground/70"
+                     pathname === link.href || (link.href.startsWith('/#') && pathname === '/') ? "text-primary" : "text-foreground/70"
                    )}
                    onClick={closeMobileMenu}
                  >
@@ -183,7 +185,7 @@ export function Navbar() {
                         <Link
                           href={component.href}
                           className="text-base text-foreground/70 hover:text-primary"
-                          onClick={closeMobileMenu} 
+                          onClick={closeMobileMenu}
                         >
                           {component.title}
                         </Link>
@@ -207,29 +209,22 @@ const ListItem = React.forwardRef<
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick) {
-      onClick(e); 
-    }
-    // Additional logic to ensure mobile menu closes if it's part of a dropdown
-    if (typeof (onClick as any) === 'function' && (e.target as HTMLElement).closest('.radix-navigation-menu-content')) {
-        const mobileMenuCloseButton = document.querySelector('[aria-label="Close Menu"]');
-        if (mobileMenuCloseButton instanceof HTMLElement) {
-            mobileMenuCloseButton.click();
-        }
+      (onClick as (event: React.MouseEvent<HTMLAnchorElement>) => void)(e);
     }
   };
 
   return (
     <li>
       <NavigationMenuLink asChild>
-         <Link 
+         <Link
           href={href}
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
-          onClick={handleClick} 
-          {...props} 
+          onClick={handleClick}
+          {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
