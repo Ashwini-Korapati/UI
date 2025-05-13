@@ -68,31 +68,31 @@ export default function Home() {
   return (
     <>
       {/* Hero Section - Full Width */}
-      <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-primary/10 flex items-center justify-center text-center px-4">
+      <section id="hero" className="relative min-h-screen w-full overflow-hidden flex items-center justify-center text-center px-4">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
            <video
-            autoPlay // Ensures video plays automatically
-            loop // Loops the video
-            muted // Muted is often required for autoplay in browsers
-            playsInline // Important for mobile browsers
-            className="absolute inset-0 w-full h-full object-cover opacity-20" // Video base opacity
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover" // Video covers fully
            >
-            <source src="/event1.mp4" type="video/mp4" /> {/* Updated video source */}
+            <source src="/event1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
            </video>
-           {/* Gradient Overlay */}
-           <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-5"></div>
+           {/* Gradient Overlay: primary color covering approx 50% from left, fading out. Opacity controls blend with video. */}
+           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent opacity-80 md:opacity-70"></div>
         </div>
-        <div className="relative z-10 text-white max-w-4xl mx-auto"> {/* Added max-width for content */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary-foreground drop-shadow-md animate-fadeInUp [animation-delay:0.1s]">
+        <div className="relative z-10 max-w-4xl mx-auto p-4"> {/* Text container, text will be on gradient */}
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary-foreground drop-shadow-lg animate-fadeInUp [animation-delay:0.1s]">
             Events should be memorable and engaging
           </h1>
-          <p className="text-lg md:text-2xl mb-6 text-primary-foreground/90 drop-shadow-sm animate-fadeInUp [animation-delay:0.3s]">
+          <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 drop-shadow-md animate-fadeInUp [animation-delay:0.3s]">
             Coming together is a beginning; working together is success.
           </p>
           <div className="animate-fadeInUp [animation-delay:0.5s]">
-            <Button asChild size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3 text-lg">
               <Link href="/about">Learn More</Link>
             </Button>
            </div>
@@ -134,7 +134,7 @@ export default function Home() {
                  Our team of experts meticulously handpicks a selection of top-tier vendors, ensuring that you have access to a wide range of services and products that cater to your specific event needs.
               </p>
            </div>
-            <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg animate-fadeInUp [animation-delay:0.2s] object-cover"> {/* Changed from object-cover to contain if needed */}
+            <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg animate-fadeInUp [animation-delay:0.2s] object-cover">
                  <video
                     autoPlay
                     loop
@@ -167,7 +167,7 @@ export default function Home() {
               <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-accent p-6 rounded-lg rotate-y-180 backface-hidden shadow-md border border-border">
                  <Target className="h-16 w-16 text-accent-foreground mb-4" />
                 <h3 className="text-2xl font-semibold text-accent-foreground text-center">Our Mission</h3>
-                <p className="text-center text-sm text-accent-foreground/80 mt-2"> {/* Adjusted text color for better contrast */}
+                <p className="text-center text-sm text-accent-foreground/80 mt-2">
                   Simplify planning, connect with the best, and ensure unforgettable events.
                 </p>
               </div>
@@ -179,7 +179,7 @@ export default function Home() {
               <p className="text-lg text-foreground/80 mb-6">
                 At Events Unlimited, our mission is to simplify event planning and execution by:
               </p>
-              <ul className="space-y-3 text-lg text-foreground/80"> {/* Removed stagger-children, direct animation handled by parent or individual items as needed */}
+              <ul className="space-y-3 text-lg text-foreground/80">
                 {[
                   "Providing a comprehensive platform with a curated selection of top-notch vendors offering the best prices and packages.",
                   "Connecting you with industry-leading services and products that cater to your specific event requirements.",
@@ -229,7 +229,7 @@ export default function Home() {
       <section id="why-choose-us" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
         <div className="w-full max-w-7xl mx-auto"> {/* Added max-width for content */}
            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary animate-fadeInUp">Why Choose Us?</h2>
-           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Removed stagger-children */}
+           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { title: "Extensive Network", description: "With a vast network of trusted event vendors, we cater to events of any scale.", icon: UsersRound },
                 { title: "Find the Best Vendors", description: "Photographers, caterers, decorators, entertainers - explore our extensive network.", icon: Handshake },
@@ -238,7 +238,7 @@ export default function Home() {
                 { title: "Transparent Pricing", description: "No hidden costs. Make informed decisions that fit your budget.", icon: CheckCircle },
                 { title: "Genuine Reviews", description: "Access genuine client reviews to make well-informed decisions.", icon: CheckCircle },
               ].map((item, index) => (
-                 <div key={index} className="flex items-start space-x-4 animate-fadeInUp" style={{animationDelay: `${0.2 + index * 0.07}s`}}> {/* Added individual animation and delay */}
+                 <div key={index} className="flex items-start space-x-4 animate-fadeInUp" style={{animationDelay: `${0.2 + index * 0.07}s`}}>
                     <item.icon className="h-8 w-8 text-accent mt-1 shrink-0" />
                     <div>
                        <h3 className="text-xl font-semibold mb-2 text-primary">{item.title}</h3>
@@ -267,7 +267,7 @@ export default function Home() {
       </section>
 
        {/* Join Us & CTA Section - Full Width */}
-      <section id="join-us" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4"> {/* Changed to secondary for alternation */}
+      <section id="join-us" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
         <div className="w-full text-center max-w-3xl mx-auto"> {/* Added max-width for content */}
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary animate-fadeInUp">Join Us on Our Journey</h2>
           <p className="text-lg text-foreground/80 mb-8 animate-fadeInUp [animation-delay:0.1s]">
@@ -307,4 +307,3 @@ export default function Home() {
     </>
   );
 }
-
