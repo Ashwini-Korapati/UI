@@ -12,7 +12,7 @@ const corporateServices = [
     id: "dj",
     title: "DJ Services",
     description: "Our professional DJs curate the perfect soundtrack for your corporate event, from background ambiance to high-energy dance floors. We work with you to understand your audience and event theme, ensuring the music enhances the overall experience.",
-    imageUrl: "https://picsum.photos/600/400?random=dj",
+    imageUrl: "/dj1.jpeg", // Updated image path
     aiHint: "dj setup"
   },
   {
@@ -26,7 +26,7 @@ const corporateServices = [
     id: "gifting",
     title: "Corporate Gifting",
     description: "Make a lasting impression with thoughtfully curated corporate gifts. We offer a wide range of options, from branded merchandise to luxury items, tailored to your budget and recipient profile, perfect for attendees, speakers, or employees.",
-    imageUrls: Array.from({ length: 13 }, (_, i) => `/print${i + 1}.jpg`), // Use /printN.jpg paths
+    imageUrls: Array.from({ length: 13 }, (_, i) => `/print${i + 1}.jpg`), 
     aiHint: "gift boxes"
   },
   {
@@ -40,7 +40,7 @@ const corporateServices = [
     id: "games",
     title: "Games & Team Building",
     description: "Foster collaboration and fun with our engaging games and team-building activities. We design customized experiences, from icebreakers to complex challenges, perfect for boosting morale and strengthening team dynamics.",
-    imageUrl: "https://picsum.photos/600/400?random=games",
+    imageUrl: "/games.JPG", // Updated image path
     aiHint: "team building"
   },
 ];
@@ -108,6 +108,7 @@ export default function CorporateEventsPage() {
                             layout="fill"
                             objectFit="cover"
                             data-ai-hint={service.aiHint}
+                            unoptimized={service.imageUrl.startsWith('/')} // Unoptimize local images
                           />
                         </div>
                       )}
