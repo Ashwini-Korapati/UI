@@ -26,7 +26,7 @@ const corporateServices = [
     id: "gifting",
     title: "Corporate Gifting",
     description: "Make a lasting impression with thoughtfully curated corporate gifts. We offer a wide range of options, from branded merchandise to luxury items, tailored to your budget and recipient profile, perfect for attendees, speakers, or employees.",
-    imageUrl: "https://picsum.photos/600/400?random=gifts",
+    imageUrls: Array.from({ length: 13 }, (_, i) => `/print${i + 1}.jpg`), // Use /printN.jpg paths
     aiHint: "gift boxes"
   },
   {
@@ -69,22 +69,50 @@ export default function CorporateEventsPage() {
                   {service.title}
                 </AccordionTrigger>
                 <AccordionContent className="px-2 pb-6">
-                  <div className="grid md:grid-cols-3 gap-6 items-start">
-                    <div className="md:col-span-2">
-                      <p className="text-base text-foreground/80">
+                  {service.id === 'gifting' && service.imageUrls && Array.isArray(service.imageUrls) ? (
+                    // Gifting Gallery Layout
+                    <div className="md:col-span-3 mt-2">
+                      <p className="text-base text-foreground/80 mb-6">
                         {service.description}
                       </p>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        {service.imageUrls.map((url, index) => (
+                          <div key={url} className="flex justify-center items-center p-1 bg-muted/10 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-md overflow-hidden">
+                              <Image
+                                src={url}
+                                alt={`${service.title} Example ${index + 1}`}
+                                layout="fill"
+                                objectFit="contain"
+                                data-ai-hint={service.aiHint || "corporate gift"}
+                                unoptimized // Useful for many local static images if sizes vary
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div className="relative h-48 w-full md:col-span-1 rounded-md overflow-hidden shadow-sm">
-                       <Image
-                        src={service.imageUrl}
-                        alt={service.title}
-                        layout="fill"
-                        objectFit="cover"
-                        data-ai-hint={service.aiHint}
-                      />
+                  ) : (
+                    // Standard layout for other services (text + single image)
+                    <div className="grid md:grid-cols-3 gap-6 items-start">
+                      <div className="md:col-span-2">
+                        <p className="text-base text-foreground/80">
+                          {service.description}
+                        </p>
+                      </div>
+                      {service.imageUrl && (
+                        <div className="relative h-48 w-full md:col-span-1 rounded-md overflow-hidden shadow-sm">
+                          <Image
+                            src={service.imageUrl}
+                            alt={service.title}
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint={service.aiHint}
+                          />
+                        </div>
+                      )}
                     </div>
-                  </div>
+                  )}
                 </AccordionContent>
               </AccordionItem>
              ))}
