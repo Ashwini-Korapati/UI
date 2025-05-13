@@ -17,15 +17,15 @@ export default function Home() {
             loop // Loops the video
             muted // Muted is often required for autoplay in browsers
             playsInline // Important for mobile browsers
-            className="absolute inset-0 w-full h-full object-cover opacity-50" // Video base opacity
+            className="absolute inset-0 w-full h-full object-cover opacity-20" // Video base opacity, adjusted for more visibility
             // Optional: Add a poster image for loading or unsupported browsers
             // poster="https://picsum.photos/1920/1080?random=poster"
            >
             <source src="/event1.mp4" type="video/mp4" /> {/* Updated video source */}
             Your browser does not support the video tag.
            </video>
-           {/* Gradient Overlay: Reduced opacity further to make video more visible */}
-           <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-10"></div> {/* Reduced opacity from 30 to 10 */}
+           {/* Gradient Overlay: Further reduced opacity to make video more visible and ensure it does not overlap navbar by being part of hero's relative positioning */}
+           <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-5"></div>
         </div>
         <div className="relative z-10 container mx-auto px-4 text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary-foreground drop-shadow-md animate-fadeInUp [animation-delay:0.1s]">
@@ -150,19 +150,19 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-primary animate-fadeInUp">What We Offer</h2>
            <div className="grid md:grid-cols-3 gap-8 stagger-children">
-             <div className="bg-background p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+             <div className="bg-background p-6 rounded-lg shadow-md transform transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 hover:-rotate-2">
                 <h3 className="text-xl font-semibold mb-3 text-primary">Event Vendors</h3>
                 <p className="text-foreground/80">
                    We have carefully curated a diverse list of event vendors, including venues, caterers, decorators, photographers, entertainers, and more. All pre-screened for reliability and quality.
                 </p>
              </div>
-              <div className="bg-background p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-background p-6 rounded-lg shadow-md transform transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 hover:-rotate-2">
                 <h3 className="text-xl font-semibold mb-3 text-primary">Best Price Guarantee</h3>
                 <p className="text-foreground/80">
                   Our commitment is to bring you the best deals. We negotiate with vendors on your behalf to secure the most competitive prices for your events.
                 </p>
              </div>
-              <div className="bg-background p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-background p-6 rounded-lg shadow-md transform transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 hover:-rotate-2">
                 <h3 className="text-xl font-semibold mb-3 text-primary">Custom Packages</h3>
                 <p className="text-foreground/80">
                   We understand each event is unique. We offer customized packages that cater to your specific needs, preferences, and budget.
