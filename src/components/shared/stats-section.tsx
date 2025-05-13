@@ -2,6 +2,7 @@
 "use client";
 
 import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface StatCardProps {
   largeText: string;
@@ -10,23 +11,18 @@ interface StatCardProps {
 
 const StatCard: React.FC<StatCardProps> = ({ largeText, smallText }) => {
   return (
-    <div className="outer-stat-card">
-      <div className="dot-stat-card"></div>
-      <div className="inner-stat-card">
-        <div className="ray-stat-card"></div>
-        {/* Image removed */}
-        <div className="text-stat-card">{largeText}</div>
-        <div className="small-text-stat-card">{smallText}</div>
-        <div className="line-stat-card topl-stat-card"></div>
-        <div className="line-stat-card leftl-stat-card"></div>
-        <div className="line-stat-card bottoml-stat-card"></div>
-        <div className="line-stat-card rightl-stat-card"></div>
-      </div>
-    </div>
+    <Card className="text-center bg-card/80 backdrop-blur-sm border-border/50 shadow-xl h-full flex flex-col justify-center">
+      <CardHeader>
+        <CardTitle className="text-4xl md:text-5xl font-bold text-primary">{largeText}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-muted-foreground text-sm md:text-base">{smallText}</p>
+      </CardContent>
+    </Card>
   );
 };
 
-const statsData: Omit<StatCardProps, 'imageSrc' | 'imageAlt' | 'imageHint'>[] = [ // Adjusted type
+const statsData: StatCardProps[] = [
   {
     largeText: '1000+',
     smallText: 'Events and Counting',
@@ -43,15 +39,23 @@ const statsData: Omit<StatCardProps, 'imageSrc' | 'imageAlt' | 'imageHint'>[] = 
 
 export function StatsSection() {
   return (
-    <section id="stats" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
-      <div className="w-full max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 justify-items-center">
+    <section
+      id="stats"
+      className="relative py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4 bg-cover bg-center bg-fixed"
+      style={{ backgroundImage: "url('https://picsum.photos/1920/1080?random=stats-background')" }}
+      data-ai-hint="business metrics" // AI hint for background image
+    >
+      <div className="absolute inset-0 bg-black/60 z-0"></div> {/* Overlay for better text contrast */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-primary-foreground animate-fadeInUp">
+          Our Achievements
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8 justify-items-stretch">
           {statsData.map((stat, index) => (
-            <div key={index} className="animate-fadeInUp" style={{ animationDelay: `${0.2 + index * 0.15}s` }}>
+            <div key={index} className="animate-fadeInUp h-full" style={{ animationDelay: `${0.2 + index * 0.15}s` }}>
               <StatCard
                 largeText={stat.largeText}
                 smallText={stat.smallText}
-                // imageSrc, imageAlt, imageHint props removed
               />
             </div>
           ))}
