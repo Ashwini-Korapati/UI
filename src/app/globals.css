@@ -124,6 +124,75 @@
   }
   /* perspective can be applied using arbitrary values e.g., perspective-[1000px] */
   /* rotate-y-180 is a built-in Tailwind utility */
+
+  /* Custom Flip Card CSS */
+  .flip-card {
+    background-color: transparent;
+    width: 280px; /* Adjusted width */
+    height: 320px; /* Adjusted height */
+    perspective: 1000px;
+    font-family: sans-serif;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 hsla(var(--primary), 0.2); /* Use theme color */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center content */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid hsl(var(--border)); /* Use theme border */
+    border-radius: 1rem; /* Consistent border radius */
+    padding: 1.5rem; /* Add padding */
+  }
+
+  .flip-card-front {
+    background-color: hsl(var(--card)); /* Use theme card color */
+    color: hsl(var(--card-foreground)); /* Use theme card text color */
+  }
+  .dark .flip-card-front {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+  }
+
+
+  .flip-card-back {
+    background-color: hsl(var(--accent)); /* Use theme accent color */
+    color: hsl(var(--accent-foreground)); /* Use theme accent text color */
+    transform: rotateY(180deg);
+  }
+   .dark .flip-card-back {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+
+  .flip-card .title { /* Scoped title class */
+    font-size: 1.5em;
+    font-weight: 700; /* Adjusted font-weight */
+    text-align: center;
+    margin: 0 0 0.5rem 0; /* Add some bottom margin */
+    color: hsl(var(--primary)); /* Title color based on primary */
+  }
+  .flip-card-back .title {
+     color: hsl(var(--accent-foreground)); /* Title color for back based on accent-foreground */
+  }
 }
 
 
@@ -143,43 +212,6 @@
 /* Class to apply the floating animation */
 .animate-float {
   animation: float 3s ease-in-out infinite;
-}
-
-/* Marquee Animation */
-.marquee {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Optional: Add fade effect at edges */
-}
-
-.marquee-content {
-  display: flex;
-  align-items: center; /* Center logos vertically */
-  animation: marquee 40s linear infinite; /* Slower animation */
-  /* Adjust duration as needed - faster speed = lower duration */
-  width: max-content; /* Ensure content doesn't wrap prematurely */
-}
-
-/* Pause animation on hover */
-.marquee:hover .marquee-content {
-  animation-play-state: paused;
-}
-
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%); /* Move exactly half the width for seamless loop */
-  }
-}
-
-/* Style for individual logos within the marquee */
-.marquee-content > div {
-  flex-shrink: 0; /* Prevent logos from shrinking */
-  padding: 0 1.5rem; /* Add some space between logos */
 }
 
 /* Bubble Animation */
