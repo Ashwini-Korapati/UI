@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -60,22 +59,26 @@ export function Navbar() {
     { href: "/contact", label: "Contact Us" },
     { href: "/become-vendor", label: "Become a Vendor" },
     { href: "/#clients", label: "Clients" },
-    { href: "/#faq", label: "FAQ" }, // Added FAQ link
+    { href: "/#faq", label: "FAQ" },
   ];
 
-  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+  const scheduleCloseMobileMenu = () => {
+    setTimeout(() => {
+      setIsMobileMenuOpen(false);
+    }, 0);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between h-20 md:h-24"> {/* Adjusted height for better logo fit */}
         {/* Logo Only */}
-        <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
+        <Link href="/" className="flex items-center ml-0 md:ml-4" onClick={scheduleCloseMobileMenu}> {/* Added md:ml-4 for desktop, ml-0 for mobile, schedule close */}
           <Image
             src="/logoimg.jpeg"
             alt="Events Unlimited Logo"
-            width={120}
-            height={120}
-            className="rounded-sm object-contain ml-4 mt-3"
+            width={100} // Increased width
+            height={100} // Increased height
+            className="rounded-sm object-contain" // object-contain to maintain aspect ratio
             data-ai-hint="company logo"
             unoptimized
             priority
@@ -105,7 +108,7 @@ export function Navbar() {
                              key={component.title}
                              title={component.title}
                              href={component.href}
-                             onClick={closeMobileMenu}
+                             onClick={scheduleCloseMobileMenu} // Use scheduled close for dropdown items
                            >
                              {component.description}
                            </ListItem>
@@ -116,7 +119,7 @@ export function Navbar() {
                  ) : (
                    <Link href={link.href} legacyBehavior passHref>
                      <NavigationMenuLink
-                        onClick={closeMobileMenu}
+                        onClick={isMobileMenuOpen ? scheduleCloseMobileMenu : undefined} // schedule close only if mobile menu might be open
                        className={cn(
                          navigationMenuTriggerStyle(),
                          pathname === link.href || (link.href.startsWith('/#') && pathname === '/') ? "bg-accent/50 text-accent-foreground" : "",
@@ -146,7 +149,7 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs p-6 bg-background">
               <div className="flex justify-between items-center mb-6">
-                 <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
+                 <Link href="/" className="flex items-center" onClick={scheduleCloseMobileMenu}> {/* schedule close */}
                    <Image
                        src="/logoimg.jpeg"
                        alt="Events Unlimited Logo Mobile"
@@ -157,7 +160,7 @@ export function Navbar() {
                        unoptimized
                     />
                  </Link>
-                 <Button variant="ghost" size="icon" onClick={closeMobileMenu}>
+                 <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}> {/* Direct close, no navigation involved */}
                    <X className="h-6 w-6" />
                    <span className="sr-only">Close Menu</span>
                  </Button>
@@ -172,7 +175,7 @@ export function Navbar() {
                      "text-lg font-medium transition-colors hover:text-primary",
                      pathname === link.href || (link.href.startsWith('/#') && pathname === '/') ? "text-primary" : "text-foreground/70"
                    )}
-                   onClick={closeMobileMenu}
+                   onClick={scheduleCloseMobileMenu} // Use scheduled close
                  >
                    {link.label}
                  </Link>
@@ -185,7 +188,7 @@ export function Navbar() {
                         <Link
                           href={component.href}
                           className="text-base text-foreground/70 hover:text-primary"
-                          onClick={closeMobileMenu}
+                          onClick={scheduleCloseMobileMenu} // Use scheduled close
                         >
                           {component.title}
                         </Link>
@@ -209,7 +212,8 @@ const ListItem = React.forwardRef<
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick) {
-      (onClick as (event: React.MouseEvent<HTMLAnchorElement>) => void)(e);
+      // The onClick prop is scheduleCloseMobileMenu, which already uses setTimeout
+      (onClick as (event?: React.MouseEvent<HTMLAnchorElement>) => void)(e);
     }
   };
 
@@ -236,3 +240,4 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem";
+
