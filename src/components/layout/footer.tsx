@@ -69,7 +69,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground/90" />
-                <span>42, 4th Temple St Rd, Vyalikaval, Kodandarampura, Malleshwaram, Bengaluru, Karnataka 560003</span>
+                <span>address no 9, 3rd temple road, malleshwaram bangalore - 560003</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground/90" />
