@@ -68,10 +68,6 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-3 text-accent-foreground/90">Contact Info</h4>
             <ul className="space-y-2 text-sm">
               <li className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground/90" />
-                <span>address no 9,  3rd temple road, malleshwaram bangalore  560003</span>
-              </li>
-              <li className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground/90" />
                 <div className="flex flex-col">
                      <a href="tel:+917647367436" className="hover:text-accent-foreground/80 transition-colors">+91 76473 67436</a>
@@ -81,6 +77,10 @@ export function Footer() {
               <li className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 shrink-0 text-accent-foreground/90" />
                 <a href="mailto:eventsunlimited365@gmail.com" className="hover:text-accent-foreground/80 transition-colors break-all">eventsunlimited365@gmail.com</a>
+              </li>
+               <li className="flex items-center space-x-2">
+                <MapPin className="h-4 w-4 shrink-0 text-accent-foreground/90" />
+                <span>address no 9, 3rd temple road, malleshwaram bangalore - 560003</span>
               </li>
                <li className="flex items-center space-x-2">
                  <Globe className="h-4 w-4 shrink-0 text-accent-foreground/90" />
