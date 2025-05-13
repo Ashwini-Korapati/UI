@@ -5,19 +5,19 @@ import { ContactForm } from '@/components/forms/contact-form'; // Import the for
 export default function ContactPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="py-12 md:py-20 bg-secondary text-center">
-        <div className="container mx-auto px-4">
+      {/* Page Header - Full Width */}
+      <section className="py-12 md:py-20 bg-secondary text-center px-4">
+        <div className="max-w-2xl mx-auto"> {/* Added max-width for content */}
           <h1 className="text-4xl md:text-5xl font-bold text-primary">Contact Us</h1>
-          <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-lg md:text-xl text-muted-foreground">
             We'd love to hear from you! Reach out with questions or to start planning your next unforgettable event.
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      {/* Contact Section - Full Width */}
+      <section className="py-16 md:py-24 bg-background px-4">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start max-w-7xl mx-auto"> {/* Added max-width */}
 
           {/* Contact Form */}
           <div className="bg-white p-6 md:p-8 rounded-lg shadow-md border border-border">

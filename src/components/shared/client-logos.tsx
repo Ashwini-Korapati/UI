@@ -1,3 +1,4 @@
+
 "use client";
 import React from 'react';
 import Image from 'next/image';
@@ -6,8 +7,8 @@ import { cn } from '@/lib/utils';
 interface ClientLogoProps {
   src: string;
   alt: string;
-  width?: number; // Add width prop
-  height?: number; // Add height prop
+  width?: number;
+  height?: number;
 }
 
 // Updated default width and height for logos to 150
@@ -32,7 +33,7 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 150, height =
 // Removed 3rd logo (Archer) and one LSEG logo
 const logos = [
   { src: '/1.jpeg', alt: 'Blackline Logo' },
- { src: '/2.jpeg', alt: 'Agilon Health Logo' },
+  { src: '/2.jpeg', alt: 'Agilon Health Logo' },
   // { src: '/3.jpeg', alt: 'Archer Logo' }, // Removed 3rd logo
   { src: '/4.jpeg', alt: 'CDM Smith Logo' },
   { src: '/5.jpeg', alt: 'RSA Logo' },
@@ -51,7 +52,8 @@ export function ClientLogos() {
   const extendedLogos = [...logos, ...logos];
 
   return (
-    <div className="container mx-auto">
+    // Removed container mx-auto, using full width with padding from parent section
+    <div className="w-full">
       {/* Increased font size and ensured boldness */}
       <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-40 animate-fade-in">
         Trusted By
@@ -72,6 +74,7 @@ export function ClientLogos() {
           overflow: hidden;
           display: flex; /* Use flexbox for horizontal alignment */
           align-items: center; /* Center items vertically */
+          width: 100%; /* Ensure marquee takes full width */
         }
         .marquee-content {
           display: flex;

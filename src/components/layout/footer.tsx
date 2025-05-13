@@ -15,13 +15,13 @@ export function Footer() {
          ))}
       </div>
 
-       {/* Client Logos Section - Now the scroll target */}
-       <section id="clients" className="bg-secondary py-12 md:py-16 relative z-10 min-h-screen flex items-center justify-center">
+       {/* Client Logos Section - Full Width */}
+       <section id="clients" className="bg-secondary py-12 md:py-16 relative z-10 min-h-screen flex items-center justify-center px-4">
          <ClientLogos />
        </section>
 
-      {/* Main Footer Content */}
-      <div className="container mx-auto py-4 md:py-6 px-4 relative z-10">
+      {/* Main Footer Content - Full Width */}
+      <div className="w-full py-4 md:py-6 px-4 relative z-10 max-w-7xl mx-auto"> {/* Added max-width */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
 
           {/* About Section */}

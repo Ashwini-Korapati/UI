@@ -83,19 +83,19 @@ const faqItems = [
 export default function CorporateEventsPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="py-12 md:py-20 bg-secondary text-center">
-        <div className="container mx-auto px-4">
+      {/* Page Header - Full Width */}
+      <section className="py-12 md:py-20 bg-secondary text-center px-4">
+        <div className="max-w-3xl mx-auto"> {/* Added max-width */}
           <h1 className="text-4xl md:text-5xl font-bold text-primary">Corporate Event Services</h1>
-          <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="mt-4 text-lg md:text-xl text-muted-foreground">
             Tailored solutions to make your corporate gatherings impactful and memorable. Explore our range of services designed for excellence.
           </p>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
+      {/* Services Section - Full Width */}
+      <section className="py-16 md:py-24 bg-background px-4">
+        <div className="max-w-5xl mx-auto"> {/* Kept max-width for centered content */}
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Our Offerings</h2>
            <Accordion type="single" collapsible className="w-full">
              {corporateServices.map((service) => (
@@ -156,9 +156,9 @@ export default function CorporateEventsPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="corporate-faq" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center">
-        <div className="container mx-auto px-4 max-w-3xl">
+      {/* FAQ Section - Full Width */}
+      <section id="corporate-faq" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center px-4">
+        <div className="w-full max-w-3xl mx-auto"> {/* Kept max-width for centered content */}
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary animate-fadeInUp">
             Frequently Asked Questions
           </h2>

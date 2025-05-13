@@ -67,8 +67,8 @@ const faqItems = [
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-primary/10 flex items-center justify-center text-center">
+      {/* Hero Section - Full Width */}
+      <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-primary/10 flex items-center justify-center text-center px-4">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
            <video
@@ -84,7 +84,7 @@ export default function Home() {
            {/* Gradient Overlay */}
            <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-5"></div>
         </div>
-        <div className="relative z-10 container mx-auto px-4 text-white">
+        <div className="relative z-10 text-white max-w-4xl mx-auto"> {/* Added max-width for content */}
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary-foreground drop-shadow-md animate-fadeInUp [animation-delay:0.1s]">
             Events should be memorable and engaging
           </h1>
@@ -99,9 +99,9 @@ export default function Home() {
         </div>
       </section>
 
-       {/* Intro Section */}
-      <section id="intro" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center">
-        <div className="container mx-auto px-4 text-center">
+       {/* Intro Section - Full Width */}
+      <section id="intro" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
+        <div className="w-full text-center">
            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary animate-fadeInUp">
              Events_Unlimited
           </h2>
@@ -122,9 +122,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Who We Are Section */}
-      <section id="who-we-are" className="py-16 md:py-24 bg-secondary min-h-screen flex items-center">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      {/* Who We Are Section - Full Width */}
+      <section id="who-we-are" className="py-16 md:py-24 bg-secondary min-h-screen flex items-center px-4">
+        <div className="w-full grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto"> {/* Added max-width for content */}
            <div className="animate-fadeInUp md:text-left">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Who We Are</h2>
               <p className="text-lg text-foreground/80 mb-4">
@@ -134,13 +134,13 @@ export default function Home() {
                  Our team of experts meticulously handpicks a selection of top-tier vendors, ensuring that you have access to a wide range of services and products that cater to your specific event needs.
               </p>
            </div>
-            <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg animate-fadeInUp [animation-delay:0.2s]">
+            <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg animate-fadeInUp [animation-delay:0.2s] object-cover"> {/* Changed from object-cover to contain if needed */}
                  <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover" // Ensure video covers the div
                   >
                     <source src="/event.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -149,9 +149,9 @@ export default function Home() {
         </div>
       </section>
 
-       {/* Vision & Mission Section */}
-      <section id="vision-mission" className="py-16 md:py-24 bg-background min-h-screen flex items-center">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+       {/* Vision & Mission Section - Full Width */}
+      <section id="vision-mission" className="py-16 md:py-24 bg-background min-h-screen flex items-center px-4">
+        <div className="w-full grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto"> {/* Added max-width for content */}
           {/* Flippable Card */}
           <div className="group perspective-[1000px] order-last md:order-first animate-fadeInUp [animation-delay:0.2s] flex items-center justify-center h-full min-h-[280px] md:min-h-[320px]">
             <div className="relative w-full max-w-md h-full rounded-lg shadow-xl transition-transform duration-700 ease-in-out group-hover:rotate-y-180 preserve-3d">
@@ -196,11 +196,11 @@ export default function Home() {
         </div>
       </section>
 
-       {/* What We Offer Section */}
-      <section id="what-we-offer" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center">
-        <div className="container mx-auto px-4 text-center">
+       {/* What We Offer Section - Full Width */}
+      <section id="what-we-offer" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center px-4">
+        <div className="w-full text-center max-w-7xl mx-auto"> {/* Added max-width for content */}
            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-primary animate-fadeInUp">What We Offer</h2>
-           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"> {/* Centered items */}
             {whatWeOfferItems.map((item, index) => (
               <div
                 key={index}
@@ -225,9 +225,9 @@ export default function Home() {
         </div>
       </section>
 
-        {/* Why Choose Us Section */}
-      <section id="why-choose-us" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center">
-        <div className="container mx-auto px-4">
+        {/* Why Choose Us Section - Full Width */}
+      <section id="why-choose-us" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
+        <div className="w-full max-w-7xl mx-auto"> {/* Added max-width for content */}
            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary animate-fadeInUp">Why Choose Us?</h2>
            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Removed stagger-children */}
               {[
@@ -251,11 +251,11 @@ export default function Home() {
       </section>
 
 
-       {/* Customer Satisfaction Section */}
-       <section id="customer-satisfaction" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center">
-        <div className="container mx-auto px-4 text-center">
+       {/* Customer Satisfaction Section - Full Width */}
+       <section id="customer-satisfaction" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
+        <div className="w-full text-center max-w-3xl mx-auto"> {/* Added max-width for content */}
            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary animate-fadeInUp">Customer Satisfaction</h2>
-           <div className="max-w-3xl mx-auto space-y-6 animate-fadeInUp [animation-delay:0.1s]">
+           <div className="space-y-6 animate-fadeInUp [animation-delay:0.1s]">
              <p className="text-lg text-foreground/80">
                 Customer satisfaction is at the heart of everything we do. We take pride in delivering exceptional customer service and ensuring that each interaction with us is a positive one.
              </p>
@@ -266,11 +266,11 @@ export default function Home() {
         </div>
       </section>
 
-       {/* Join Us & CTA Section */}
-      <section id="join-us" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center"> {/* Changed to secondary for alternation */}
-        <div className="container mx-auto px-4 text-center">
+       {/* Join Us & CTA Section - Full Width */}
+      <section id="join-us" className="py-16 md:py-24 bg-secondary min-h-screen flex flex-col items-center justify-center px-4"> {/* Changed to secondary for alternation */}
+        <div className="w-full text-center max-w-3xl mx-auto"> {/* Added max-width for content */}
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary animate-fadeInUp">Join Us on Our Journey</h2>
-          <p className="max-w-3xl mx-auto text-lg text-foreground/80 mb-8 animate-fadeInUp [animation-delay:0.1s]">
+          <p className="text-lg text-foreground/80 mb-8 animate-fadeInUp [animation-delay:0.1s]">
             We invite you to be a part of our exciting journey as we continue to evolve and make a positive impact. Whether you are a customer, partner, or team member, we look forward to building meaningful connections and achieving great things together.
           </p>
           <div className="animate-fadeInUp [animation-delay:0.2s]">
@@ -281,9 +281,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center">
-        <div className="container mx-auto px-4 max-w-3xl">
+      {/* FAQ Section - Full Width */}
+      <section id="faq" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
+        <div className="w-full max-w-3xl mx-auto"> {/* Added max-width for content */}
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary animate-fadeInUp">
             Frequently Asked Questions
           </h2>
@@ -307,4 +307,3 @@ export default function Home() {
     </>
   );
 }
-
