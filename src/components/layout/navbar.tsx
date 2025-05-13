@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -23,27 +24,27 @@ import { ThemeToggle } from "@/components/layout/theme-toggle";
 const corporateEventComponents: { title: string; href: string; description: string }[] = [
   {
     title: "DJ Services",
-    href: "/corporate-events#dj",
+    href: "/corporate-events#dj-services", // Updated ID
     description: "Professional DJs to set the right mood for your event.",
   },
   {
     title: "Anchoring",
-    href: "/corporate-events#anchoring",
+    href: "/corporate-events#anchoring-hosting", // Updated ID
     description: "Experienced anchors to host and engage your audience.",
   },
   {
     title: "Gifting",
-    href: "/corporate-events#gifting",
+    href: "/corporate-events#corporate-gifting", // Updated ID
     description: "Curated corporate gifts for attendees and speakers.",
   },
   {
     title: "Printing",
-    href: "/corporate-events#printing",
+    href: "/corporate-events#event-printing", // Updated ID
     description: "High-quality printing solutions for event materials.",
   },
   {
     title: "Games & Activities",
-    href: "/corporate-events#games",
+    href: "/corporate-events#games-team-building", // Updated ID
     description: "Engaging games and team-building activities.",
   },
 ];
@@ -69,7 +70,7 @@ export function Navbar() {
         {/* Logo Only */}
         <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
           <Image
-            src="/logoimg.jpeg" // Path relative to public directory
+            src="/logoimg.jpeg" 
             alt="Events Unlimited Logo"
             width={120} 
             height={120} 
@@ -78,7 +79,6 @@ export function Navbar() {
             unoptimized 
             priority 
           />
-          {/* Removed "Events Unlimited" text */}
         </Link>
 
         {/* Desktop Navigation & Controls - Moved to the right */}
@@ -104,7 +104,7 @@ export function Navbar() {
                              key={component.title}
                              title={component.title}
                              href={component.href}
-                             onClick={closeMobileMenu}
+                             onClick={closeMobileMenu} // Pass closeMobileMenu here
                            >
                              {component.description}
                            </ListItem>
@@ -208,6 +208,13 @@ const ListItem = React.forwardRef<
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick) {
       onClick(e); 
+    }
+    // Additional logic to ensure mobile menu closes if it's part of a dropdown
+    if (typeof (onClick as any) === 'function' && (e.target as HTMLElement).closest('.radix-navigation-menu-content')) {
+        const mobileMenuCloseButton = document.querySelector('[aria-label="Close Menu"]');
+        if (mobileMenuCloseButton instanceof HTMLElement) {
+            mobileMenuCloseButton.click();
+        }
     }
   };
 

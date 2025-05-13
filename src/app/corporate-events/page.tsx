@@ -6,73 +6,73 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { CalendarDays, GanttChartSquare, Handshake, Palette, ScreenShare } from 'lucide-react'; // Added new icons
+import { CalendarDays, GanttChartSquare, Handshake, Palette, ScreenShare, Zap, Users, Gift, Printer, Puzzle } from 'lucide-react'; // Added new icons
 
 const corporateServices = [
  {
-    id: "dj",
+    id: "dj-services", // Unique ID
     title: "DJ Services",
     description: "Our professional DJs curate the perfect soundtrack for your corporate event, from background ambiance to high-energy dance floors. We work with you to understand your audience and event theme, ensuring the music enhances the overall experience.",
     imageUrl: "/dj1.jpeg",
-    aiHint: "dj setup"
+    aiHint: "dj setup console" // AI Hint
   },
   {
-    id: "anchoring",
+    id: "anchoring-hosting", // Unique ID
     title: "Anchoring & Hosting",
     description: "Engage your audience with our experienced and charismatic anchors. They masterfully guide your event's flow, introduce speakers, facilitate discussions, and keep energy levels high, ensuring a smooth and professional presentation.",
     imageUrl: "https://picsum.photos/600/400?random=anchor",
      aiHint: "public speaking"
   },
   {
-    id: "gifting",
+    id: "corporate-gifting", // Unique ID
     title: "Corporate Gifting",
     description: "Make a lasting impression with thoughtfully curated corporate gifts. We offer a wide range of options, from branded merchandise to luxury items, tailored to your budget and recipient profile, perfect for attendees, speakers, or employees.",
     imageUrls: Array.from({ length: 13 }, (_, i) => `/print${i + 1}.jpg`),
-    aiHint: "gift boxes"
+    aiHint: "gift boxes" // AI Hint
   },
   {
-    id: "printing",
+    id: "event-printing", // Unique ID
     title: "Event Printing Solutions",
     description: "High-quality printing services for all your event needs. We handle everything from invitations, banners, backdrops, brochures, and signage, ensuring professional-looking materials that align with your brand identity.",
     imageUrl: "https://picsum.photos/600/400?random=printing",
-    aiHint: "print machine"
+    aiHint: "print machine" // AI Hint
   },
   {
-    id: "games",
+    id: "games-team-building", // Unique ID
     title: "Games & Team Building",
     description: "Foster collaboration and fun with our engaging games and team-building activities. We design customized experiences, from icebreakers to complex challenges, perfect for boosting morale and strengthening team dynamics.",
     imageUrl: "/games.JPG",
-    aiHint: "team building"
+    aiHint: "team building activity" // AI Hint
   },
 ];
 
 const faqItems = [
   {
-    id: "faq-1",
+    id: "faq-event-types",
     question: "What types of corporate events do you manage?",
     answer: "We manage a wide range of corporate events including Sports Day, Annual Day, Staff Parties, Product Launches, AGMs, Family Day events, and Tech Conferences.",
     icon: GanttChartSquare,
   },
   {
-    id: "faq-2",
+    id: "faq-booking-time",
     question: "How early should we book our event with you?",
     answer: "For larger events, we recommend reaching out at least 2-3 months in advance. For smaller or mid-scale events, a lead time of 4-6 weeks usually works well. Ideally, 30 days is perfect for us to deliver the best results.",
     icon: CalendarDays,
   },
   {
-    id: "faq-3",
+    id: "faq-venue-selection",
     question: "Can you help us choose the right venue?",
     answer: "Yes, we do take care of the venue selection and other bookings as well to ensure it aligns with your event's requirements and budget.",
     icon: Handshake,
   },
   {
-    id: "faq-4",
+    id: "faq-custom-themes",
     question: "Do you offer custom themes and creative concepts?",
     answer: "Yes, we specialize in customized events. Most of the time, we tailor themes and creative concepts to match your brand and event objectives.",
     icon: Palette,
   },
   {
-    id: "faq-5",
+    id: "faq-event-services",
     question: "What services do you provide as part of event management?",
     answer: "We provide end-to-end event management services, covering everything from initial planning and vendor coordination to on-site execution and post-event analysis.",
     icon: ScreenShare,
@@ -104,7 +104,7 @@ export default function CorporateEventsPage() {
                   {service.title}
                 </AccordionTrigger>
                 <AccordionContent className="px-2 pb-6">
-                  {service.id === 'gifting' && service.imageUrls && Array.isArray(service.imageUrls) ? (
+                  {service.id === 'corporate-gifting' && service.imageUrls && Array.isArray(service.imageUrls) ? (
                     // Gifting Gallery Layout
                     <div className="md:col-span-3 mt-2">
                       <p className="text-base text-foreground/80 mb-6">
@@ -180,4 +180,3 @@ export default function CorporateEventsPage() {
     </>
   );
 }
-
