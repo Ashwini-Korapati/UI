@@ -8,99 +8,99 @@
   }
 
   :root {
-    /* Professional Lavender Theme (Light) */
-    --background: 255 100% 100%; /* White */
-    --foreground: 255 20% 25%;  /* Dark Lavender Gray */
+    /* Professional Dark Blue Theme */
+    --background: 210 40% 98%; /* #f0f4f8 - Light Grey Blue */
+    --foreground: 210 25% 30%; /* #3a4b67 - Dark Slate Blue */
 
-    --card: 255 100% 100%;
-    --card-foreground: 255 20% 25%;
+    --card: 210 40% 100%; /* #ffffff - White */
+    --card-foreground: 210 25% 30%; /* #3a4b67 */
 
-    --popover: 255 100% 100%;
-    --popover-foreground: 255 20% 25%;
+    --popover: 210 40% 100%; /* #ffffff */
+    --popover-foreground: 210 25% 30%; /* #3a4b67 */
 
-    --primary: 255 80% 60%;  /* Lavender */
-    --primary-foreground: 255 100% 98%; /* Almost White */
+    --primary: 210 100% 20%; /* #003366 - Dark Blue */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 255 50% 96%; /* Light Lavender Gray */
-    --secondary-foreground: 255 30% 40%; /* Medium Lavender Gray */
+    --secondary: 220 13% 91%; /* #e0e0e0 - Light Grey */
+    --secondary-foreground: 210 25% 20%; /* #263246 - Darker Slate Blue */
 
-    --muted: 255 50% 96%;
-    --muted-foreground: 255 25% 65%; /* Muted Lavender Gray */
+    --muted: 220 13% 91%; /* #e0e0e0 */
+    --muted-foreground: 210 20% 50%; /* #6b7f9e - Muted Slate Blue */
 
-    --accent: 275 80% 65%;  /* Deeper Purple */
-    --accent-foreground: 275 100% 98%; /* Very Light Purple/White */
+    --accent: 180 100% 25%; /* #008080 - Teal */
+    --accent-foreground: 0 0% 100%; /* White */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 255 40% 90%; /* Light Lavender Border */
-    --input: 255 40% 94%; /* Slightly Darker Lavender Input */
-    --ring: 255 80% 60%; /* Lavender Ring */
+    --border: 210 20% 85%; /* #cdd5e0 - Light Grey Blue Border */
+    --input: 210 20% 92%; /* #e1e7ed - Lighter Grey Blue Input */
+    --ring: 180 100% 25%; /* #008080 - Teal Ring */
 
-    --chart-1: 255 80% 60%; /* Lavender */
-    --chart-2: 275 80% 65%; /* Deeper Purple */
-    --chart-3: 255 40% 70%; /* Medium Lavender */
-    --chart-4: 265 70% 75%; /* Brighter Lavender */
-    --chart-5: 250 60% 85%; /* Light Lilac */
+    --chart-1: 210 100% 20%; /* Dark Blue */
+    --chart-2: 180 100% 25%; /* Teal */
+    --chart-3: 210 60% 50%;  /* Medium Blue */
+    --chart-4: 180 60% 50%;  /* Medium Teal */
+    --chart-5: 210 40% 70%;  /* Light Blue */
 
     --radius: 0.5rem;
 
     /* Sidebar specific */
-    --sidebar-background: 255 30% 98%; /* Very Light Lavender Gray */
-    --sidebar-foreground: 255 20% 30%;
-    --sidebar-primary: 255 80% 60%;
-    --sidebar-primary-foreground: 255 100% 98%;
-    --sidebar-accent: 255 40% 92%;
-    --sidebar-accent-foreground: 255 20% 20%;
-    --sidebar-border: 255 40% 88%;
-    --sidebar-ring: 275 80% 65%;
+    --sidebar-background: 210 30% 96%; /* Very Light Grey Blue */
+    --sidebar-foreground: 210 25% 25%;
+    --sidebar-primary: 210 100% 20%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 90%;
+    --sidebar-accent-foreground: 210 25% 15%;
+    --sidebar-border: 210 20% 80%;
+    --sidebar-ring: 180 100% 25%;
   }
 
   .dark {
     /* Dark Mode Theme */
-    --background: 255 10% 8%; /* Very Dark Desaturated Lavender */
-    --foreground: 255 15% 95%; /* Light Gray */
+    --background: 210 20% 10%; /* #10151c - Very Dark Blue */
+    --foreground: 210 25% 95%; /* #eff3f7 - Light Grey Blue */
 
-    --card: 255 10% 12%; /* Slightly lighter dark */
-    --card-foreground: 255 15% 95%;
+    --card: 210 20% 15%; /* #1a222c - Darker Blue */
+    --card-foreground: 210 25% 95%;
 
-    --popover: 255 10% 10%;
-    --popover-foreground: 255 15% 95%;
+    --popover: 210 20% 12%; /* Even Darker Blue */
+    --popover-foreground: 210 25% 95%;
 
-    --primary: 255 70% 70%; /* Lighter Lavender */
-    --primary-foreground: 255 10% 15%; /* Dark Text on Primary */
+    --primary: 210 100% 60%; /* #66a3ff - Lighter Blue */
+    --primary-foreground: 210 20% 10%; /* Very Dark Blue */
 
-    --secondary: 255 10% 18%; /* Dark Gray */
-    --secondary-foreground: 255 10% 80%; /* Lighter Gray Text */
+    --secondary: 210 15% 20%; /* #262c3a - Dark Grey Blue */
+    --secondary-foreground: 210 15% 80%; /* Light Grey Blue */
 
-    --muted: 255 10% 18%;
-    --muted-foreground: 255 10% 65%; /* Muted Light Gray */
+    --muted: 210 15% 20%;
+    --muted-foreground: 210 15% 65%; /* Muted Light Grey Blue */
 
-    --accent: 275 70% 75%; /* Brighter Purple */
-    --accent-foreground: 275 100% 10%; /* Very Dark Text on Accent */
+    --accent: 180 100% 45%; /* #19e6e6 - Brighter Teal */
+    --accent-foreground: 180 100% 5%; /* Very Dark Teal */
 
     --destructive: 0 70% 50%; /* Darker Red */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 255 15% 25%; /* Dark Lavender Border */
-    --input: 255 15% 22%; /* Slightly Darker Input */
-    --ring: 255 70% 70%; /* Lighter Lavender Ring */
+    --border: 210 15% 25%; /* Dark Grey Blue Border */
+    --input: 210 15% 22%; /* Slightly Darker Input */
+    --ring: 180 100% 45%; /* Brighter Teal Ring */
 
-    --chart-1: 255 70% 70%;
-    --chart-2: 275 70% 75%;
-    --chart-3: 255 40% 60%;
-    --chart-4: 265 60% 65%;
-    --chart-5: 250 50% 55%;
+    --chart-1: 210 100% 60%;
+    --chart-2: 180 100% 45%;
+    --chart-3: 210 60% 70%;
+    --chart-4: 180 60% 65%;
+    --chart-5: 210 40% 50%;
 
     /* Sidebar specific */
-    --sidebar-background: 255 10% 13%;
-    --sidebar-foreground: 255 15% 90%;
-    --sidebar-primary: 255 70% 70%;
-    --sidebar-primary-foreground: 255 10% 15%;
-    --sidebar-accent: 255 15% 25%;
-    --sidebar-accent-foreground: 255 15% 95%;
-    --sidebar-border: 255 15% 30%;
-    --sidebar-ring: 275 70% 75%;
+    --sidebar-background: 210 20% 13%;
+    --sidebar-foreground: 210 25% 90%;
+    --sidebar-primary: 210 100% 60%;
+    --sidebar-primary-foreground: 210 20% 10%;
+    --sidebar-accent: 210 15% 25%;
+    --sidebar-accent-foreground: 210 25% 95%;
+    --sidebar-border: 210 15% 30%;
+    --sidebar-ring: 180 100% 45%;
   }
 }
 
@@ -304,3 +304,139 @@
 .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
 .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
 /* Add more if needed */
+
+/* CSS for Stats Card */
+@layer components {
+  .outer-stat-card {
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
+    padding: 1px;
+    background: radial-gradient(circle 230px at 0% 0%, hsl(var(--card)), hsl(var(--background))); /* Adjusted to theme colors */
+    position: relative;
+    box-shadow: 0 4px 12px hsla(var(--foreground), 0.1);
+  }
+
+  .dark .outer-stat-card {
+     background: radial-gradient(circle 230px at 0% 0%, hsl(var(--card)), hsl(var(--background)));
+  }
+
+  .dot-stat-card {
+    width: 5px;
+    aspect-ratio: 1;
+    position: absolute;
+    background-color: hsl(var(--accent)); /* Adjusted to theme accent */
+    box-shadow: 0 0 10px hsl(var(--accent));
+    border-radius: 100px;
+    z-index: 2;
+    right: 10%;
+    top: 10%;
+    animation: moveDot 6s linear infinite;
+  }
+
+  @keyframes moveDot {
+    0%,
+    100% {
+      top: 10%;
+      right: 10%;
+    }
+    25% {
+      top: 10%;
+      right: calc(100% - 35px);
+    }
+    50% {
+      top: calc(100% - 30px);
+      right: calc(100% - 35px);
+    }
+    75% {
+      top: calc(100% - 30px);
+      right: 10%;
+    }
+  }
+
+  .inner-stat-card {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+    border: solid 1px hsl(var(--border)); /* Adjusted to theme border */
+    background-size: 20px 20px;
+    background: radial-gradient(circle 280px at 0% 0%, hsl(var(--secondary)), hsl(var(--background))); /* Adjusted */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    color: hsl(var(--foreground)); /* Adjusted */
+    overflow: hidden; /* Added to contain the ray */
+  }
+
+  .dark .inner-stat-card {
+     background: radial-gradient(circle 280px at 0% 0%, hsl(var(--secondary)), hsl(var(--background)));
+     color: hsl(var(--foreground));
+  }
+
+  .ray-stat-card {
+    width: 220px;
+    height: 45px;
+    border-radius: 100px;
+    position: absolute;
+    background-color: hsla(var(--accent), 0.7); /* Adjusted with opacity */
+    opacity: 0.4;
+    box-shadow: 0 0 50px hsla(var(--accent), 0.5);
+    filter: blur(10px);
+    transform-origin: 10%;
+    top: 0%;
+    left: 0;
+    transform: rotate(40deg);
+  }
+
+  .text-stat-card {
+    font-weight: bolder;
+    font-size: 4rem;
+    /* Gradient text effect: using primary and foreground for contrast */
+    background: linear-gradient(45deg, hsl(var(--primary)) 4%, hsl(var(--foreground)), hsl(var(--primary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    z-index: 1; /* Ensure text is above ray */
+  }
+  
+  .small-text-stat-card {
+    color: hsl(var(--muted-foreground));
+    font-size: 0.875rem; /* Tailwind text-sm */
+    font-weight: 600; /* Tailwind semibold */
+    text-transform: uppercase;
+    letter-spacing: 0.05em; /* Tailwind tracking-wider */
+    margin-top: 0.25rem; /* Tailwind mt-1 */
+    z-index: 1; /* Ensure text is above ray */
+  }
+
+
+  .line-stat-card {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background-color: hsl(var(--border)); /* Adjusted */
+  }
+  .topl-stat-card {
+    top: 10%;
+    background: linear-gradient(90deg, hsl(var(--muted-foreground)) 30%, hsl(var(--border)) 70%);
+  }
+  .bottoml-stat-card {
+    bottom: 10%;
+    background: hsl(var(--border)); /* Simplified for theme */
+  }
+  .leftl-stat-card {
+    left: 10%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, hsl(var(--muted-foreground)) 30%, hsl(var(--border)) 70%);
+  }
+  .rightl-stat-card {
+    right: 10%;
+    width: 1px;
+    height: 100%;
+     background: hsl(var(--border)); /* Simplified for theme */
+  }
+}
