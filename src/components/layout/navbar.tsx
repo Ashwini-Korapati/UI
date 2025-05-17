@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -62,19 +63,22 @@ export function Navbar() {
     { href: "/#faq", label: "FAQ" },
   ];
 
-  const scheduleCloseMobileMenu = () => {
+  // Function to close the mobile menu, ensuring it happens after navigation
+  const closeMobileMenu = () => {
+    // Use setTimeout to ensure the click event (navigation) processes first
     setTimeout(() => {
       setIsMobileMenuOpen(false);
     }, 0);
   };
 
+
   return (
     <header className="sticky top-0 z-50  w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex items-center justify-between h-16 md:h-20"> {/* Adjusted height for better logo fit */}
  {/* Logo Only */}
-        <Link href="/" className="flex items-center ml-0 md:ml-4" onClick={scheduleCloseMobileMenu}> {/* Added md:ml-4 for desktop, ml-0 for mobile, schedule close */}
+        <Link href="/" className="flex items-center ml-0 md:ml-4" onClick={closeMobileMenu}> {/* Added md:ml-4 for desktop, ml-0 for mobile, schedule close */}
           <Image
-            src="/logoimg.jpeg"
+            src="/logo.png"
             alt="Events Unlimited Logo"
             width={170} // Increased width
             height={170} // Increased height
@@ -108,7 +112,7 @@ export function Navbar() {
                              key={component.title}
                              title={component.title}
                              href={component.href}
-                             onClick={scheduleCloseMobileMenu} // Use scheduled close for dropdown items
+                             onClick={closeMobileMenu} // Use scheduled close for dropdown items
                            >
                              {component.description}
                            </ListItem>
@@ -119,10 +123,10 @@ export function Navbar() {
                  ) : (
                    <Link href={link.href} legacyBehavior passHref>
                      <NavigationMenuLink
-                        onClick={isMobileMenuOpen ? scheduleCloseMobileMenu : undefined} // schedule close only if mobile menu might be open
+                        onClick={isMobileMenuOpen ? closeMobileMenu : undefined} // schedule close only if mobile menu might be open
                        className={cn(
  navigationMenuTriggerStyle(),
-                         link.href === '/' && pathname === '/' ? "bg-accent/50 text-accent-foreground" : ""
+                        (pathname === link.href || (link.href.startsWith('/#') && pathname === '/')) ? "bg-accent/50 text-accent-foreground" : ""
                        )}
                      >
                        {link.label}
@@ -148,9 +152,9 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs p-6 bg-background">
               <div className="flex justify-between items-center mb-6">
-                 <Link href="/" className="flex items-center" onClick={scheduleCloseMobileMenu}> {/* schedule close */}
+                 <Link href="/" className="flex items-center" onClick={closeMobileMenu}> {/* schedule close */}
                    <Image
-                       src="/logoimg.jpeg"
+                       src="/logo.png"
                        alt="Events Unlimited Logo Mobile"
                        width={180}
                        height={180}
@@ -172,9 +176,9 @@ export function Navbar() {
                    href={link.href}
                    className={cn(
                      "text-lg font-medium transition-colors hover:text-primary",
-                     pathname === link.href || (link.href.startsWith('/#') && pathname === '/') ? "text-primary" : "text-foreground/70" // Keep this logic for mobile for now, as it seems intentional.
+                     (pathname === link.href || (link.href.startsWith('/#') && pathname === '/')) ? "text-primary" : "text-foreground/70"
                    )}
-                   onClick={scheduleCloseMobileMenu} // Use scheduled close
+                   onClick={closeMobileMenu} // Use scheduled close
                  >
                    {link.label}
                  </Link>
@@ -187,7 +191,7 @@ export function Navbar() {
                         <Link
                           href={component.href}
                           className="text-base text-foreground/70 hover:text-primary"
-                          onClick={scheduleCloseMobileMenu} // Use scheduled close
+                          onClick={closeMobileMenu} // Use scheduled close
                         >
                           {component.title}
                         </Link>
@@ -211,9 +215,10 @@ const ListItem = React.forwardRef<
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick) {
-      // The onClick prop is scheduleCloseMobileMenu, which already uses setTimeout
+      // The onClick prop is closeMobileMenu, which already uses setTimeout
       (onClick as (event?: React.MouseEvent<HTMLAnchorElement>) => void)(e);
     }
+    // If there's no specific onClick for menu closure, the link will navigate directly.
   };
 
   return (
@@ -239,4 +244,3 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem";
-
