@@ -14,7 +14,7 @@ interface StatCardProps {
 const StatCard: React.FC<StatCardProps> = ({ largeText, smallText, backgroundImageUrl, aiHint }) => {
   return (
     <Card
-      className="text-center border-border/50 shadow-xl h-full flex flex-col justify-center relative bg-cover bg-center rounded-lg overflow-hidden group transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
+      className="text-center border-border/50 shadow-xl h-full min-h-80 flex flex-col justify-center relative bg-cover bg-center rounded-lg overflow-hidden group transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
       style={{ backgroundImage: `url(${backgroundImageUrl})` }}
       data-ai-hint={aiHint}
     >
