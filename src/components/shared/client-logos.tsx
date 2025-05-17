@@ -25,38 +25,38 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt }) => (
 );
 
 // IMPORTANT: Ensure your image files in the /public directory are named EXACTLY as below,
-// especially removing spaces and special characters (use hyphens instead).
+// removing spaces and hyphens from original names.
 const logosList = [
   { src: '/ABB.png', alt: 'ABB Logo' },
   { src: '/ADARSH.png', alt: 'ADARSH Logo' },
-  { src: '/AGILON-HEALTH-LOGO.png', alt: 'AGILON HEALTH LOGO' },
+  { src: '/AGILONHEALTHLOGO.png', alt: 'AGILON HEALTH LOGO' },
   { src: '/AKMI.png', alt: 'AKMI Logo' },
-  { src: '/ANTHOLOGY-LOGO.png', alt: 'ANTHOLOGY LOGO' },
+  { src: '/ANTHOLOGYLOGO.png', alt: 'ANTHOLOGY LOGO' },
   { src: '/AUTOLIV.png', alt: 'AUTOLIV Logo' },
-  { src: '/AVPL-LOGO.png', alt: 'AVPL LOGO' },
-  { src: '/BEL-LOGO.png', alt: 'BEL LOGO' },
-  { src: '/CARELON-LOGO.png', alt: 'CARELON LOGO' },
-  { src: '/CDM-LOGO.png', alt: 'CDM LOGO' },
+  { src: '/AVPLLOGO.png', alt: 'AVPL LOGO' },
+  { src: '/BELLOGO.png', alt: 'BEL LOGO' },
+  { src: '/CARELONLOGO.png', alt: 'CARELON LOGO' },
+  { src: '/CDMLOGO.png', alt: 'CDM LOGO' },
   { src: '/FORTERRRO.png', alt: 'FORTERRRO Logo' },
   { src: '/HDFC.png', alt: 'HDFC Logo' },
-  { src: '/INDIA-FIRST-LOGO.png', alt: 'INDIA FIRST LOGO' },
-  { src: '/INDUS-LOGO.png', alt: 'INDUS LOGO' },
-  { src: '/kennametal-logo.png', alt: 'Kennametal Logo' },
+  { src: '/INDIAFIRSTLOGO.png', alt: 'INDIA FIRST LOGO' },
+  { src: '/INDUSLOGO.png', alt: 'INDUS LOGO' },
+  { src: '/kennametallogo.png', alt: 'Kennametal Logo' },
   { src: '/LSEG.png', alt: 'LSEG Logo' },
-  { src: '/MERCARI-LOGO.png', alt: 'MERCARI LOGO' },
-  { src: '/MUTHOOT-LOGO.png', alt: 'MUTHOOT LOGO' },
-  { src: '/NINE-DOTS.png', alt: 'NINE DOTS Logo' },
+  { src: '/MERCARIOGO.png', alt: 'MERCARI LOGO' }, // Assuming MERCARI-LOGO -> MERCARIOGO
+  { src: '/MUTHOOTLOGO.png', alt: 'MUTHOOT LOGO' },
+  { src: '/NINEDOTS.png', alt: 'NINE DOTS Logo' },
   { src: '/QLAR.png', alt: 'QLAR Logo' },
   { src: '/quadragen.png', alt: 'Quadragen Logo' },
-  { src: '/RSA-LOGO.png', alt: 'RSA LOGO' },
+  { src: '/RSALOGO.png', alt: 'RSA LOGO' },
   { src: '/RUSH.png', alt: 'RUSH Logo' },
-  { src: '/STG-LAB.png', alt: 'STG LAB Logo' },
+  { src: '/STGLAB.png', alt: 'STG LAB Logo' },
   { src: '/TALISMA.png', alt: 'TALISMA Logo' },
-  { src: '/TR-LOGO.png', alt: 'TR LOGO' },
-  { src: '/UI-PATH-LOGO.png', alt: 'UI PATH LOGO' },
-  { src: '/UST-LOGO.png', alt: 'UST LOGO' },
-  { src: '/WENGER-LOGO.png', alt: 'WENGER LOGO' },
-  { src: '/YES-BANK-LOGO.png', alt: 'YES BANK LOGO' }
+  { src: '/TRLOGO.png', alt: 'TR LOGO' },
+  { src: '/UIPATHLOGO.png', alt: 'UI PATH LOGO' },
+  { src: '/USTLOGO.png', alt: 'UST LOGO' },
+  { src: '/WENGERLOGO.png', alt: 'WENGER LOGO' },
+  { src: '/YESBANKLOGO.png', alt: 'YES BANK LOGO' }
 ];
 
 
@@ -70,7 +70,7 @@ export function ClientLogos() {
 
   return (
     <div className="w-full max-w-screen-xl mx-auto">
-      <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-12 md:mb-16 lg:mb-20 animate-fadeInUp">
+      <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-12 md:mb-16 lg:mb-20 lg:mb-40 animate-fadeInUp">
         Trusted By
       </h3>
       <div className="space-y-4"> {/* Adds space between rows of marquees */}
