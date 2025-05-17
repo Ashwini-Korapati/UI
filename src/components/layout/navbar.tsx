@@ -73,9 +73,9 @@ export function Navbar() {
 
 
   return (
-    <header className="sticky top-0 z-50  w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex items-center justify-between h-16 md:h-20"> {/* Adjusted height for better logo fit */}
- {/* Logo Only */}
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex items-center justify-between h-auto py-2 md:py-0 md:h-20"> {/* Adjusted height for better logo fit */}
+        {/* Logo Only */}
         <Link href="/" className="flex items-center ml-0 md:ml-4" onClick={closeMobileMenu}> {/* Added md:ml-4 for desktop, ml-0 for mobile, schedule close */}
           <Image
             src="/logo.png"
@@ -156,8 +156,8 @@ export function Navbar() {
                    <Image
                        src="/logo.png"
                        alt="Events Unlimited Logo Mobile"
-                       width={180}
-                       height={180}
+                       width={180} // Increased width
+                       height={180} // Increased height
                        className="rounded-sm object-contain"
                        data-ai-hint="company logo"
                        unoptimized
