@@ -13,21 +13,21 @@ interface ClientLogoProps {
 }
 
 const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 150, height = 150, className }) => (
-  <div className={cn("flex items-center justify-center", className)}>
+  <div className={cn("flex items-center justify-center p-2", className)}>
     <Image
       src={src} // Use the string path directly
       alt={alt}
-      width={width}
-      height={height}
+      width={width} // Use passed width or default
+      height={height} // Use passed height or default
       className="transition-transform duration-300 ease-in-out hover:scale-110 object-contain"
       data-ai-hint="company logo"
-      // unoptimized={true} // Removed as local images should be optimizable by Next.js
     />
   </div>
 );
 
 // IMPORTANT: Ensure your image files in the /public directory are named EXACTLY as below,
 // especially removing spaces and special characters (use hyphens instead).
+// For example, "AGILON HEALTH LOGO.png" must be renamed to "AGILON-HEALTH-LOGO.png" in your public folder.
 const logosList = [
   { src: '/ABB.png', alt: 'ABB Logo' },
   { src: '/ADARSH.png', alt: 'ADARSH Logo' },
@@ -36,14 +36,14 @@ const logosList = [
   { src: '/ANTHOLOGY-LOGO.png', alt: 'ANTHOLOGY LOGO' },
   { src: '/AUTOLIV.png', alt: 'AUTOLIV Logo' },
   { src: '/AVPL-LOGO.png', alt: 'AVPL LOGO' },
-  { src: '/BEL-LOGO.png', alt: 'BEL LOGO' }, // Assumed renamed from "BEL ,LOGO.png"
-  { src: '/CARELON-LOGO.png', alt: 'CARELON LOGO' }, // Assumed renamed from "CARELON ,LOGO.png"
-  { src: '/CDM-LOGO.png', alt: 'CDM LOGO' }, // Assumed renamed from "CDM ,LOGO.png"
+  { src: '/BEL-LOGO.png', alt: 'BEL Logo' },
+  { src: '/CARELON-LOGO.png', alt: 'CARELON Logo' },
+  { src: '/CDM-LOGO.png', alt: 'CDM Logo' },
   { src: '/FORTERRRO.png', alt: 'FORTERRRO Logo' },
   { src: '/HDFC.png', alt: 'HDFC Logo' },
   { src: '/INDIA-FIRST-LOGO.png', alt: 'INDIA FIRST LOGO' },
   { src: '/INDUS-LOGO.png', alt: 'INDUS LOGO' },
-  { src: '/kennametal-logo.png', alt: 'Kennametal Logo' }, // Assumed renamed from "kennametal logo.png"
+  { src: '/kennametal-logo.png', alt: 'Kennametal Logo' },
   { src: '/LSEG.png', alt: 'LSEG Logo' },
   { src: '/MERCARI-LOGO.png', alt: 'MERCARI LOGO' },
   { src: '/MUTHOOT-LOGO.png', alt: 'MUTHOOT LOGO' },
@@ -78,7 +78,7 @@ export function ClientLogos() {
               key={`${logo.alt}-${index}`}
               src={logo.src}
               alt={logo.alt}
-              className="mx-4"
+              className="mx-4" // For spacing in the marquee
             />
           ))}
         </div>
