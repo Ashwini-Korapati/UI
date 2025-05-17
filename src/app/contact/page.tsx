@@ -36,11 +36,11 @@ export default function ContactPage() {
                 Call these numbers for any queries:
               </p>
               <div className="mt-2 space-y-1">
-                <a href="tel:+919845925252" className="block text-lg text-accent hover:underline">
-                  +91 98459 25252
+                <a href="tel:+917899943534" className="block text-lg text-accent hover:underline">
+                  +91 78999 43534
                 </a>
-                 <a href="tel:+917647367436" className="block text-lg text-accent hover:underline">
-                  +91 76473 67436
+                 <a href="tel:+919845925252" className="block text-lg text-accent hover:underline">
+                  +91 98459 25252
                 </a>
               </div>
             </div>
@@ -52,6 +52,9 @@ export default function ContactPage() {
               <a href="mailto:eventsunlimited365@gmail.com" className="block text-lg text-accent hover:underline break-all">
                   eventsunlimited365@gmail.com
               </a>
+              <a href="mailto:events365info@gmail.com" className="block text-lg text-accent hover:underline break-all mt-1">
+                  events365info@gmail.com
+              </a>
             </div>
 
 
@@ -60,7 +63,7 @@ export default function ContactPage() {
                 <MapPin className="h-5 w-5 mr-3 text-accent" /> Location
               </h3>
               <p className="text-lg text-foreground/80">
-                42, 4th Temple St Rd, Vyalikaval, Kodandarampura, Malleshwaram, Bengaluru, Karnataka 560003
+                address no 9, 3rd temple road, malleshwaram bangalore - 560003
               </p>
               {/* Optional: Add a Google Maps embed here */}
             </div>
@@ -85,4 +88,3 @@ export default function ContactPage() {
     </>
   );
 }
-

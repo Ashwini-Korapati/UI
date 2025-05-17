@@ -70,13 +70,16 @@ export function Footer() {
               <li className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground/90" />
                 <div className="flex flex-col">
-                     <a href="tel:+917647367436" className="hover:text-accent-foreground/80 transition-colors">+91 76473 67436</a>
+                     <a href="tel:+917899943534" className="hover:text-accent-foreground/80 transition-colors">+91 78999 43534</a>
                     <a href="tel:+919845925252" className="hover:text-accent-foreground/80 transition-colors">+91 98459 25252</a>
                 </div>
               </li>
-              <li className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 shrink-0 text-accent-foreground/90" />
-                <a href="mailto:eventsunlimited365@gmail.com" className="hover:text-accent-foreground/80 transition-colors break-all">eventsunlimited365@gmail.com</a>
+              <li className="flex items-start space-x-2"> {/* Changed to items-start for better alignment with multiple emails */}
+                <Mail className="h-4 w-4 mt-0.5 shrink-0 text-accent-foreground/90" />
+                <div className="flex flex-col">
+                  <a href="mailto:eventsunlimited365@gmail.com" className="hover:text-accent-foreground/80 transition-colors break-all">eventsunlimited365@gmail.com</a>
+                  <a href="mailto:events365info@gmail.com" className="hover:text-accent-foreground/80 transition-colors break-all mt-1">events365info@gmail.com</a>
+                </div>
               </li>
                <li className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 shrink-0 text-accent-foreground/90" />
