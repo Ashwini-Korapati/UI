@@ -59,8 +59,8 @@ export function Navbar() {
     { href: "/corporate-events", label: "Corporate Events" },
     { href: "/contact", label: "Contact Us" },
     { href: "/become-vendor", label: "Become a Vendor" },
-    { href: "/#clients", label: "Clients" }, // Ensure hash links are handled for active state
-    { href: "/#faq", label: "FAQ" }, // Ensure hash links are handled for active state
+    { href: "/#clients", label: "Clients" }, 
+    { href: "/#faq", label: "FAQ" }, 
   ];
 
   const closeMobileMenu = () => {
@@ -74,17 +74,19 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex items-center justify-between h-auto py-2 md:py-0 md:h-20">
         {/* Logo Only */}
-        <Link href="/" className="flex items-center md:ml-4" onClick={closeMobileMenu}>
-          <Image
-            src="/logo.png"
-            alt="Events Unlimited Logo"
-            width={170} 
-            height={170} 
-            className="rounded-sm object-contain"
-            data-ai-hint="company logo"
-            unoptimized
-            priority
-          />
+        <Link href="/" legacyBehavior passHref>
+          <a className="flex items-center md:ml-4" onClick={closeMobileMenu}>
+            <Image
+              src="/logo.png"
+              alt="Events Unlimited Logo"
+              width={170} 
+              height={170} 
+              className="rounded-sm object-contain"
+              data-ai-hint="company logo"
+              unoptimized
+              priority
+            />
+          </a>
         </Link>
 
         {/* Desktop Navigation & Controls */}
@@ -95,7 +97,8 @@ export function Navbar() {
                 const isActive =
                   link.href === "/"
                     ? pathname === "/"
-                    : pathname.startsWith(link.href.split('#')[0]) && (link.href.includes('#') ? true : pathname === link.href);
+                    : (pathname === link.href || (link.href.includes('#') && pathname === link.href.split('#')[0]));
+
 
                 return (
                   <NavigationMenuItem key={link.href}>
@@ -151,16 +154,18 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs p-6 bg-background">
               <div className="flex justify-between items-center mb-6">
-                 <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
-                   <Image
-                       src="/logo.png"
-                       alt="Events Unlimited Logo Mobile"
-                       width={180}
-                       height={180}
-                       className="rounded-sm object-contain"
-                       data-ai-hint="company logo"
-                       unoptimized
-                    />
+                 <Link href="/" legacyBehavior passHref>
+                   <a className="flex items-center" onClick={closeMobileMenu}>
+                     <Image
+                         src="/logo.png"
+                         alt="Events Unlimited Logo Mobile"
+                         width={180}
+                         height={180}
+                         className="rounded-sm object-contain"
+                         data-ai-hint="company logo"
+                         unoptimized
+                      />
+                   </a>
                  </Link>
                  <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                    <X className="h-6 w-6" />
@@ -172,7 +177,7 @@ export function Navbar() {
                   const isActive =
                     link.href === "/"
                       ? pathname === "/"
-                      : pathname.startsWith(link.href.split('#')[0]) && (link.href.includes('#') ? true : pathname === link.href);
+                      : (pathname === link.href || (link.href.includes('#') && pathname === link.href.split('#')[0]));
                   
                   return link.label === "Corporate Events" ? null : (
                    <Link
