@@ -63,7 +63,7 @@ export default function ContactPage() {
                 <MapPin className="h-5 w-5 mr-3 text-accent" /> Location
               </h3>
               <p className="text-lg text-foreground/80">
-                address no 9, 3rd temple road, malleshwaram bangalore - 560003
+                No 9, 3rd Temple Road, Malleshwaram Bengaluru - 560003
               </p>
               {/* Optional: Add a Google Maps embed here */}
             </div>

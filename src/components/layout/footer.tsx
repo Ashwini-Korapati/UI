@@ -79,7 +79,7 @@ export function Footer() {
               </li>
                <li className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 shrink-0 text-accent-foreground/90" />
-                <span>address no 9, 3rd temple road, malleshwaram bangalore - 560003</span>
+                <span>No 9, 3rd Temple Road, Malleshwaram Bengaluru - 560003</span>
               </li>
                {/* Website link removed */}
             </ul>
