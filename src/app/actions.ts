@@ -14,7 +14,6 @@ console.log('------------------------------------------------');
 
 
 // Nodemailer transporter setup
-// Ensure EMAIL_SERVER_USER, EMAIL_SERVER_PASSWORD, and EMAIL_RECIPIENT are set in your .env.local file
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -34,22 +33,38 @@ async function sendEmailNotification(subject: string, htmlContent: string): Prom
   await transporter.sendMail(mailOptions);
 }
 
+function checkEnvVars(): { configured: boolean; debugMessage: string } {
+  const serverUserSet = !!process.env.EMAIL_SERVER_USER;
+  const serverPasswordSet = !!process.env.EMAIL_SERVER_PASSWORD;
+  const recipientSet = !!process.env.EMAIL_RECIPIENT;
+
+  let debugMessage = "Debug Info: ";
+  debugMessage += `EMAIL_SERVER_USER found by server action: ${serverUserSet}. `;
+  debugMessage += `EMAIL_SERVER_PASSWORD found by server action: ${serverPasswordSet}. `;
+  debugMessage += `EMAIL_RECIPIENT found by server action: ${recipientSet}. `;
+  debugMessage += "Check SERVER terminal for 'Module Load' logs. Ensure .env.local is in project ROOT and server was RESTARTED after changes to .env.local.";
+
+  if (!serverUserSet || !serverPasswordSet || !recipientSet) {
+    console.error(`Critical Error: Email server environment variables issue. ${debugMessage}`);
+    return { configured: false, debugMessage };
+  }
+  return { configured: true, debugMessage: "Environment variables seem configured." };
+}
+
 export async function submitContactForm(data: ContactFormData): Promise<{ success: boolean; message: string }> {
-  console.log('[ContactForm] Attempting to send email. Checking environment variables:');
+  console.log('[ContactForm] Attempting to send email. Values at time of call:');
   console.log('[ContactForm] EMAIL_SERVER_USER:', process.env.EMAIL_SERVER_USER ? `'${process.env.EMAIL_SERVER_USER}'` : 'NOT SET');
-  console.log('[ContactForm] EMAIL_SERVER_PASSWORD:', process.env.EMAIL_SERVER_PASSWORD ? 'SET (exists)' : 'NOT SET'); // Avoid logging password
+  console.log('[ContactForm] EMAIL_SERVER_PASSWORD:', process.env.EMAIL_SERVER_PASSWORD ? 'SET (exists)' : 'NOT SET');
   console.log('[ContactForm] EMAIL_RECIPIENT:', process.env.EMAIL_RECIPIENT ? `'${process.env.EMAIL_RECIPIENT}'` : 'NOT SET');
 
-
-  if (!process.env.EMAIL_SERVER_USER || !process.env.EMAIL_SERVER_PASSWORD || !process.env.EMAIL_RECIPIENT) {
-    console.error('Critical Error: Email server environment variables are NOT SET or not accessible by the server action. Please ensure your .env.local file in the project root is correctly configured with EMAIL_SERVER_USER, EMAIL_SERVER_PASSWORD, and EMAIL_RECIPIENT, and that you have RESTARTED your development server after making changes to .env.local.');
-    return { success: false, message: 'Email service is not configured correctly. Please contact support after verifying server configuration.' };
+  const envCheck = checkEnvVars();
+  if (!envCheck.configured) {
+    return { success: false, message: `Email service configuration error. ${envCheck.debugMessage}` };
   }
 
   try {
     const validatedData = ContactFormSchema.parse(data);
 
-    // Prepare email content
     const subject = 'New Contact Form Submission - Events Unlimited';
     const htmlContent = `
       <h2>New Contact Form Submission</h2>
@@ -67,7 +82,6 @@ export async function submitContactForm(data: ContactFormData): Promise<{ succes
       </table>
     `;
 
-    // Send email
     await sendEmailNotification(subject, htmlContent);
     console.log('Contact form email sent for:', validatedData.email);
 
@@ -76,7 +90,6 @@ export async function submitContactForm(data: ContactFormData): Promise<{ succes
     console.error('Contact form submission error:', error);
     let errorMessage = 'An unknown error occurred while submitting the form.';
     if (error instanceof Error) {
-      // Check for Zod validation errors
       if ('issues' in error && Array.isArray((error as any).issues)) {
         errorMessage = `Validation failed: ${(error as any).issues.map((e: any) => e.message).join(', ')}`;
       } else {
@@ -88,21 +101,19 @@ export async function submitContactForm(data: ContactFormData): Promise<{ succes
 }
 
 export async function submitVendorForm(data: VendorFormData): Promise<{ success: boolean; message: string }> {
-   console.log('[VendorForm] Attempting to send email. Checking environment variables:');
+   console.log('[VendorForm] Attempting to send email. Values at time of call:');
    console.log('[VendorForm] EMAIL_SERVER_USER:', process.env.EMAIL_SERVER_USER ? `'${process.env.EMAIL_SERVER_USER}'` : 'NOT SET');
-   console.log('[VendorForm] EMAIL_SERVER_PASSWORD:', process.env.EMAIL_SERVER_PASSWORD ? 'SET (exists)' : 'NOT SET'); // Avoid logging password
+   console.log('[VendorForm] EMAIL_SERVER_PASSWORD:', process.env.EMAIL_SERVER_PASSWORD ? 'SET (exists)' : 'NOT SET');
    console.log('[VendorForm] EMAIL_RECIPIENT:', process.env.EMAIL_RECIPIENT ? `'${process.env.EMAIL_RECIPIENT}'` : 'NOT SET');
 
-
-   if (!process.env.EMAIL_SERVER_USER || !process.env.EMAIL_SERVER_PASSWORD || !process.env.EMAIL_RECIPIENT) {
-    console.error('Critical Error: Email server environment variables are NOT SET or not accessible by the server action. Please ensure your .env.local file in the project root is correctly configured with EMAIL_SERVER_USER, EMAIL_SERVER_PASSWORD, and EMAIL_RECIPIENT, and that you have RESTARTED your development server after making changes to .env.local.');
-    return { success: false, message: 'Email service is not configured correctly. Please contact support after verifying server configuration.' };
+  const envCheck = checkEnvVars();
+  if (!envCheck.configured) {
+    return { success: false, message: `Email service configuration error. ${envCheck.debugMessage}` };
   }
 
    try {
     const validatedData = VendorFormSchema.parse(data);
 
-    // Prepare email content
     const subject = 'New Vendor Application - Events Unlimited';
     const htmlContent = `
       <h2>New Vendor Application</h2>
@@ -121,7 +132,6 @@ export async function submitVendorForm(data: VendorFormData): Promise<{ success:
       </table>
     `;
 
-    // Send email
     await sendEmailNotification(subject, htmlContent);
     console.log('Vendor form email sent for:', validatedData.companyName);
 
