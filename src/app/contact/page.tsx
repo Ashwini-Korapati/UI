@@ -1,5 +1,5 @@
 
-import { Mail, MapPin, Phone, Globe } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react'; // Removed Globe
 import { ContactForm } from '@/components/forms/contact-form'; // Import the form component
 
 export default function ContactPage() {
@@ -67,21 +67,7 @@ export default function ContactPage() {
               </p>
               {/* Optional: Add a Google Maps embed here */}
             </div>
-
-            <div className="border-t border-border pt-8">
-              <h3 className="text-xl font-semibold mb-3 text-primary flex items-center">
-                <Globe className="h-5 w-5 mr-3 text-accent" /> Website
-              </h3>
-              <p className="text-foreground/80 mb-1">Reach us through our website:</p>
-              <a
-                href="https://geventsunlimited.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg text-accent hover:underline break-all"
-              >
-                geventsunlimited.com
-              </a>
-            </div>
+            {/* Website section removed */}
           </div>
         </div>
       </section>

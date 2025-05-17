@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { Mail, MapPin, Phone, Globe, Linkedin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Mail, MapPin, Phone, Linkedin, Instagram } from 'lucide-react'; // Removed Globe, Facebook, Twitter
 import { ClientLogos } from '@/components/shared/client-logos';
 
 export function Footer() {
@@ -37,15 +37,11 @@ export function Footer() {
                      <a href="https://www.linkedin.com/in/eventsunlimited365" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="LinkedIn">
                          <Linkedin className="h-5 w-5" />
                      </a>
-                     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Facebook">
-                         <Facebook className="h-5 w-5" />
-                     </a>
+                     {/* Facebook link removed */}
                      <a href="https://www.instagram.com/events_unlimited_365?igsh=MWYybzdnODYyc3dpMA==" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Instagram">
                          <Instagram className="h-5 w-5" />
                      </a>
-                     <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent-foreground transition-colors" aria-label="Twitter">
-                         <Twitter className="h-5 w-5" />
-                     </a>
+                     {/* Twitter link removed */}
                  </div>
             </div>
           </div>
@@ -85,10 +81,7 @@ export function Footer() {
                 <MapPin className="h-4 w-4 shrink-0 text-accent-foreground/90" />
                 <span>address no 9, 3rd temple road, malleshwaram bangalore - 560003</span>
               </li>
-               <li className="flex items-center space-x-2">
-                 <Globe className="h-4 w-4 shrink-0 text-accent-foreground/90" />
-                <a href="https://geventsunlimited.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-foreground/80 transition-colors break-all">geventsunlimited.com</a>
-              </li>
+               {/* Website link removed */}
             </ul>
           </div>
 
