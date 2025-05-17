@@ -74,19 +74,17 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex items-center justify-between h-auto py-2 md:py-0 md:h-20">
         {/* Logo Only */}
-        <Link href="/" legacyBehavior passHref>
-          <a className="flex items-center md:ml-4" onClick={closeMobileMenu}>
-            <Image
-              src="/logo.png"
-              alt="Events Unlimited Logo"
-              width={170} 
-              height={170} 
-              className="rounded-sm object-contain"
-              data-ai-hint="company logo"
-              unoptimized
-              priority
-            />
-          </a>
+        <Link href="/" className="flex items-center md:ml-4" onClick={closeMobileMenu}>
+          <Image
+            src="/logo.png"
+            alt="Events Unlimited Logo"
+            width={170} 
+            height={170} 
+            className="rounded-sm object-contain"
+            data-ai-hint="company logo"
+            unoptimized
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation & Controls */}
@@ -97,7 +95,7 @@ export function Navbar() {
                 const isActive =
                   link.href === "/"
                     ? pathname === "/"
-                    : (pathname === link.href || (link.href.includes('#') && pathname === link.href.split('#')[0]));
+                    : (pathname === link.href || (link.href.includes('#') && pathname + (link.href.split('#')[1] ? '#' + link.href.split('#')[1] : '') === link.href ));
 
 
                 return (
@@ -154,18 +152,16 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs p-6 bg-background">
               <div className="flex justify-between items-center mb-6">
-                 <Link href="/" legacyBehavior passHref>
-                   <a className="flex items-center" onClick={closeMobileMenu}>
-                     <Image
-                         src="/logo.png"
-                         alt="Events Unlimited Logo Mobile"
-                         width={180}
-                         height={180}
-                         className="rounded-sm object-contain"
-                         data-ai-hint="company logo"
-                         unoptimized
-                      />
-                   </a>
+                 <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
+                   <Image
+                       src="/logo.png"
+                       alt="Events Unlimited Logo Mobile"
+                       width={180}
+                       height={180}
+                       className="rounded-sm object-contain"
+                       data-ai-hint="company logo"
+                       unoptimized
+                    />
                  </Link>
                  <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                    <X className="h-6 w-6" />
@@ -177,7 +173,7 @@ export function Navbar() {
                   const isActive =
                     link.href === "/"
                       ? pathname === "/"
-                      : (pathname === link.href || (link.href.includes('#') && pathname === link.href.split('#')[0]));
+                      : (pathname === link.href || (link.href.includes('#') && pathname + (link.href.split('#')[1] ? '#' + link.href.split('#')[1] : '') === link.href));
                   
                   return link.label === "Corporate Events" ? null : (
                    <Link
@@ -236,7 +232,7 @@ const ListItem = React.forwardRef<
           href={href}
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground hover:shadow-md focus:shadow-md",
             className
           )}
           onClick={handleClick}
@@ -253,4 +249,6 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
     
+    
+
     
