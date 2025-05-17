@@ -44,16 +44,18 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-md focus:bg-accent focus:text-accent-foreground focus:shadow-md focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-accent-foreground data-[active]:shadow-md data-[state=open]:bg-accent/50 data-[state=open]:shadow-md"
+  "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-md focus:bg-accent focus:text-accent-foreground focus:shadow-md focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground data-[active=true]:shadow-md data-[state=open]:bg-accent/50 data-[state=open]:text-accent-foreground data-[state=open]:shadow-md"
 )
 
+// Added 'active' prop to NavigationMenuTrigger
 const NavigationMenuTrigger = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger> & { active?: boolean }
+>(({ className, children, active, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
     className={cn(navigationMenuTriggerStyle(), "group", className)}
+    data-active={active ? "true" : undefined} // Pass active state for styling
     {...props}
   >
     {children}{" "}
@@ -80,18 +82,14 @@ const NavigationMenuContent = React.forwardRef<
 ))
 NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName
 
-// Use the Radix primitive link directly. Styling and active state will be handled in the usage.
 const NavigationMenuLink = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Link>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Link> & { active?: boolean }
 >(({ className, active, ...props }, ref) => (
   <NavigationMenuPrimitive.Link
     ref={ref}
-    className={cn(
-      navigationMenuTriggerStyle(),
-      active ? "bg-accent/50 text-accent-foreground shadow-md" : "",
-      className
-    )}
+    className={cn(navigationMenuTriggerStyle(), className)}
+    data-active={active ? "true" : undefined} // Pass active state for styling
     {...props}
   />
 ));
@@ -145,3 +143,5 @@ export {
   NavigationMenuIndicator,
   NavigationMenuViewport,
 }
+    
+    

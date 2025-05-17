@@ -59,13 +59,11 @@ export function Navbar() {
     { href: "/corporate-events", label: "Corporate Events" },
     { href: "/contact", label: "Contact Us" },
     { href: "/become-vendor", label: "Become a Vendor" },
-    { href: "/#clients", label: "Clients" },
-    { href: "/#faq", label: "FAQ" },
+    { href: "/#clients", label: "Clients" }, // Ensure hash links are handled for active state
+    { href: "/#faq", label: "FAQ" }, // Ensure hash links are handled for active state
   ];
 
-  // Function to close the mobile menu, ensuring it happens after navigation
   const closeMobileMenu = () => {
-    // Use setTimeout to ensure the click event (navigation) processes first
     setTimeout(() => {
       setIsMobileMenuOpen(false);
     }, 0);
@@ -74,67 +72,68 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex items-center justify-between h-auto py-2 md:py-0 md:h-20"> {/* Adjusted height for better logo fit */}
+      <div className="container flex items-center justify-between h-auto py-2 md:py-0 md:h-20">
         {/* Logo Only */}
-        <Link href="/" className="flex items-center ml-0 md:ml-4" onClick={closeMobileMenu}> {/* Added md:ml-4 for desktop, ml-0 for mobile, schedule close */}
+        <Link href="/" className="flex items-center md:ml-4" onClick={closeMobileMenu}>
           <Image
             src="/logo.png"
             alt="Events Unlimited Logo"
-            width={170} // Increased width
-            height={170} // Increased height
-            className="rounded-sm object-contain" // object-contain to maintain aspect ratio
+            width={170} 
+            height={170} 
+            className="rounded-sm object-contain"
             data-ai-hint="company logo"
             unoptimized
             priority
           />
         </Link>
 
-        {/* Desktop Navigation & Controls - Moved to the right */}
+        {/* Desktop Navigation & Controls */}
         <div className="hidden md:flex items-center space-x-4">
           <NavigationMenu>
-            <NavigationMenuList className="flex items-center">
-              {navLinks.map((link) => (
-                 <NavigationMenuItem key={link.href}>
-                 {link.label === "Corporate Events" ? (
-                   <>
-                     <NavigationMenuTrigger
-                       className={cn(
-                         navigationMenuTriggerStyle(),
-                         pathname.startsWith("/corporate-events") ? "bg-accent/50 text-accent-foreground" : ""
-                       )}
-                     >
-                       Corporate Events
-                     </NavigationMenuTrigger>
-                     <NavigationMenuContent>
-                       <ul className="grid w-[300px] gap-3 p-4 md:w-[350px] md:grid-cols-1 lg:w-[400px]">
-                         {corporateEventComponents.map((component) => (
-                           <ListItem
-                             key={component.title}
-                             title={component.title}
-                             href={component.href}
-                             onClick={closeMobileMenu} // Use scheduled close for dropdown items
-                           >
-                             {component.description}
-                           </ListItem>
-                         ))}
-                       </ul>
-                     </NavigationMenuContent>
-                   </>
-                 ) : (
-                   <Link href={link.href} legacyBehavior passHref>
-                     <NavigationMenuLink
-                        onClick={isMobileMenuOpen ? closeMobileMenu : undefined} // schedule close only if mobile menu might be open
-                       className={cn(
- navigationMenuTriggerStyle(),
-                        (pathname === link.href || (link.href.startsWith('/#') && pathname === '/')) ? "bg-accent/50 text-accent-foreground" : ""
-                       )}
-                     >
-                       {link.label}
-                     </NavigationMenuLink>
-                   </Link>
-                 )}
-               </NavigationMenuItem>
-              ))}
+            <NavigationMenuList>
+              {navLinks.map((link) => {
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(link.href.split('#')[0]) && (link.href.includes('#') ? true : pathname === link.href);
+
+                return (
+                  <NavigationMenuItem key={link.href}>
+                    {link.label === "Corporate Events" ? (
+                      <>
+                        <NavigationMenuTrigger
+                          active={pathname.startsWith("/corporate-events")}
+                        >
+                          Corporate Events
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <ul className="grid w-[300px] gap-3 p-4 md:w-[350px] md:grid-cols-1 lg:w-[400px]">
+                            {corporateEventComponents.map((component) => (
+                              <ListItem
+                                key={component.title}
+                                title={component.title}
+                                href={component.href}
+                                onClick={closeMobileMenu}
+                              >
+                                {component.description}
+                              </ListItem>
+                            ))}
+                          </ul>
+                        </NavigationMenuContent>
+                      </>
+                    ) : (
+                      <Link href={link.href} legacyBehavior passHref>
+                        <NavigationMenuLink
+                          active={isActive}
+                          onClick={isMobileMenuOpen ? closeMobileMenu : undefined}
+                        >
+                          {link.label}
+                        </NavigationMenuLink>
+                      </Link>
+                    )}
+                  </NavigationMenuItem>
+                );
+              })}
             </NavigationMenuList>
           </NavigationMenu>
           <ThemeToggle />
@@ -152,37 +151,43 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs p-6 bg-background">
               <div className="flex justify-between items-center mb-6">
-                 <Link href="/" className="flex items-center" onClick={closeMobileMenu}> {/* schedule close */}
+                 <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
                    <Image
                        src="/logo.png"
                        alt="Events Unlimited Logo Mobile"
-                       width={180} // Increased width
-                       height={180} // Increased height
+                       width={180}
+                       height={180}
                        className="rounded-sm object-contain"
                        data-ai-hint="company logo"
                        unoptimized
                     />
                  </Link>
-                 <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}> {/* Direct close, no navigation involved */}
+                 <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                    <X className="h-6 w-6" />
                    <span className="sr-only">Close Menu</span>
                  </Button>
              </div>
              <nav className="flex flex-col space-y-4">
-               {navLinks.map((link) => (
-                  link.label === "Corporate Events" ? null :
-                 <Link
-                   key={link.href}
-                   href={link.href}
-                   className={cn(
-                     "text-lg font-medium transition-colors hover:text-primary",
-                     (pathname === link.href || (link.href.startsWith('/#') && pathname === '/')) ? "text-primary" : "text-foreground/70"
-                   )}
-                   onClick={closeMobileMenu} // Use scheduled close
-                 >
-                   {link.label}
-                 </Link>
-               ))}
+               {navLinks.map((link) => {
+                  const isActive =
+                    link.href === "/"
+                      ? pathname === "/"
+                      : pathname.startsWith(link.href.split('#')[0]) && (link.href.includes('#') ? true : pathname === link.href);
+                  
+                  return link.label === "Corporate Events" ? null : (
+                   <Link
+                     key={link.href}
+                     href={link.href}
+                     className={cn(
+                       "text-lg font-medium transition-colors hover:text-primary",
+                       isActive ? "text-primary" : "text-foreground/70"
+                     )}
+                     onClick={closeMobileMenu}
+                   >
+                     {link.label}
+                   </Link>
+                 );
+               })}
                 <div className="pt-2">
                   <h4 className="mb-2 text-lg font-medium text-primary">Corporate Events</h4>
                   <ul className="flex flex-col space-y-3 pl-2">
@@ -191,7 +196,7 @@ export function Navbar() {
                         <Link
                           href={component.href}
                           className="text-base text-foreground/70 hover:text-primary"
-                          onClick={closeMobileMenu} // Use scheduled close
+                          onClick={closeMobileMenu}
                         >
                           {component.title}
                         </Link>
@@ -215,10 +220,8 @@ const ListItem = React.forwardRef<
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick) {
-      // The onClick prop is closeMobileMenu, which already uses setTimeout
       (onClick as (event?: React.MouseEvent<HTMLAnchorElement>) => void)(e);
     }
-    // If there's no specific onClick for menu closure, the link will navigate directly.
   };
 
   return (
@@ -244,3 +247,5 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem";
+    
+    
