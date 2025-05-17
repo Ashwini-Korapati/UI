@@ -304,7 +304,6 @@
 .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
 /* Add more if needed */
 
-/* Removed marquee CSS */
 
 /* Custom Sparkle Button CSS */
 .custom-sparkle-button {
@@ -493,4 +492,40 @@
   font-weight: 500; /* Adjust as needed */
   color: transparent;
   white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+/* Client Logos Marquee Animation */
+@layer utilities {
+  .marquee {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    /* Optional: Add a mask for soft edges if desired */
+    /* -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent); */
+    /* mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent); */
+  }
+
+  .marquee-content {
+    display: flex; /* Makes items align in a row */
+    flex-shrink: 0; /* Important for the animation to work correctly */
+    align-items: center; /* Vertically center logos if their heights vary slightly */
+    animation: scroll-horizontal 60s linear infinite; /* Adjust duration as needed */
+    will-change: transform; /* Performance hint for smoother animation */
+  }
+
+  /* Individual logo items are styled within ClientLogo component */
+
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      /* Scroll by the width of the original set of logos.
+          Since the content is duplicated, scrolling by -50% of the total width
+          (which is 2x original) brings the second set perfectly into view
+          and then resets, creating a seamless loop. */
+      transform: translateX(-50%);
+    }
+  }
 }

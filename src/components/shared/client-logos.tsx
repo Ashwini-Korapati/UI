@@ -7,19 +7,18 @@ import { cn } from '@/lib/utils';
 interface ClientLogoProps {
   src: string;
   alt: string;
-  width?: number;
-  height?: number;
-  className?: string;
 }
 
-const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 150, height = 150, className }) => (
-  <div className={cn("flex items-center justify-center p-2", className)}>
+const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt }) => (
+  // Each logo container will be flex-shrink-0 to maintain its size in the flex marquee
+  // Added padding and margin for spacing, and size constraints
+  <div className="flex-shrink-0 p-2 mx-4 flex items-center justify-center w-28 h-28"> {/* 112px by 112px container */}
     <Image
       src={src}
       alt={alt}
-      width={width}
-      height={height}
-      className="transition-transform duration-300 ease-in-out hover:scale-110 object-contain"
+      width={100} // Set desired width for the image itself
+      height={100} // Set desired height for the image itself
+      className="object-contain transition-transform duration-300 ease-in-out hover:scale-110" // object-contain to fit within bounds, hover effect
       data-ai-hint="company logo"
     />
   </div>
@@ -62,19 +61,24 @@ const logosList = [
 
 
 export function ClientLogos() {
+  // Duplicate logos for seamless looping effect
+  const extendedLogos = [...logosList, ...logosList];
+
   return (
     <div className="w-full max-w-screen-xl mx-auto">
-      <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-12 md:mb-16 lg:mb-20 animate-fadeInUp"> {/* Adjusted bottom margin */}
+      <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-12 md:mb-16 lg:mb-20 animate-fadeInUp">
         Trusted By
       </h3>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6 md:gap-8 place-items-center">
-        {logosList.map((logo) => (
-          <ClientLogo
-            key={logo.alt}
-            src={logo.src}
-            alt={logo.alt}
-          />
-        ))}
+      <div className="marquee">
+        <div className="marquee-content">
+          {extendedLogos.map((logo, index) => (
+            <ClientLogo
+              key={`${logo.alt}-${index}`} // Ensure unique keys for duplicated items
+              src={logo.src}
+              alt={logo.alt}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
