@@ -27,6 +27,11 @@ async function sendEmailNotification(subject: string, htmlContent: string): Prom
 }
 
 export async function submitContactForm(data: ContactFormData): Promise<{ success: boolean; message: string }> {
+  if (!process.env.EMAIL_SERVER_USER || !process.env.EMAIL_SERVER_PASSWORD || !process.env.EMAIL_RECIPIENT) {
+    console.error('Email server environment variables are not set. Please check your .env.local file and restart the server.');
+    return { success: false, message: 'Email service is not configured correctly. Please contact support.' };
+  }
+
   try {
     const validatedData = ContactFormSchema.parse(data);
 
@@ -69,6 +74,11 @@ export async function submitContactForm(data: ContactFormData): Promise<{ succes
 }
 
 export async function submitVendorForm(data: VendorFormData): Promise<{ success: boolean; message: string }> {
+   if (!process.env.EMAIL_SERVER_USER || !process.env.EMAIL_SERVER_PASSWORD || !process.env.EMAIL_RECIPIENT) {
+    console.error('Email server environment variables are not set. Please check your .env.local file and restart the server.');
+    return { success: false, message: 'Email service is not configured correctly. Please contact support.' };
+  }
+
    try {
     const validatedData = VendorFormSchema.parse(data);
 
