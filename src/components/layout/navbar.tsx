@@ -93,10 +93,7 @@ export function Navbar() {
             <NavigationMenuList>
               {navLinks.map((link) => {
                 const isActive =
-                  link.href === "/"
-                    ? pathname === "/"
-                    : (pathname === link.href || (link.href.includes('#') && pathname + (link.href.split('#')[1] ? '#' + link.href.split('#')[1] : '') === link.href ));
-
+                  link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
 
                 return (
                   <NavigationMenuItem key={link.href}>
@@ -171,9 +168,7 @@ export function Navbar() {
              <nav className="flex flex-col space-y-4">
                {navLinks.map((link) => {
                   const isActive =
-                    link.href === "/"
-                      ? pathname === "/"
-                      : (pathname === link.href || (link.href.includes('#') && pathname + (link.href.split('#')[1] ? '#' + link.href.split('#')[1] : '') === link.href));
+                    link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
                   
                   return link.label === "Corporate Events" ? null : (
                    <Link
