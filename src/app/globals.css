@@ -510,7 +510,7 @@
     display: flex; /* Makes items align in a row */
     flex-shrink: 0; /* Important for the animation to work correctly */
     align-items: center; /* Vertically center logos if their heights vary slightly */
-    animation: scroll-horizontal 60s linear infinite; /* Adjust duration as needed */
+    animation: scroll-horizontal 120s linear infinite; /* Adjust duration as needed */
     will-change: transform; /* Performance hint for smoother animation */
   }
 
@@ -529,3 +529,6 @@
     }
   }
 }
+
+
+    
