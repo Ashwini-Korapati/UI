@@ -6,9 +6,11 @@ import { format } from 'date-fns';
 import { ContactFormData, ContactFormSchema, VendorFormData, VendorFormSchema } from '@/lib/schemas';
 
 // Log environment variables at the module level to see if they are loaded when the server starts/module is imported
-console.log('[actions.ts] Initial check - EMAIL_SERVER_USER:', process.env.EMAIL_SERVER_USER ? 'SET' : 'NOT SET');
-console.log('[actions.ts] Initial check - EMAIL_SERVER_PASSWORD:', process.env.EMAIL_SERVER_PASSWORD ? 'SET (exists)' : 'NOT SET'); // Avoid logging password itself
-console.log('[actions.ts] Initial check - EMAIL_RECIPIENT:', process.env.EMAIL_RECIPIENT ? 'SET' : 'NOT SET');
+console.log('--- Environment Variables Check (Module Load) ---');
+console.log('EMAIL_SERVER_USER (on load):', process.env.EMAIL_SERVER_USER ? `'${process.env.EMAIL_SERVER_USER}'` : 'NOT SET');
+console.log('EMAIL_SERVER_PASSWORD (on load):', process.env.EMAIL_SERVER_PASSWORD ? 'SET (exists)' : 'NOT SET'); // Avoid logging password
+console.log('EMAIL_RECIPIENT (on load):', process.env.EMAIL_RECIPIENT ? `'${process.env.EMAIL_RECIPIENT}'` : 'NOT SET');
+console.log('------------------------------------------------');
 
 
 // Nodemailer transporter setup
@@ -34,12 +36,13 @@ async function sendEmailNotification(subject: string, htmlContent: string): Prom
 
 export async function submitContactForm(data: ContactFormData): Promise<{ success: boolean; message: string }> {
   console.log('[ContactForm] Attempting to send email. Checking environment variables:');
-  console.log('[ContactForm] EMAIL_SERVER_USER:', process.env.EMAIL_SERVER_USER ? process.env.EMAIL_SERVER_USER : 'NOT SET');
-  console.log('[ContactForm] EMAIL_SERVER_PASSWORD:', process.env.EMAIL_SERVER_PASSWORD ? 'SET (exists)' : 'NOT SET');
-  console.log('[ContactForm] EMAIL_RECIPIENT:', process.env.EMAIL_RECIPIENT ? process.env.EMAIL_RECIPIENT : 'NOT SET');
+  console.log('[ContactForm] EMAIL_SERVER_USER:', process.env.EMAIL_SERVER_USER ? `'${process.env.EMAIL_SERVER_USER}'` : 'NOT SET');
+  console.log('[ContactForm] EMAIL_SERVER_PASSWORD:', process.env.EMAIL_SERVER_PASSWORD ? 'SET (exists)' : 'NOT SET'); // Avoid logging password
+  console.log('[ContactForm] EMAIL_RECIPIENT:', process.env.EMAIL_RECIPIENT ? `'${process.env.EMAIL_RECIPIENT}'` : 'NOT SET');
+
 
   if (!process.env.EMAIL_SERVER_USER || !process.env.EMAIL_SERVER_PASSWORD || !process.env.EMAIL_RECIPIENT) {
-    console.error('Email server environment variables are not set. Please ensure your .env.local file in the project root is correctly configured with EMAIL_SERVER_USER, EMAIL_SERVER_PASSWORD, and EMAIL_RECIPIENT, and that you have RESTARTED your development server after making changes to .env.local.');
+    console.error('Critical Error: Email server environment variables are NOT SET or not accessible by the server action. Please ensure your .env.local file in the project root is correctly configured with EMAIL_SERVER_USER, EMAIL_SERVER_PASSWORD, and EMAIL_RECIPIENT, and that you have RESTARTED your development server after making changes to .env.local.');
     return { success: false, message: 'Email service is not configured correctly. Please contact support after verifying server configuration.' };
   }
 
@@ -86,12 +89,13 @@ export async function submitContactForm(data: ContactFormData): Promise<{ succes
 
 export async function submitVendorForm(data: VendorFormData): Promise<{ success: boolean; message: string }> {
    console.log('[VendorForm] Attempting to send email. Checking environment variables:');
-   console.log('[VendorForm] EMAIL_SERVER_USER:', process.env.EMAIL_SERVER_USER ? process.env.EMAIL_SERVER_USER : 'NOT SET');
-   console.log('[VendorForm] EMAIL_SERVER_PASSWORD:', process.env.EMAIL_SERVER_PASSWORD ? 'SET (exists)' : 'NOT SET');
-   console.log('[VendorForm] EMAIL_RECIPIENT:', process.env.EMAIL_RECIPIENT ? process.env.EMAIL_RECIPIENT : 'NOT SET');
+   console.log('[VendorForm] EMAIL_SERVER_USER:', process.env.EMAIL_SERVER_USER ? `'${process.env.EMAIL_SERVER_USER}'` : 'NOT SET');
+   console.log('[VendorForm] EMAIL_SERVER_PASSWORD:', process.env.EMAIL_SERVER_PASSWORD ? 'SET (exists)' : 'NOT SET'); // Avoid logging password
+   console.log('[VendorForm] EMAIL_RECIPIENT:', process.env.EMAIL_RECIPIENT ? `'${process.env.EMAIL_RECIPIENT}'` : 'NOT SET');
+
 
    if (!process.env.EMAIL_SERVER_USER || !process.env.EMAIL_SERVER_PASSWORD || !process.env.EMAIL_RECIPIENT) {
-    console.error('Email server environment variables are not set. Please ensure your .env.local file in the project root is correctly configured with EMAIL_SERVER_USER, EMAIL_SERVER_PASSWORD, and EMAIL_RECIPIENT, and that you have RESTARTED your development server after making changes to .env.local.');
+    console.error('Critical Error: Email server environment variables are NOT SET or not accessible by the server action. Please ensure your .env.local file in the project root is correctly configured with EMAIL_SERVER_USER, EMAIL_SERVER_PASSWORD, and EMAIL_RECIPIENT, and that you have RESTARTED your development server after making changes to .env.local.');
     return { success: false, message: 'Email service is not configured correctly. Please contact support after verifying server configuration.' };
   }
 
