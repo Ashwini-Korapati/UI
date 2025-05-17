@@ -2,6 +2,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 interface ClientLogoProps {
   src: string;
@@ -12,21 +13,21 @@ interface ClientLogoProps {
 }
 
 const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 150, height = 150, className }) => (
-  <div className={`${className} flex items-center justify-center`}> {/* Removed temporary border */}
+  <div className={cn("flex items-center justify-center", className)}>
     <Image
-      src={src}
+      src={src} // Use the string path directly
       alt={alt}
       width={width}
       height={height}
       className="transition-transform duration-300 ease-in-out hover:scale-110 object-contain"
       data-ai-hint="company logo"
-      // Removed unoptimized={true} here as it was for placeholder debugging, next/image can optimize local images
+      // unoptimized={true} // Removed as local images should be optimizable by Next.js
     />
   </div>
 );
 
 // IMPORTANT: Ensure your image files in the /public directory are named EXACTLY as below,
-// especially removing spaces and special characters.
+// especially removing spaces and special characters (use hyphens instead).
 const logosList = [
   { src: '/ABB.png', alt: 'ABB Logo' },
   { src: '/ADARSH.png', alt: 'ADARSH Logo' },
@@ -35,14 +36,14 @@ const logosList = [
   { src: '/ANTHOLOGY-LOGO.png', alt: 'ANTHOLOGY LOGO' },
   { src: '/AUTOLIV.png', alt: 'AUTOLIV Logo' },
   { src: '/AVPL-LOGO.png', alt: 'AVPL LOGO' },
-  { src: '/BEL-LOGO.png', alt: 'BEL LOGO' },
-  { src: '/CARELON-LOGO.png', alt: 'CARELON LOGO' },
-  { src: '/CDM-LOGO.png', alt: 'CDM LOGO' },
+  { src: '/BEL-LOGO.png', alt: 'BEL LOGO' }, // Assumed renamed from "BEL ,LOGO.png"
+  { src: '/CARELON-LOGO.png', alt: 'CARELON LOGO' }, // Assumed renamed from "CARELON ,LOGO.png"
+  { src: '/CDM-LOGO.png', alt: 'CDM LOGO' }, // Assumed renamed from "CDM ,LOGO.png"
   { src: '/FORTERRRO.png', alt: 'FORTERRRO Logo' },
   { src: '/HDFC.png', alt: 'HDFC Logo' },
   { src: '/INDIA-FIRST-LOGO.png', alt: 'INDIA FIRST LOGO' },
   { src: '/INDUS-LOGO.png', alt: 'INDUS LOGO' },
-  { src: '/kennametal-logo.png', alt: 'Kennametal Logo' },
+  { src: '/kennametal-logo.png', alt: 'Kennametal Logo' }, // Assumed renamed from "kennametal logo.png"
   { src: '/LSEG.png', alt: 'LSEG Logo' },
   { src: '/MERCARI-LOGO.png', alt: 'MERCARI LOGO' },
   { src: '/MUTHOOT-LOGO.png', alt: 'MUTHOOT LOGO' },
@@ -60,6 +61,7 @@ const logosList = [
   { src: '/YES-BANK-LOGO.png', alt: 'YES BANK LOGO' }
 ];
 
+
 export function ClientLogos() {
   // Duplicate logos for seamless marquee effect
   const duplicatedLogos = [...logosList, ...logosList];
@@ -69,15 +71,17 @@ export function ClientLogos() {
       <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-40 animate-fadeInUp">
         Trusted By
       </h3>
-      <div className="flex animate-marquee whitespace-nowrap">
-        {duplicatedLogos.map((logo, index) => (
-          <ClientLogo
-            key={`${logo.alt}-${index}`}
-            src={logo.src}
-            alt={logo.alt}
-            className="mx-4" 
-          />
-        ))}
+      <div className="marquee">
+        <div className="marquee-content">
+          {duplicatedLogos.map((logo, index) => (
+            <ClientLogo
+              key={`${logo.alt}-${index}`}
+              src={logo.src}
+              alt={logo.alt}
+              className="mx-4"
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
