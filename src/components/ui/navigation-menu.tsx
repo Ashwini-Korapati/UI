@@ -44,7 +44,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+  "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-md focus:bg-accent focus:text-accent-foreground focus:shadow-md focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-accent-foreground data-[active]:shadow-md data-[state=open]:bg-accent/50 data-[state=open]:shadow-md"
 )
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -81,7 +81,20 @@ const NavigationMenuContent = React.forwardRef<
 NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName
 
 // Use the Radix primitive link directly. Styling and active state will be handled in the usage.
-const NavigationMenuLink = NavigationMenuPrimitive.Link;
+const NavigationMenuLink = React.forwardRef<
+  React.ElementRef<typeof NavigationMenuPrimitive.Link>,
+  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Link> & { active?: boolean }
+>(({ className, active, ...props }, ref) => (
+  <NavigationMenuPrimitive.Link
+    ref={ref}
+    className={cn(
+      navigationMenuTriggerStyle(),
+      active ? "bg-accent/50 text-accent-foreground shadow-md" : "",
+      className
+    )}
+    {...props}
+  />
+));
 NavigationMenuLink.displayName = NavigationMenuPrimitive.Link.displayName;
 
 
