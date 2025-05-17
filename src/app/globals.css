@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -303,33 +304,7 @@
 .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
 /* Add more if needed */
 
-.marquee {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  padding: 1rem 0; /* Add some padding */
-}
-
-.marquee-content {
-  display: flex;
-  animation: marquee-scroll 30s linear infinite; /* Adjust duration for speed */
-  will-change: transform; /* Optimize animation performance */
-}
-
-.marquee-content > * {
-  flex-shrink: 0; /* Prevent items from shrinking */
-  margin-right: 2rem; /* Space between logos */
-}
-
-
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%); /* Scroll by half the width for seamless loop */
-  }
-}
+/* Removed marquee CSS */
 
 /* Custom Sparkle Button CSS */
 .custom-sparkle-button {

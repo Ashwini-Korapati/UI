@@ -15,10 +15,10 @@ interface ClientLogoProps {
 const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 150, height = 150, className }) => (
   <div className={cn("flex items-center justify-center p-2", className)}>
     <Image
-      src={src} // Use the string path directly
+      src={src}
       alt={alt}
-      width={width} // Use passed width or default
-      height={height} // Use passed height or default
+      width={width}
+      height={height}
       className="transition-transform duration-300 ease-in-out hover:scale-110 object-contain"
       data-ai-hint="company logo"
     />
@@ -27,7 +27,6 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, width = 150, height =
 
 // IMPORTANT: Ensure your image files in the /public directory are named EXACTLY as below,
 // especially removing spaces and special characters (use hyphens instead).
-// For example, "AGILON HEALTH LOGO.png" must be renamed to "AGILON-HEALTH-LOGO.png" in your public folder.
 const logosList = [
   { src: '/ABB.png', alt: 'ABB Logo' },
   { src: '/ADARSH.png', alt: 'ADARSH Logo' },
@@ -63,25 +62,19 @@ const logosList = [
 
 
 export function ClientLogos() {
-  // Duplicate logos for seamless marquee effect
-  const duplicatedLogos = [...logosList, ...logosList];
-
   return (
-    <div className="w-full max-w-screen-xl mx-auto overflow-hidden">
-      <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-40 animate-fadeInUp">
+    <div className="w-full max-w-screen-xl mx-auto">
+      <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-12 md:mb-16 lg:mb-20 animate-fadeInUp"> {/* Adjusted bottom margin */}
         Trusted By
       </h3>
-      <div className="marquee">
-        <div className="marquee-content">
-          {duplicatedLogos.map((logo, index) => (
-            <ClientLogo
-              key={`${logo.alt}-${index}`}
-              src={logo.src}
-              alt={logo.alt}
-              className="mx-4" // For spacing in the marquee
-            />
-          ))}
-        </div>
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6 md:gap-8 place-items-center">
+        {logosList.map((logo) => (
+          <ClientLogo
+            key={logo.alt}
+            src={logo.src}
+            alt={logo.alt}
+          />
+        ))}
       </div>
     </div>
   );
