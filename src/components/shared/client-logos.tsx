@@ -20,6 +20,7 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt }) => (
       height={100} // Desired height for the image itself
       className="object-contain transition-transform duration-300 ease-in-out hover:scale-110" // object-contain to fit, hover effect
       data-ai-hint="company logo"
+      unoptimized // Using unoptimized as paths are static and known
     />
   </div>
 );
@@ -43,7 +44,7 @@ const logosList = [
   { src: '/INDUSLOGO.png', alt: 'INDUS LOGO' },
   { src: '/kennametallogo.png', alt: 'Kennametal Logo' },
   { src: '/LSEG.png', alt: 'LSEG Logo' },
-  { src: '/MERCARIOGO.png', alt: 'MERCARI LOGO' }, // Assuming MERCARI-LOGO -> MERCARIOGO
+  { src: '/MERCARIOGO.png', alt: 'MERCARI LOGO' },
   { src: '/MUTHOOTLOGO.png', alt: 'MUTHOOT LOGO' },
   { src: '/NINEDOTS.png', alt: 'NINE DOTS Logo' },
   { src: '/QLAR.png', alt: 'QLAR Logo' },
@@ -73,7 +74,7 @@ export function ClientLogos() {
       <h3 className="text-center text-3xl md:text-4xl font-bold text-primary mb-12 md:mb-16 lg:mb-20 lg:mb-40 animate-fadeInUp">
         Trusted By
       </h3>
-      <div className="space-y-4"> {/* Adds space between rows of marquees */}
+      <div className="space-y-4 mb-10 md:mb-14 lg:mb-16"> {/* Adds space between rows of marquees AND margin-bottom */}
         {rows.map((rowLogos, rowIndex) => {
           // Duplicate logos for seamless looping effect for THIS ROW
           // If a row has fewer than logosPerRow, it will still scroll, but the density will be lower.

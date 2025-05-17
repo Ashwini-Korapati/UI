@@ -16,7 +16,7 @@ export function Footer() {
       </div>
 
        {/* Client Logos Section - Full Width */}
-       <section id="clients" className="bg-secondary py-12 md:py-16 relative z-10 min-h-screen flex items-center justify-center px-4">
+       <section id="clients" className="bg-secondary pt-8 md:pt-12 pb-12 md:pb-16 relative z-10 min-h-screen flex items-center justify-center px-4">
          <ClientLogos />
        </section>
 
