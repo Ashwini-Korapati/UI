@@ -15,11 +15,11 @@ const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt }) => (
     <Image
       src={src}
       alt={alt}
-      width={alt === 'INDUS LOGO' ? 26 : 100} // Decrease size for Indus logo
-      height={alt === 'INDUS LOGO' ? 26 : 100} // Decrease size for Indus logo
+      width={alt === 'INDUS LOGO' ? 48 : 100} // Adjusted width for Indus logo
+      height={alt === 'INDUS LOGO' ? 72 : 100} // Adjusted height for Indus logo
       className={cn(
         "object-contain transition-transform duration-300 ease-in-out hover:scale-110",
-        alt === 'INDUS LOGO' ? 'w-auto h-auto' : 'w-[80px] h-[80px]' // Adjust className based on alt  // className for INDUS LOGO might need adjustment depending on desired outcome
+        alt === 'INDUS LOGO' ? 'w-[48px] h-[72px]' : 'w-[80px] h-[80px]' // Specific smaller box for Indus logo
       )}
       data-ai-hint="company logo"
       unoptimized // Using unoptimized as paths are static and known
