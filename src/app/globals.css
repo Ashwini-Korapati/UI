@@ -541,6 +541,7 @@
 
 .hero-video-carousel {
   display: flex;
+  width: 100%; /* Ensure the flex container takes full width */
   height: 100%;
   transition: transform 0.7s ease-in-out; /* Smooth transition for sliding */
 }
@@ -634,5 +635,3 @@
     text-fill-color: transparent;
   }
 }
-    
-
