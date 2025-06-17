@@ -78,7 +78,7 @@ export default function Home() {
         <div className="container mx-auto grid lg:grid-cols-[minmax(0,_2fr)_minmax(0,_3fr)] gap-12 items-stretch"> {/* Changed grid column definition */}
           {/* Left Text Column */}
           <div className="text-left animate-fadeInUp flex flex-col justify-center">
-            <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold mb-8 text-gradient-primary-accent">
+            <h1 className="text-4xl md:text-3xl lg:text-4xl font-bold mb-8 text-gradient-primary-accent">
               Events should be memorable and engaging
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-foreground/80">
