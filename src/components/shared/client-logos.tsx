@@ -10,15 +10,17 @@ interface ClientLogoProps {
 }
 
 const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt }) => (
-  // Each logo container will be flex-shrink-0 to maintain its size in the flex marquee
-  // Added padding and margin for spacing, and size constraints
-  <div className="flex-shrink-0 p-2 mx-4 flex items-center justify-center w-28 h-28"> {/* Container for consistent logo sizing */}
+  <div className="flex-shrink-0 p-2 mx-4 flex items-center justify-center w-32 h-32">
+    {/* Container for consistent logo sizing */}
     <Image
       src={src}
       alt={alt}
-      width={100} // Desired width for the image itself
-      height={100} // Desired height for the image itself
-      className="object-contain transition-transform duration-300 ease-in-out hover:scale-110" // object-contain to fit, hover effect
+      width={alt === 'INDUS LOGO' ? 26 : 100} // Decrease size for Indus logo
+      height={alt === 'INDUS LOGO' ? 26 : 100} // Decrease size for Indus logo
+      className={cn(
+        "object-contain transition-transform duration-300 ease-in-out hover:scale-110",
+        alt === 'INDUS LOGO' ? 'w-auto h-auto' : 'w-[80px] h-[80px]' // Adjust className based on alt  // className for INDUS LOGO might need adjustment depending on desired outcome
+      )}
       data-ai-hint="company logo"
       unoptimized // Using unoptimized as paths are static and known
     />
