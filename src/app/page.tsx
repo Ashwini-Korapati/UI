@@ -65,9 +65,9 @@ const faqItems = [
 ];
 
 const heroVideos = [
-  { src: "/video1.mp4", type: "video/mp4" },
-  { src: "/video2.mp4", type: "video/mp4" },
-  { src: "/video3.mp4", type: "video/mp4" },
+  { src: "/vide1.mp4", type: "video/mp4" },
+  { src: "/vide2.mp4", type: "video/mp4" },
+  { src: "/vide3.mp4", type: "video/mp4" },
 ];
 
 
