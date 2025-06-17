@@ -11,7 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { StatsSection } from '@/components/shared/stats-section';
-import { HeroVideoCarousel } from '@/components/shared/hero-video-carousel'; // Added import
+import { HeroVideoCarousel } from '@/components/shared/hero-video-carousel';
 
 const whatWeOfferItems = [
   {
@@ -74,36 +74,39 @@ const heroVideos = [
 export default function Home() {
   return (
     <>
-      {/* Hero Section - Full Width */}
-      <section id="hero" className="relative min-h-screen w-full overflow-hidden flex items-center justify-center text-center px-4">
-        {/* Video Background Carousel */}
-        <div className="absolute inset-0 z-0">
-           <HeroVideoCarousel videos={heroVideos} />
-           {/* Gradient Overlay: primary color covering approx 50% from left, fading out. Opacity controls blend with video. */}
-           <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-primary/10 to-transparent opacity-20 md:opacity-10 z-[1]"></div>
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto p-4"> {/* Text container, text will be on gradient */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary-foreground drop-shadow-lg animate-fadeInUp [animation-delay:0.1s]">
-            Events should be memorable and engaging
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 drop-shadow-md animate-fadeInUp [animation-delay:0.3s]">
-            Coming together is a beginning; working together is success.
-          </p>
-          <div className="animate-fadeInUp [animation-delay:0.5s]">
-            <Link href="/about" passHref legacyBehavior>
-              <a className="custom-sparkle-button">
-                <div className="dots_border"></div>
-                <svg className="sparkle" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
-                  <path className="path" d="M6.83739 1.00001C6.93721 0.832825 7.16725 0.832825 7.26707 1.00001L8.28358 2.68359C8.33483 2.76938 8.42328 2.82251 8.52029 2.8269L10.3849 2.98674C10.5657 3.00101 10.6559 3.22026 10.5217 3.3369L9.14077 4.528C9.06813 4.59108 9.03527 4.68886 9.05578 4.78261L9.46295 6.60708C9.5002 6.78361 9.30981 6.91804 9.15419 6.82442L7.48362 5.80445C7.40006 5.75292 7.29336 5.75292 7.20979 5.80445L5.53922 6.82442C5.3836 6.91804 5.19322 6.78361 5.23046 6.60708L5.63763 4.78261C5.65814 4.68886 5.62528 4.59108 5.55264 4.528L4.17164 3.3369C4.03741 3.22026 4.12768 3.00101 4.30841 2.98674L6.17303 2.8269C6.27004 2.82251 6.3585 2.76938 6.40974 2.68359L6.83739 1.00001Z"></path>
-                  <path className="path" d="M3.25342 6.00001C3.35324 5.83282 3.58328 5.83282 3.6831 6.00001L4.69961 7.68359C4.75086 7.76938 4.83931 7.82251 4.93632 7.8269L6.80094 7.98674C6.98167 8.00101 7.07194 8.22026 6.93771 8.3369L5.55671 9.528C5.48407 9.59108 5.45120 9.68886 5.47171 9.78261L5.87888 11.6071C5.91613 11.7836 5.72574 11.918 5.57012 11.8244L3.89955 10.8044C3.816 10.7529 3.70929 10.7529 3.62572 10.8044L1.95515 11.8244C1.79953 11.918 1.60915 11.7836 1.64639 11.6071L2.05356 9.78261C2.07407 9.68886 2.04121 9.59108 1.96857 9.528L0.587567 8.3369C0.453343 8.22026 0.543614 8.00101 0.724345 7.98674L2.58896 7.8269C2.68597 7.82251 2.77442 7.76938 2.82567 7.68359L3.25342 6.00001Z"></path>
-                  <path className="path" d="M11.0085 6.76476C11.1083 6.59757 11.3383 6.59757 11.4381 6.76476L12.4546 8.44835C12.5059 8.53414 12.5943 8.58726 12.6913 8.59166L14.556 8.7515C14.7367 8.76576 14.827 8.98501 14.6927 9.10166L13.3117 10.2928C13.2391 10.3558 13.2062 10.4536 13.2267 10.5474L13.6339 12.3718C13.6711 12.5484 13.4807 12.6828 13.3251 12.5892L11.6546 11.5692C11.571 11.5177 11.4643 11.5177 11.3807 11.5692L9.71017 12.5892C9.55455 12.6828 9.36417 12.5484 9.40141 12.3718L9.80858 10.5474C9.82909 10.4536 9.79623 10.3558 9.72359 10.2928L8.34259 9.10166C8.20836 8.98501 8.29863 8.76576 8.47936 8.7515L10.344 8.59166C10.441 8.58726 10.5295 8.53414 10.5807 8.44835L11.0085 6.76476Z"></path>
-                </svg>
-                <span className="text_button">Learn More</span>
-              </a>
-            </Link>
-           </div>
+      {/* Hero Section - Two Column Layout */}
+      <section id="hero" className="py-16 md:py-20 bg-background text-foreground min-h-screen flex items-center px-4">
+        <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Text Column */}
+          <div className="text-left animate-fadeInUp">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary">
+              Events should be memorable and engaging
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-foreground/80">
+              Coming together is a beginning; working together is success.
+            </p>
+            <div className="animate-fadeInUp [animation-delay:0.2s]">
+              <Link href="/about" passHref legacyBehavior>
+                <a className="custom-sparkle-button">
+                  <div className="dots_border"></div>
+                  <svg className="sparkle" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+                    <path className="path" d="M6.83739 1.00001C6.93721 0.832825 7.16725 0.832825 7.26707 1.00001L8.28358 2.68359C8.33483 2.76938 8.42328 2.82251 8.52029 2.8269L10.3849 2.98674C10.5657 3.00101 10.6559 3.22026 10.5217 3.3369L9.14077 4.528C9.06813 4.59108 9.03527 4.68886 9.05578 4.78261L9.46295 6.60708C9.5002 6.78361 9.30981 6.91804 9.15419 6.82442L7.48362 5.80445C7.40006 5.75292 7.29336 5.75292 7.20979 5.80445L5.53922 6.82442C5.3836 6.91804 5.19322 6.78361 5.23046 6.60708L5.63763 4.78261C5.65814 4.68886 5.62528 4.59108 5.55264 4.528L4.17164 3.3369C4.03741 3.22026 4.12768 3.00101 4.30841 2.98674L6.17303 2.8269C6.27004 2.82251 6.3585 2.76938 6.40974 2.68359L6.83739 1.00001Z"></path>
+                    <path className="path" d="M3.25342 6.00001C3.35324 5.83282 3.58328 5.83282 3.6831 6.00001L4.69961 7.68359C4.75086 7.76938 4.83931 7.82251 4.93632 7.8269L6.80094 7.98674C6.98167 8.00101 7.07194 8.22026 6.93771 8.3369L5.55671 9.528C5.48407 9.59108 5.45120 9.68886 5.47171 9.78261L5.87888 11.6071C5.91613 11.7836 5.72574 11.918 5.57012 11.8244L3.89955 10.8044C3.816 10.7529 3.70929 10.7529 3.62572 10.8044L1.95515 11.8244C1.79953 11.918 1.60915 11.7836 1.64639 11.6071L2.05356 9.78261C2.07407 9.68886 2.04121 9.59108 1.96857 9.528L0.587567 8.3369C0.453343 8.22026 0.543614 8.00101 0.724345 7.98674L2.58896 7.8269C2.68597 7.82251 2.77442 7.76938 2.82567 7.68359L3.25342 6.00001Z"></path>
+                    <path className="path" d="M11.0085 6.76476C11.1083 6.59757 11.3383 6.59757 11.4381 6.76476L12.4546 8.44835C12.5059 8.53414 12.5943 8.58726 12.6913 8.59166L14.556 8.7515C14.7367 8.76576 14.827 8.98501 14.6927 9.10166L13.3117 10.2928C13.2391 10.3558 13.2062 10.4536 13.2267 10.5474L13.6339 12.3718C13.6711 12.5484 13.4807 12.6828 13.3251 12.5892L11.6546 11.5692C11.571 11.5177 11.4643 11.5177 11.3807 11.5692L9.71017 12.5892C9.55455 12.6828 9.36417 12.5484 9.40141 12.3718L9.80858 10.5474C9.82909 10.4536 9.79623 10.3558 9.72359 10.2928L8.34259 9.10166C8.20836 8.98501 8.29863 8.76576 8.47936 8.7515L10.344 8.59166C10.441 8.58726 10.5295 8.53414 10.5807 8.44835L11.0085 6.76476Z"></path>
+                  </svg>
+                  <span className="text_button">Learn More</span>
+                </a>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Video Album Box Column */}
+          <div className="relative w-full aspect-[16/9] md:aspect-auto md:h-[calc(100vh-16rem)] max-h-[450px] lg:max-h-[550px] rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 animate-fadeInUp [animation-delay:0.1s]">
+            <HeroVideoCarousel videos={heroVideos} />
+          </div>
         </div>
       </section>
+
 
        {/* Intro Section - Full Width */}
       <section id="intro" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
@@ -317,3 +320,5 @@ export default function Home() {
     </>
   );
 }
+
+    
