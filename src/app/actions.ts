@@ -24,8 +24,8 @@ const transporter = nodemailer.createTransport({
 
 async function sendEmailNotification(subject: string, htmlContent: string): Promise<void> {
   const mailOptions = {
-    from: process.env.EMAIL_SERVER_USER,
-    to: process.env.EMAIL_RECIPIENT,
+    from: process.env.EMAIL_SERVER_USER, // This will be 'eventsunlimited365@gmail.com' if .env.local is set
+    to: process.env.EMAIL_RECIPIENT,    // This will also be 'eventsunlimited365@gmail.com' if .env.local is set
     subject: subject,
     html: htmlContent,
   };
@@ -39,16 +39,17 @@ function checkEnvVars(): { configured: boolean; debugMessage: string } {
   const recipientSet = !!process.env.EMAIL_RECIPIENT;
 
   let debugMessage = "Debug Info: ";
-  debugMessage += `EMAIL_SERVER_USER found by server action: ${serverUserSet}. `;
-  debugMessage += `EMAIL_SERVER_PASSWORD found by server action: ${serverPasswordSet}. `;
-  debugMessage += `EMAIL_RECIPIENT found by server action: ${recipientSet}. `;
-  debugMessage += "Check SERVER terminal for 'Module Load' logs. Ensure .env.local is in project ROOT and server was RESTARTED after changes to .env.local.";
+  debugMessage += `EMAIL_SERVER_USER (e.g., your Gmail for sending): ${serverUserSet ? 'SET' : 'NOT SET'}. `;
+  debugMessage += `EMAIL_SERVER_PASSWORD (e.g., your Gmail App Password): ${serverPasswordSet ? 'SET' : 'NOT SET'}. `;
+  debugMessage += `EMAIL_RECIPIENT (e.g., where notifications should be sent): ${recipientSet ? 'SET' : 'NOT SET'}. `;
+  debugMessage += "ACTION REQUIRED: Ensure these are correctly set in your .env.local file at the project root. The server must be RESTARTED after any changes to .env.local. Based on your request, emails should be configured to be sent FROM 'eventsunlimited365@gmail.com' and TO 'eventsunlimited365@gmail.com'.";
+
 
   if (!serverUserSet || !serverPasswordSet || !recipientSet) {
     console.error(`Critical Error: Email server environment variables issue. ${debugMessage}`);
     return { configured: false, debugMessage };
   }
-  return { configured: true, debugMessage: "Environment variables seem configured." };
+  return { configured: true, debugMessage: "Environment variables seem configured. Ensure they match 'eventsunlimited365@gmail.com' for user/recipient and the provided app passkey." };
 }
 
 export async function submitContactForm(data: ContactFormData): Promise<{ success: boolean; message: string }> {
@@ -149,3 +150,4 @@ export async function submitVendorForm(data: VendorFormData): Promise<{ success:
     return { success: false, message: errorMessage };
   }
 }
+
