@@ -75,7 +75,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section - Two Column Layout */}
-      <section id="hero" className="py-16 md:py-20 bg-background text-foreground min-h-screen flex items-center px-4">
+      <section id="hero" className="pt-8 pb-16 md:pt-12 md:pb-20 bg-background text-foreground min-h-screen flex items-center px-4">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-stretch"> {/* Changed items-center to items-stretch */}
           {/* Left Text Column */}
           <div className="text-left animate-fadeInUp flex flex-col justify-center"> {/* Added flex flex-col justify-center */}

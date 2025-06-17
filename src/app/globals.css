@@ -541,38 +541,39 @@
 
 .hero-video-carousel {
   display: flex;
-  width: 100%; /* Ensure the flex container takes full width */
+  width: 100%;
   height: 100%;
-  transition: transform 0.7s ease-in-out; /* Smooth transition for sliding */
+  transition: transform 0.7s ease-in-out;
 }
 
 .hero-video-carousel-item {
-  flex: 0 0 100%; /* Each video takes the full width of the container */
+  flex: 0 0 100%;
+  min-width: 100%; /* Ensure item takes full width */
   height: 100%;
-  position: relative; /* For potential absolute positioning of video elements if needed */
+  position: relative;
 }
 
 .hero-video-carousel-item video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures video covers the area, cropping if necessary */
+  object-fit: cover;
 }
 
 .hero-video-dots {
   position: absolute;
-  bottom: 30px; /* Adjusted for better visibility */
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px; /* Increased gap */
-  z-index: 5; /* Above video layers, but below main hero text block */
+  gap: 10px;
+  z-index: 5;
 }
 
 .hero-video-dot {
-  width: 12px; /* Slightly larger dots */
+  width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: hsla(var(--primary-foreground), 0.4); /* Use theme variable for inactive */
+  background-color: hsla(var(--primary-foreground), 0.4);
   border: 1px solid hsla(var(--primary-foreground), 0.6);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -584,7 +585,7 @@
 }
 
 .hero-video-dot.active {
-  background-color: hsl(var(--primary-foreground)); /* Use theme variable for active */
+  background-color: hsl(var(--primary-foreground));
   transform: scale(1.2);
 }
 
@@ -593,12 +594,12 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 5; /* Same as dots, or higher if needed */
-  background-color: hsla(var(--primary-foreground), 0.2); /* Semi-transparent background */
-  color: hsl(var(--primary-foreground)); /* Icon color */
+  z-index: 5;
+  background-color: hsla(var(--primary-foreground), 0.2);
+  color: hsl(var(--primary-foreground));
   border: none;
-  border-radius: 50%; /* Circular buttons */
-  width: 44px; /* Button size */
+  border-radius: 50%;
+  width: 44px;
   height: 44px;
   display: flex;
   align-items: center;
@@ -609,21 +610,21 @@
 }
 
 .hero-video-nav-button:hover {
-  background-color: hsla(var(--primary-foreground), 0.4); /* Darker on hover */
-  transform: translateY(-50%) scale(1.1); /* Slight scale effect on hover */
+  background-color: hsla(var(--primary-foreground), 0.4);
+  transform: translateY(-50%) scale(1.1);
   opacity: 1;
 }
 
 .hero-video-nav-button.left {
-  left: 20px; /* Adjust spacing from edge */
+  left: 20px;
 }
 
 .hero-video-nav-button.right {
-  right: 20px; /* Adjust spacing from edge */
+  right: 20px;
 }
 
-.hero-video-nav-button svg { /* Styling for the Lucide icons */
-  stroke-width: 2.5; /* Make icons a bit bolder if needed */
+.hero-video-nav-button svg {
+  stroke-width: 2.5;
 }
 
 @layer utilities {
@@ -635,3 +636,4 @@
     text-fill-color: transparent;
   }
 }
+
