@@ -79,7 +79,7 @@ export default function Home() {
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Text Column */}
           <div className="text-left animate-fadeInUp">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gradient-primary-accent">
               Events should be memorable and engaging
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-foreground/80">
@@ -101,7 +101,7 @@ export default function Home() {
           </div>
 
           {/* Right Video Album Box Column */}
-          <div className="relative w-full aspect-[16/9] md:aspect-auto md:h-[calc(100vh-16rem)] max-h-[450px] lg:max-h-[550px] rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 animate-fadeInUp [animation-delay:0.1s]">
+          <div className="relative w-full aspect-[16/9] md:aspect-auto md:h-[calc(100vh-16rem)] max-h-[550px] lg:max-h-[650px] rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 animate-fadeInUp [animation-delay:0.1s]">
             <HeroVideoCarousel videos={heroVideos} />
           </div>
         </div>
