@@ -78,8 +78,8 @@ export function Navbar() {
           <Image
             src="/logo.png"
             alt="Events Unlimited Logo"
-            width={120} // Reduced width
-            height={40} // Reduced height
+            width={150} // Increased width
+            height={50} // Increased height
             className="rounded-sm object-contain"
             data-ai-hint="company logo"
             unoptimized
@@ -153,8 +153,8 @@ export function Navbar() {
                    <Image
                        src="/logo.png"
                        alt="Events Unlimited Logo Mobile"
-                       width={100} // Reduced width
-                       height={35} // Reduced height
+                       width={120} // Increased width
+                       height={40} // Increased height
                        className="rounded-sm object-contain"
                        data-ai-hint="company logo"
                        unoptimized
