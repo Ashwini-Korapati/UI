@@ -663,11 +663,13 @@
   -webkit-text-fill-color: transparent;
   color: transparent; /* Fallback */
   font-weight: 900;
-  font-size: clamp(3rem, 9vw, 6.5rem); /* Responsive font size: min, preferred (viewport-based), max */
+  font-size: clamp(2rem, 6vw, 4rem); /* Responsive font size: min, preferred (viewport-based), max */
   line-height: 1.2; /* Adjust line height for larger text */
   text-shadow: 1px 1px 3px hsla(var(--foreground), 0.3); /* Subtle shadow using foreground color */
   animation: shimmer 3s linear infinite;
 }
 
+
+    
 
     
