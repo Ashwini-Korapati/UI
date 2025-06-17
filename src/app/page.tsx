@@ -78,7 +78,7 @@ export default function Home() {
         <div className="container mx-auto grid lg:grid-cols-[minmax(0,_2fr)_minmax(0,_3fr)] gap-12 items-stretch"> {/* Changed grid column definition */}
           {/* Left Text Column */}
           <div className="text-left animate-fadeInUp flex flex-col justify-center">
-            <h1 className="text-4xl md:text-3xl mb-8 hero-headline-shimmer">
+            <h1 className="mb-8 hero-headline-shimmer">
               Events should be memorable and engaging
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-foreground/80">
@@ -100,7 +100,7 @@ export default function Home() {
           </div>
 
           {/* Right Video Album Box Column */}
-          <div className="relative w-full h-full min-h-[300px] sm:min-h-[350px] md:min-h-[450px] lg:h-[calc(100vh-10rem)] max-h-[550px] lg:max-h-[650px] rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 animate-fadeInUp [animation-delay:0.1s]">
+          <div className="relative w-full h-full min-h-[300px] sm:min-h-[350px] md:h-[calc(100vh-16rem)] max-h-[550px] lg:max-h-[650px] rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 animate-fadeInUp [animation-delay:0.1s]">
             <HeroVideoCarousel videos={heroVideos} />
           </div>
         </div>
