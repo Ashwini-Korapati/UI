@@ -74,12 +74,12 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex items-center justify-between h-auto py-2 md:py-0 md:h-16"> {/* Reduced height from h-20 to h-16 */}
         {/* Logo Only */}
-        <Link href="/" className="flex items-center md:ml-4" onClick={closeMobileMenu}>
+        <Link href="/" className="flex items-center ml-[5px] md:ml-4" onClick={closeMobileMenu}>
           <Image
             src="/logo.png"
             alt="Events Unlimited Logo"
-            width={150} // Increased width
-            height={50} // Increased height
+            width={160} 
+            height={60} 
             className="rounded-sm object-contain"
             data-ai-hint="company logo"
             unoptimized
@@ -90,7 +90,7 @@ export function Navbar() {
         {/* Desktop Navigation & Controls */}
         <div className="hidden md:flex items-center space-x-4">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className={cn("group flex flex-1 list-none items-center md:justify-end space-x-1")}>
               {navLinks.map((link) => {
                 const isActive =
                   link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
@@ -153,8 +153,8 @@ export function Navbar() {
                    <Image
                        src="/logo.png"
                        alt="Events Unlimited Logo Mobile"
-                       width={120} // Increased width
-                       height={40} // Increased height
+                       width={130} 
+                       height={50} 
                        className="rounded-sm object-contain"
                        data-ai-hint="company logo"
                        unoptimized
@@ -249,3 +249,4 @@ ListItem.displayName = "ListItem";
     
 
     
+
