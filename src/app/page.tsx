@@ -133,11 +133,11 @@ export default function Home() {
           {/* Image Column */}
           <div className="relative h-72 md:h-96 rounded-lg overflow-hidden shadow-xl animate-fadeInUp [animation-delay:0.2s]">
             <Image
-              src="https://placehold.co/600x450.png"
-              alt="Crafting memorable event moments"
+              src="https://img.freepik.com/free-photo/decorated-banquet-hall-with-flowers_8353-10058.jpg?ga=GA1.1.374887541.1738313136&semt=ais_hybrid&w=740"
+              alt="Beautifully decorated event hall"
               layout="fill"
               objectFit="cover"
-              data-ai-hint="event planning celebration"
+              data-ai-hint="event hall decoration"
               className="transform transition-transform duration-500 ease-in-out hover:scale-105"
             />
           </div>
