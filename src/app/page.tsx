@@ -124,7 +124,7 @@ export default function Home() {
               For Corporate Events, We Blend Affordability with Excellence, Ensuring your Event is Etched in Hearts Forever. At Events Unlimited, We Understand your Event is as Unique as You are. Our Dedicated Team is Adept at Turning Visions into Reality, making your Dream Event a Seamless, Unforgettable Reality.
             </p>
             <p className="text-lg text-foreground/80">
-              Thank you for choosing Events Unlimited – Let’s Embark on this Exciting Journey Together!
+              <strong className="text-primary">Thank you for choosing Events Unlimited – Let’s Embark on this Exciting Journey Together!</strong>
             </p>
           </div>
         </div>
