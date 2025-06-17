@@ -111,20 +111,20 @@ export default function Home() {
       <section id="intro" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
         <div className="w-full text-center max-w-7xl mx-auto">
            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary animate-fadeInUp">
-             Events_Unlimited
+             Events Unlimited
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 italic animate-fadeInUp [animation-delay:0.1s]">
             "Crafting Memorable Moments."
           </p>
           <div className="max-w-3xl mx-auto space-y-6 animate-fadeInUp [animation-delay:0.2s]">
             <p className="text-lg text-foreground/80">
-              We specialize in creating unforgettable experiences for every occasion. Welcome to EventsUnlimited! We’ve been your partner in crafting exceptional event experiences from our base in Bangalore. Our goal is simple yet powerful: connecting you with India’s best vendors to create extraordinary moments without the extravagant price tag.
+              We Specialize in Creating Unforgettable Experiences for Every Occasion. Welcome to Events Unlimited! We’ve been your Partner in Crafting Exceptional Event Experiences. Our Goal is Simple Yet Powerful, Connecting you with India’s Best Vendors to Create Extraordinary Moments without the Extravagant Price Tag.
             </p>
             <p className="text-lg text-foreground/80">
-              For corporate events, we blend affordability with excellence, ensuring your event is etched in hearts forever. At EventsUnlimited, we understand your event is as unique as you are. Our dedicated team is adept at turning visions into reality, making your dream event a seamless, unforgettable reality.
+              For Corporate Events, We Blend Affordability with Excellence, Ensuring your Event is Etched in Hearts Forever. At Events Unlimited, We Understand your Event is as Unique as You are. Our Dedicated Team is Adept at Turning Visions into Reality, making your Dream Event a Seamless, Unforgettable Reality.
             </p>
             <p className="text-lg text-foreground/80">
-              Thank you for choosing EventsUnlimited – let’s embark on this exciting journey together!
+              Thank you for choosing Events Unlimited – Let’s Embark on this Exciting Journey Together!
             </p>
           </div>
         </div>
@@ -198,7 +198,7 @@ export default function Home() {
                   "Making event planning easy and stress-free, ensuring you reach your targets while building lasting relationships.",
                   "Envisioning expanding our services worldwide to elevate public awareness of our offerings and expertise."
                 ].map((item, index) => (
-                  <li key={index} className="flex items-start animate-fadeInUp" style={{animationDelay: `${0.3 + index * 0.1}s`}}>
+                  <li key={index} className="flex items-start animate-fadeInUp" style={{animationDelay: `$\{0.3 + index * 0.1}s`}}>
                     <CheckCircle className="h-6 w-6 text-accent mr-3 mt-1 shrink-0" />
                     {item}
                   </li>
@@ -217,7 +217,7 @@ export default function Home() {
               <div
                 key={index}
                 className="flip-card animate-fadeInUp"
-                style={{animationDelay: `${0.2 + index * 0.1}s`}}
+                style={{animationDelay: `$\{0.2 + index * 0.1}s`}}
               >
                 <div className="flip-card-inner">
                   {/* Front Side */}
@@ -250,7 +250,7 @@ export default function Home() {
                 { title: "Transparent Pricing", description: "No hidden costs. Make informed decisions that fit your budget.", icon: CheckCircle },
                 { title: "Genuine Reviews", description: "Access genuine client reviews to make well-informed decisions.", icon: CheckCircle },
               ].map((item, index) => (
-                 <div key={index} className="flex items-start space-x-4 animate-fadeInUp" style={{animationDelay: `${0.2 + index * 0.07}s`}}>
+                 <div key={index} className="flex items-start space-x-4 animate-fadeInUp" style={{animationDelay: `$\{0.2 + index * 0.07}s`}}>
                     <item.icon className="h-8 w-8 text-accent mt-1 shrink-0" />
                     <div>
                        <h3 className="text-xl font-semibold mb-2 text-primary">{item.title}</h3>
@@ -319,4 +319,3 @@ export default function Home() {
     </>
   );
 }
-
