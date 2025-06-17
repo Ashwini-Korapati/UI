@@ -72,14 +72,14 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex items-center justify-between h-auto py-2 md:py-0 md:h-20">
+      <div className="container flex items-center justify-between h-auto py-2 md:py-0 md:h-16"> {/* Reduced height from h-20 to h-16 */}
         {/* Logo Only */}
         <Link href="/" className="flex items-center md:ml-4" onClick={closeMobileMenu}>
           <Image
             src="/logo.png"
             alt="Events Unlimited Logo"
-            width={170} 
-            height={170} 
+            width={120} // Reduced width
+            height={40} // Reduced height
             className="rounded-sm object-contain"
             data-ai-hint="company logo"
             unoptimized
@@ -153,8 +153,8 @@ export function Navbar() {
                    <Image
                        src="/logo.png"
                        alt="Events Unlimited Logo Mobile"
-                       width={180}
-                       height={180}
+                       width={100} // Reduced width
+                       height={35} // Reduced height
                        className="rounded-sm object-contain"
                        data-ai-hint="company logo"
                        unoptimized
@@ -244,6 +244,8 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
     
+    
+
     
 
     
