@@ -551,6 +551,7 @@
 .hero-video-carousel-item {
   flex-shrink: 0; /* Prevent item from shrinking */
   width: 100%; /* Each item should occupy 100% of the container's width */
+  min-width: 100%; /* Ensure it doesn't shrink below container width */
   height: 100%;
   position: relative;
 }
@@ -639,3 +640,28 @@
   }
 }
 
+/* Added for hero headline shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.hero-headline-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--accent)) 25%,
+    hsl(var(--primary)) 50%,
+    hsl(var(--accent)) 75%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback */
+  font-weight: 900;
+  animation: shimmer 3s linear infinite;
+}
