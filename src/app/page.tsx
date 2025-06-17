@@ -76,9 +76,9 @@ export default function Home() {
     <>
       {/* Hero Section - Two Column Layout */}
       <section id="hero" className="pt-8 pb-16 md:pt-12 md:pb-20 bg-background text-foreground min-h-screen flex items-center px-4">
-        <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-stretch"> {/* Changed items-center to items-stretch */}
+        <div className="container mx-auto grid lg:grid-cols-[minmax(0,_2fr)_minmax(0,_3fr)] gap-12 items-stretch"> {/* Changed grid column definition */}
           {/* Left Text Column */}
-          <div className="text-left animate-fadeInUp flex flex-col justify-center"> {/* Added flex flex-col justify-center */}
+          <div className="text-left animate-fadeInUp flex flex-col justify-center">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold mb-8 text-gradient-primary-accent">
               Events should be memorable and engaging
             </h1>
@@ -101,7 +101,7 @@ export default function Home() {
           </div>
 
           {/* Right Video Album Box Column */}
-          <div className="relative w-full h-full min-h-[300px] sm:min-h-[350px] md:min-h-[450px] lg:min-h-[550px] max-h-[550px] lg:max-h-[650px] rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 animate-fadeInUp [animation-delay:0.1s]">
+          <div className="relative w-full h-full min-h-[300px] sm:min-h-[350px] md:min-h-[450px] lg:min-h-[calc(100vh-10rem)] max-h-[550px] lg:max-h-[650px] rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 animate-fadeInUp [animation-delay:0.1s]">
             <HeroVideoCarousel videos={heroVideos} />
           </div>
         </div>
