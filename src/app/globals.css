@@ -541,14 +541,16 @@
 
 .hero-video-carousel {
   display: flex;
-  width: 100%;
+  flex-direction: row; /* Explicitly set horizontal direction */
+  flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+  width: 100%; /* The flex container itself takes 100% width of its parent */
   height: 100%;
   transition: transform 0.7s ease-in-out;
 }
 
 .hero-video-carousel-item {
-  flex: 0 0 100%;
-  min-width: 100%; /* Ensure item takes full width */
+  flex-shrink: 0; /* Prevent item from shrinking */
+  width: 100%; /* Each item should occupy 100% of the container's width */
   height: 100%;
   position: relative;
 }
@@ -636,4 +638,3 @@
     text-fill-color: transparent;
   }
 }
-
