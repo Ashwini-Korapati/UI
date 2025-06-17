@@ -107,25 +107,39 @@ export default function Home() {
       </section>
 
 
-       {/* Intro Section - Full Width */}
+       {/* Intro Section - Full Width, Two Column Layout */}
       <section id="intro" className="py-16 md:py-24 bg-background min-h-screen flex flex-col items-center justify-center px-4">
-        <div className="w-full text-center max-w-7xl mx-auto">
-           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary animate-fadeInUp">
-             Events Unlimited
-          </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 italic animate-fadeInUp [animation-delay:0.1s]">
-            "Crafting Memorable Moments."
-          </p>
-          <div className="max-w-3xl mx-auto space-y-6 animate-fadeInUp [animation-delay:0.2s]">
-            <p className="text-lg text-foreground/80">
-              We Specialize in Creating Unforgettable Experiences for Every Occasion. Welcome to Events Unlimited! We’ve been your Partner in Crafting Exceptional Event Experiences. Our Goal is Simple Yet Powerful, Connecting you with India’s Best Vendors to Create Extraordinary Moments without the Extravagant Price Tag.
+        <div className="w-full grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+          {/* Text Column */}
+          <div className="animate-fadeInUp md:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Events Unlimited
+            </h2>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 italic [animation-delay:0.1s]">
+              "Crafting Memorable Moments."
             </p>
-            <p className="text-lg text-foreground/80">
-              For Corporate Events, We Blend Affordability with Excellence, Ensuring your Event is Etched in Hearts Forever. At Events Unlimited, We Understand your Event is as Unique as You are. Our Dedicated Team is Adept at Turning Visions into Reality, making your Dream Event a Seamless, Unforgettable Reality.
-            </p>
-            <p className="text-lg text-foreground/80">
-              <strong className="text-primary">Thank you for choosing Events Unlimited – Let’s Embark on this Exciting Journey Together!</strong>
-            </p>
+            <div className="space-y-6 [animation-delay:0.2s]">
+              <p className="text-lg text-foreground/80">
+                We Specialize in Creating Unforgettable Experiences for Every Occasion. Welcome to Events Unlimited! We’ve been your Partner in Crafting Exceptional Event Experiences. Our Goal is Simple Yet Powerful, Connecting you with India’s Best Vendors to Create Extraordinary Moments without the Extravagant Price Tag.
+              </p>
+              <p className="text-lg text-foreground/80">
+                For Corporate Events, We Blend Affordability with Excellence, Ensuring your Event is Etched in Hearts Forever. At Events Unlimited, We Understand your Event is as Unique as You are. Our Dedicated Team is Adept at Turning Visions into Reality, making your Dream Event a Seamless, Unforgettable Reality.
+              </p>
+              <p className="text-lg text-foreground/80">
+                <strong className="text-primary font-semibold">Thank you for choosing Events Unlimited – Let’s Embark on this Exciting Journey Together!</strong>
+              </p>
+            </div>
+          </div>
+          {/* Image Column */}
+          <div className="relative h-72 md:h-96 rounded-lg overflow-hidden shadow-xl animate-fadeInUp [animation-delay:0.2s]">
+            <Image
+              src="https://placehold.co/600x450.png"
+              alt="Crafting memorable event moments"
+              layout="fill"
+              objectFit="cover"
+              data-ai-hint="event planning celebration"
+              className="transform transition-transform duration-500 ease-in-out hover:scale-105"
+            />
           </div>
         </div>
       </section>
