@@ -587,4 +587,42 @@
   transform: scale(1.2);
 }
 
+/* Hero Video Navigation Buttons */
+.hero-video-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5; /* Same as dots, or higher if needed */
+  background-color: hsla(var(--primary-foreground), 0.2); /* Semi-transparent background */
+  color: hsl(var(--primary-foreground)); /* Icon color */
+  border: none;
+  border-radius: 50%; /* Circular buttons */
+  width: 44px; /* Button size */
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.hero-video-nav-button:hover {
+  background-color: hsla(var(--primary-foreground), 0.4); /* Darker on hover */
+  transform: translateY(-50%) scale(1.1); /* Slight scale effect on hover */
+  opacity: 1;
+}
+
+.hero-video-nav-button.left {
+  left: 20px; /* Adjust spacing from edge */
+}
+
+.hero-video-nav-button.right {
+  right: 20px; /* Adjust spacing from edge */
+}
+
+.hero-video-nav-button svg { /* Styling for the Lucide icons */
+  stroke-width: 2.5; /* Make icons a bit bolder if needed */
+}
+
     
